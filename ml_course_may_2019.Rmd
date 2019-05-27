@@ -5,7 +5,7 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 transition: faster
 output: 
   ioslides_presentation:
-    logo: NTNU-logo.png
+    logo: img/NTNU-logo.png
     css: styles.css
 ---
 
@@ -75,4 +75,4 @@ for teaching ML
 
 ## Questions
 
-![](questions.jpeg)
+![](img/questions.jpeg)
