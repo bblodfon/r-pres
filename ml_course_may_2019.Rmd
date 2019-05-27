@@ -1,6 +1,6 @@
 ---
 title: Lessons Learned <br> ML course
-author: John Zobolas
+author: John Zobolas, PhD Student
 date: "`r format(Sys.time(), '%d %B %Y')`"
 transition: faster
 output: 
