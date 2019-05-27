@@ -1,0 +1,78 @@
+---
+title: Lessons Learned <br> ML course
+author: John Zobolas
+date: "`r format(Sys.time(), '%d %B %Y')`"
+transition: faster
+output: 
+  ioslides_presentation:
+    logo: NTNU-logo.png
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Outline
+
+- The course
+- Before the course
+- During the course
+- Feature Importance
+- Questions
+
+## The Course: ML in Medical Bioinformatics
+
+- Offered by **MedBioInfo** (The Swedish Research School in Medical Bioinformatics)
+- <font color="green">**Location</font>: Linköping University, Sweden**
+- Access the course material [here](https://canvas.instructure.com/courses/1308611)
+- Easy to intermediate level
+- Covers the most essential/practical ML for applications
+- <font color="green">**Excellent lecturers**</font>
+  - **Manuela Zucknick (Statistician)**
+  - **Claudio Mirabello (NN expert)**
+- Almost non-medical ... but I highly recommend it nonetheless!
+
+## Before the Course
+
+### [Preparatory tasks](https://github.com/bjornwallner/ML_medbioinfo) **(1 week)**
+- Most tasks were **Python-based**
+- Use [scikit-learn module](https://scikit-learn.org/stable/tutorial/index.html) 
+for teaching ML
+
+### **Reading**
+- James et al. (2013). [An Introduction to Statistical Learning – with Applications in R. Springer](http://www-bcf.usc.edu/~gareth/ISL/)
+- [Neural Networks and Deep Learning, Michael Nielsen (online book)](http://neuralnetworksanddeeplearning.com/)
+
+## During the course
+
+### Practical Exercises
+- Use [jupyter-notebooks](https://jupyter.org/)
+- <font color="green">Discussion</font>: **R vs Python for ML (beginners vs advanced)**
+- Know your data, know your methods!
+
+### Applications in research and reproducibility (**R**)
+- [Aure et al (2015), Integrated analysis reveals microRNA networks coordinately expressed with 
+  key proteins in breast cancer](https://doi.org/10.1186/s13073-015-0135-5)
+  
+### Neural Networks and Deep Learning
+- [Tensor Flow Playground](http://playground.tensorflow.org)
+- [Keras: The Python Deep Learning library](https://keras.io/)
+
+## Feature Importance 
+... or why John participated in the course!
+
+### <font color="red"> **Can ML help us find biomarkers?** </font>
+
+### <font color="coral"> **Methods** </font>
+
+- **Variable selection**
+  - Correlation plots between the features and the response
+  - <font color="green">**Linear Regression Models with Regularization (LASSO, Elastic Nets)**</font>
+- <font color="green">**Random Forests**</font> (feature selection is embedded in decision trees)
+- Use  <font color="green">**combination of methods!**</font>
+-  <font color="green">**Neural Networks**</font> can also work but need a lot of engineering
+
+## Questions
+
+![](questions.jpeg)

@@ -1,0 +1,23 @@
+/* title logo image */
+.gdbar img {
+  width: 420px !important;
+  height: 100px !important;
+  margin: 8px 8px;
+}
+
+/* box containing the title logo image */
+.gdbar {
+  width: 500px !important;
+  height: 120px !important;
+}
+
+/* logo on the rest of the slides (disable) */
+slides > slide:not(.nobackground):before {
+  width: 0;
+  height: 0;
+  background-size: 0 0;
+}
+
+h3 {
+  color: coral;
+}
