@@ -1,0 +1,95 @@
+---
+title: "Annual DLN Conference 2019"
+subtitle: "Bekkjarvik Gjestgiveri"
+author: " John Zobolas <br/> PhD Student"
+institute: "Department of Biology, NTNU"
+date: "June 11th, 2019"
+output:
+  xaringan::moon_reader:
+    css: [default, default-fonts, css/ntnu.css]
+    self_contained: true
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+layout: true
+
+<div class="my-footer">
+<span>
+  <img src="img/ntnu-logo-neg.png" style="width:160px;height:30px;">
+</span>
+</div> 
+
+---
+
+# Hello World
+
+Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE}
+devtools::install_github("yihui/xaringan")
+```
+
+--
+
+You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
+
+- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
+
+--
+
+
+CV checklist
+
+- [Checklist by Sverre Haugen](https://github.com/bblodfon/myCV/blob/master/CV_Checklist_Sverre_Haugen.pdf)
+- [My CV](https://bblodfon.github.io/myCV/cv.html) using the R package [pagedown](https://github.com/rstudio/pagedown)
+
+
+---
+
+# Hello Ninja
+
+As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+
+1. The [remark.js](https://remarkjs.com) library;
+
+1. The **xaringan** package;
+
+Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in t frfrhe web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+
+---
+
+class: center
+ 
+# Hand seals (印)
+
+Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+---
+
+# Mouni
+
+Oit thes
+
+--
+
+Ti thes?
+
+--
+
+- Something!
