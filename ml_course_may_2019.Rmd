@@ -1,12 +1,11 @@
 ---
 title: Lessons Learned <br> ML course
 author: John Zobolas, PhD Student
-date: "`r format(Sys.time(), '%d %B %Y')`"
-transition: faster
+date: June 11th, 2019
 output: 
-  ioslides_presentation:
+  ioslides_presentation: 
+    css: css/styles.css
     logo: img/NTNU-logo.png
-    css: styles.css
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +32,7 @@ knitr::opts_chunk$set(echo = FALSE)
   - **Claudio Mirabello (NN expert)**
 - Almost non-medical ... but I highly recommend it nonetheless!
 
-## Before the Course
+## Before the Course {.build}
 
 ### [Preparatory tasks](https://github.com/bjornwallner/ML_medbioinfo) **(1 week)**
 - Most tasks were **Python-based**
@@ -44,7 +43,7 @@ for teaching ML
 - James et al. (2013). [An Introduction to Statistical Learning – with Applications in R. Springer](http://www-bcf.usc.edu/~gareth/ISL/)
 - [Neural Networks and Deep Learning, Michael Nielsen (online book)](http://neuralnetworksanddeeplearning.com/)
 
-## During the course
+## During the course {.build}
 
 ### Practical Exercises
 - Use [jupyter-notebooks](https://jupyter.org/)
@@ -59,7 +58,7 @@ for teaching ML
 - [Tensor Flow Playground](http://playground.tensorflow.org)
 - [Keras: The Python Deep Learning library](https://keras.io/)
 
-## Feature Importance 
+## Feature Importance {.build}
 ... or why John participated in the course!
 
 ### <font color="red"> **Can ML help us find biomarkers?** </font>
