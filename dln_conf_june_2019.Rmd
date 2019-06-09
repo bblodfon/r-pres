@@ -19,56 +19,173 @@ layout: true
 
 <div class="my-footer">
 <span>
-  <img src="img/ntnu-logo-neg.png" style="width:160px;height:30px;">
+  <img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;">
 </span>
 </div> 
 
 ---
 
-# Hello World
+# The conference 
 
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+.pull-left[
+  <img src="img/DLN/dln_2019_1.jpg" style="width:500px;height:300px;">
+]
 
-```{r eval=FALSE, tidy=FALSE}
-devtools::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
-
---
-
-
-CV checklist
-
-- [Checklist by Sverre Haugen](https://github.com/bblodfon/myCV/blob/master/CV_Checklist_Sverre_Haugen.pdf)
-- [My CV](https://bblodfon.github.io/myCV/cv.html) using the R package [pagedown](https://github.com/rstudio/pagedown)
-
+.pull-right[
+ <img src="img/DLN/dln_2019_2.jpg" style="width:500px;height:300px;">
+]
 
 ---
 
-# Hello Ninja
+# The conference 
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+.pull-left[
+  <img src="img/DLN/dln_2019_3.jpg" style="width:500px;height:300px;">
+]
 
-1. The [remark.js](https://remarkjs.com) library;
+.pull-right[
+ <img src="img/DLN/dln_2019_4.jpg" style="width:500px;height:300px;">
+]
 
-1. The **xaringan** package;
+--
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in t frfrhe web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+.center.bottom[
+  # Main Theme: **Sell Yourself!!!**
+]
 
 ---
 
-class: center
+# [Pluvia](https://pluviabiotech.com/): Bio-Tech company built from basic research .small.green[(talk by Prof Aurora Martinez, UiB)]
+
+--
+
+- **Phenylketonuria (PKU)**, an inhereted, metabolic disease
+
+--
+
+  - Causes intellectual disability
+
+--
+
+- Ways to counteract (diet, drugs, ...)
+
+--
  
-# Hand seals (印)
+- Through basic research (UiB), a **new method** was found
+  - PKU is a conformational disease
+  - Use of *pharmacological chaperons* to fix the *protein folding*
+  - Potential for innovation
 
-Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+--
 
-![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+- Discuss the business plan afterwards
+  - Patent the technology
+  - Good basic research is always a prerequisite
+
+---
+
+# Innovation & Science Communication <br/> .small.green[(talk by Anne-Sophie Schillinger)]
+
+**VIS** is a company owned by UiB and its *mission* is to identify, evaluate, 
+develop and realize research results they believe may have commercial and / or 
+socio-economic potential.
+
+--
+
+- Describe your research in 7 words!
+
+--
+
+.larger.purple[Use computers to combat cancer] `r shiny::icon("dumbbell")`
+
+--
+
+- Well... that was less. So I re-did it as: 
+
+.larger.blue[Use fancy computer methods to combat cancer]
+
+--
+
+- In 3 words:
+
+--
+
+.larger.red[Computers combat cancer] `r shiny::icon("smile")`
+
+--
+
+### Simplicity, Conciseness, Precision...
+
+---
+
+# How to get the job you want <br/> .small.green[(talk by Sverre Haugen)]
+
+--
+### 6 principles to get the job you want
+
+- Understand employers
+- **Understand yourself**
+- Understand the job
+- Job-specific communication
+- **Show motivation**
+- **Use examples**
+
+--
+
+### CV checklist
+
+- [Checklist](https://github.com/bblodfon/myCV/blob/master/CV_Checklist_Sverre_Haugen.pdf)
+- [My CV](https://bblodfon.github.io/my-cv/cv.html) (made with the R package [pagedown](https://github.com/rstudio/pagedown)
+
+---
+
+# How to get the job you want <br/> .small.green[(talk by Sverre Haugen)]
+
+### What do the best interview candidates have in common?
+
+--
+
+- Self-knowledge `r shiny::icon("praying-hands")`
+- Humbleness `r shiny::icon("pray")`
+- Ability to reflect `r shiny::icon("yin-yang")` 
+- Well prepared `r shiny::icon("user-graduate")`
+
+--
+
+### General advice
+
+- Find your [**Ikigai**](https://en.wikipedia.org/wiki/Ikigai) (生き甲斐)
+- [Fake it to make it](https://www.youtube.com/watch?v=RVmMeMcGc0Y) (for the 
+interview and in general)
+- Watch out for the **knock-out criteria** in a CV/job
+
+---
+
+# Mental Health .small.green[(talk by Jan-Martin Berge)]
+
+### Tools for managing stress
+
+--
+
+.large.purple[Essential]
+
+- Sleep
+- Workout
+
+--
+
+.large.purple[If need ever comes...]
+
+- Talk to someone
+- Take a bath and go out
+
+--
+
+.large.purple[Zen stuff]
+
+- Breathing
+- Meditation / Mindfulness 
+- Tea
 
 ---
 
@@ -78,18 +195,4 @@ class: center, middle
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
-
----
-
-# Mouni
-
-Oit thes
-
---
-
-Ti thes?
-
---
-
-- Something!
+My own NTNU template for [these slides]().
