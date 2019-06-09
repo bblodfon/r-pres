@@ -13,21 +13,13 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-resource_files:
-  - img
 ---
-
-```{r, include=FALSE}
-rmarkdown::output_metadata$set(
-  rsc_output_files = list.files("img/", recursive = TRUE, full.names = TRUE)
-)
-```
 
 layout: true
 
 <div class="my-footer">
 <span>
-  <img src="./img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;">
+  <img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;">
 </span>
 </div> 
 
@@ -36,11 +28,11 @@ layout: true
 # The conference 
 
 .pull-left[
-  <img src="./img/DLN/dln_2019_1.jpg" style="width:500px;height:300px;">
+  <img src="img/DLN/dln_2019_1.jpg" style="width:500px;height:300px;">
 ]
 
 .pull-right[
- <img src="./img/DLN/dln_2019_2.jpg" style="width:500px;height:300px;">
+ <img src="img/DLN/dln_2019_2.jpg" style="width:500px;height:300px;">
 ]
 
 ---
@@ -48,11 +40,11 @@ layout: true
 # The conference 
 
 .pull-left[
-  <img src="./img/DLN/dln_2019_3.jpg" style="width:500px;height:300px;">
+  <img src="img/DLN/dln_2019_3.jpg" style="width:500px;height:300px;">
 ]
 
 .pull-right[
- <img src="./img/DLN/dln_2019_4.jpg" style="width:500px;height:300px;">
+ <img src="img/DLN/dln_2019_4.jpg" style="width:500px;height:300px;">
 ]
 
 --
