@@ -13,7 +13,15 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+resource_files:
+  - img
 ---
+
+```{r, include=FALSE}
+rmarkdown::output_metadata$set(
+  rsc_output_files = list.files("img/", recursive = TRUE, full.names = TRUE)
+)
+```
 
 layout: true
 
