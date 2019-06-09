@@ -195,4 +195,4 @@ class: center, middle
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
-My own NTNU template for [these slides]().
+My own NTNU template for [these slides](https://github.com/bblodfon/r-pres/blob/master/dln_conf_june_2019.Rmd).
