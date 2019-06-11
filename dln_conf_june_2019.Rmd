@@ -7,7 +7,7 @@ date: "June 11th, 2019"
 output:
   xaringan::moon_reader:
     css: [default, default-fonts, css/ntnu.css]
-    self_contained: true
+    self_contained: false
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -186,6 +186,10 @@ interview and in general)
 - Breathing
 - Meditation / Mindfulness 
 - Tea
+
+--
+
+A nameless PhD quote: .large.purple['PhD is an **education**']
 
 ---
 
