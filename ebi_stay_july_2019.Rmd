@@ -1,0 +1,84 @@
+---
+title: "EBI visit (1-12 July)"
+subtitle: "VSM Dictionaries and REST APIs"
+author: " John Zobolas <br/> PhD Student"
+institute: "Department of Biology, NTNU"
+date: "July 11th, 2019"
+output:
+  xaringan::moon_reader:
+    css: [default, default-fonts, css/ntnu.css]
+    self_contained: false
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+layout: true
+
+<div class="my-footer">
+<span>
+  <img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;">
+</span>
+</div> 
+
+---
+
+# Visit Goal
+
+## Build .purple[vsm-dictionaries]
+- Uniprot (proteins)
+- Ensembl (genes)
+- RNAcentral (non-coding RNA sequences)
+- Complex Portal (stable macromolecular complexes)
+
+--
+
+</br>
+
+Connection with [BioPortal](https://github.com/vsmjs/vsm-dictionary-bioportal/) already implemented
+
+--
+
+</br>
+
+...for the [causal-builder](https://vtoure.github.io/causalBuilder/) (Vasundra, Steven)
+
+---
+
+# Uniprot's REST API
+
+- REST API: `https://www.uniprot.org/uniprot/?query=id:P12345
+&columns={column names comma separated}&format=tab`
+
+--
+
+- Sadly no JSON! (**~2 YEARS**, work in progress)
+
+--
+
+- [Proteins API](https://www.ebi.ac.uk/proteins/api/doc/) offers JSON but no filtering and no searching!
+
+--
+
+- When programmers nowadays hear the word .large[`JSON`]:
+
+.center[<img src="img/dog_face.gif">]
+
+---
+
+# EBI Search
+
+
+---
+
+class: center, middle
+
+<img src="img/questions.jpeg">
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The R code for [these slides](https://github.com/bblodfon/r-pres/blob/master/ebi_stay_july_2019.Rmd).
