@@ -64,7 +64,7 @@ Connection with [BioPortal](https://github.com/vsmjs/vsm-dictionary-bioportal/) 
 
 - When programmers nowadays hear the word .large[`JSON`]:
 
-.center[<img src="img/dog_face.gif">]
+.center[<img src="img/dog_face.gif" style="width:300px;height:200px;">]
 
 ---
 
