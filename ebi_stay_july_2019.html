@@ -35,7 +35,7 @@ layout: true
 
 ## Build .purple[vsm-dictionaries]
 - Uniprot (proteins)
-- Ensembl (genes)
+- Ensembl (genes) + EnsemblGenomes (for non-vertebrate species)
 - RNAcentral (non-coding RNA sequences)
 - Complex Portal (stable macromolecular complexes)
 
@@ -74,8 +74,53 @@ Connection with [BioPortal](https://github.com/vsmjs/vsm-dictionary-bioportal/) 
 
 ---
 
-# EBI Search
+# RNAcentral, Ensembl, ComplexPortal?
 
+Non-complete APIs (at least for what we wanted for our VSM-dictionaries) 
+
+--
+
+.larger[[EBI Search](https://www.ebi.ac.uk/ebisearch/apidoc.ebi) for the rescue!]
+
+--
+
+- Offers *uniform access* to the biological data resources hosted at EBI
+- Each data source is a diffferent **domain** (e.g. uniprot, ensembl_gene)
+- **EBI Search as a Service** (Ensembl Genomes, RNAcentral)
+- Metadata table for each domain of interest ([RNAcentral](https://www.ebi.ac.uk/ebisearch/metadata.ebi?db=rnacentral))
+- .green[Pagination] supported (`size`: 0 - 100, `start`: 0 - 1000000)
+
+--
+
+.larger.purple[Examples]
+
+- [Get multiple IDs example](https://www.ebi.ac.uk/ebisearch/ws/rest/rnacentral/entry/URS000075D314_9606,URS0000000001_77133?fields=id%2Cname%2Cdescription%2Cgene%2Cgene_synonym%2Cactive%2Cexpert_db%2Crna_type%2Cspecies&amp;format=json)
+- [Get all IDs from a domain (paginated up until the 1000000th entry)](https://www.ebi.ac.uk/ebisearch/ws/rest/rnacentral?query=domain_source:rnacentral&amp;fields=id%2Cname%2Cdescription%2Cgene%2Cgene_synonym%2Cactive%2Cexpert_db%2Crna_type%2Cspecies&amp;size=100&amp;start=0&amp;format=json)
+- [Get search results for `tp53`](https://www.ebi.ac.uk/ebisearch/ws/rest/rnacentral?query=tp53*&amp;fields=id%2Cname%2Cdescription%2Cgene%2Cgene_synonym%2Cactive%2Cexpert_db%2Crna_type%2Cspecies&amp;format=json)
+
+--
+
+More on their (last) [paper](https://academic.oup.com/nar/article/47/W1/W636/5446251): "The EMBL-EBI search and sequence analysis tools APIs in 2019"
+
+---
+
+# Miscellaneous
+
+- .blue[RNAcentral consortium meeting] on November 15th (Hinxston)
+
+--
+
+- Lead developer from Ensembl mentioned 
+  - a UK-based project to sequence thousands of microorganisms
+  - an .blue[ongoing developing project] to completely change ensemble.org site, 
+  model format, API, add pagination, etc. (~ 2022)
+
+--
+
+- .purple[RRI perspective]
+  - How to talk to people when you want something from their API that **is not there**!
+  - People tend to answer their own questions!
+  - How one person can make a difference in technology (Reactome + GraphDB)
 
 ---
 
