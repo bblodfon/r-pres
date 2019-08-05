@@ -3,7 +3,7 @@ title: "EBI visit (1-12 July)"
 subtitle: "VSM Dictionaries and REST APIs"
 author: " John Zobolas <br/> PhD Student"
 institute: "Department of Biology, NTNU"
-date: "July 11th, 2019"
+date: "August 20th, 2019"
 output:
   xaringan::moon_reader:
     css: [default, default-fonts, css/ntnu.css]
@@ -89,7 +89,6 @@ Non-complete APIs (at least for what we wanted for our VSM-dictionaries)
 .larger.purple[Examples]
 
 - [Get multiple IDs example](https://www.ebi.ac.uk/ebisearch/ws/rest/rnacentral/entry/URS000075D314_9606,URS0000000001_77133?fields=id%2Cname%2Cdescription%2Cgene%2Cgene_synonym%2Cactive%2Cexpert_db%2Crna_type%2Cspecies&format=json)
-- [Get all IDs from a domain (paginated up until the 1000000th entry)](https://www.ebi.ac.uk/ebisearch/ws/rest/rnacentral?query=domain_source:rnacentral&fields=id%2Cname%2Cdescription%2Cgene%2Cgene_synonym%2Cactive%2Cexpert_db%2Crna_type%2Cspecies&size=100&start=0&format=json)
 - [Get search results for `tp53`](https://www.ebi.ac.uk/ebisearch/ws/rest/rnacentral?query=tp53*&fields=id%2Cname%2Cdescription%2Cgene%2Cgene_synonym%2Cactive%2Cexpert_db%2Crna_type%2Cspecies&format=json)
 
 --
@@ -111,10 +110,21 @@ More on their (last) [paper](https://academic.oup.com/nar/article/47/W1/W636/544
 
 --
 
-- .purple[RRI perspective]
-  - How to talk to people when you want something from their API that **is not there**!
-  - People tend to answer their own questions!
-  - How one person can make a difference in technology (Reactome + GraphDB)
+.pull-left[
+- .purple[RRI perspective] 
+  - How to talk to people when you want something from their API that 
+**is not there**!
+  - And they tend to answer **their own** questions!
+]
+--
+
+.pull-right[
+<img src="img/gilfoyle_waits.gif" style="width:320px;height:220px;">
+]
+
+--
+
+- How one person can make a difference in technology (Reactome + GraphDB)
 
 ---
 
