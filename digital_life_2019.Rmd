@@ -1,6 +1,6 @@
 ---
 title: "DrugLogics: Ensemble model analysis unravels drug synergy mechanisms"
-subtitle: "Digtal Life 2019, Tromso"
+subtitle: "Digital Life 2019, Tromso"
 author: " John Zobolas <br/> PhD Student"
 institute: "Department of Biology, NTNU"
 date: "Sept 6th, 2019"
