@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>DrugLogics: Ensemble model analysis unravels drug synergy mechanisms</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Zobolas   PhD Student" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ntnu.css" type="text/css" />
+    <link rel="stylesheet" href="css/my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# DrugLogics: Ensemble model analysis unravels drug synergy mechanisms
+## Digtal Life 2019, Tromso
+### John Zobolas <br/> PhD Student
+### Department of Biology, NTNU
+### Sept 6th, 2019
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;
+  &lt;img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;"&gt;
+&lt;/span&gt;
+&lt;/div&gt; 
+
+---
+
+# Outline 
+
+### - DrugLogics
+
+### - Logical Modeling
+
+### - The DrugLogics Software Pipeline
+
+### - Ensemble Boolean Model Analysis
+
+### - Future Work .blue[<i class="fa fa-smile"></i>]
+
+---
+
+# DrugLogics .smaller[(in keywords!)]
+
+![:scale 85%](img/druglogics/druglogics_keywords.png)
+
+---
+
+# Logical Modeling in Systems Biology
+
+![](img/druglogics/cascade_77.png)
+
+Flobak A. et al. (2015). Discovery of drug synergies in gastric cancer cells predicted by logical modeling. PLoS Comput. Biol. 11:e1004426. doi: [10.1371/journal.pcbi.1004426](https://doi.org/10.1371/journal.pcbi.1004426)
+
+---
+
+# Intro to Logical Modeling
+
+![](img/druglogics/intro_logical_modeling.png)
+--
+
+**Model System Dynamics**: find *attractors* (fixpoints, etc.) and apply reasoning
+
+---
+
+# The DrugLogics Software Pipeline
+
+![](img/druglogics/pipeline.png)
+--
+
+- Fully **automated**
+- Genetic algorithm trains **ensemble of boolean models**
+- Designed for preclinical, **cancer cell line systems**
+- **Goal**: clinical decision support for **personalized medicine**
+
+???
+
+We have designed and developed a fully automated computational pipeline for drug response simulation and prediction in preclinical, cancer cell line model systems. This pipeline is able to produce cellular signaling network models that represent key cancer driving processes, actionable targets within these networks, and phenotypic output nodes (growing or dying) that provide an assessment of model performance when compared to actual observations. The logical modeling framework deploys a genetic algorithm that trains an ensemble of models to fit the steady state activity profile of a specific cancer cell line, as measured with proteomic, genomic and transcriptomic data. The platform represents our progress in the direction of providing predictions of pre-clinical efficacy, and ultimately clinical decision support for personalized medicine.
+
+---
+
+# Ensemble Boolean Model Analysis .smaller[(Intro...)]
+
+## .red[<i class="fa fa-question"></i>] Research questions .red[<i class="fa fa-question"></i>]
+
+- Understand why specific drug combinations work better (more **synergistically**) than others
+- Identify network nodes (**biomarkers**) that explain the mechanism by which these synergies happen
+
+--
+
+## emba R package
+
+Github <i class="fab fa-github"></i>: [https://github.com/bblodfon/emba](https://github.com/bblodfon/emba)
+
+
+```r
+devtools::install_github("bblodfon/emba")
+```
+
+---
+
+# Ensemble Boolean Model Analysis .smaller[(How it works!)]
+
+![:scale 95%](img/druglogics/emba.png)
+--
+
+
+```r
+# With emba you simply write:
+res = biomarker_tp_analysis(model.predictions, models.stable.state, 
+  models.link.operator, observed.synergies, threshold = 0.7)
+```
+
+---
+
+# *emba* : visualize biomarker results (1)
+
+![](img/druglogics/PI-D1_A498_state.svg)
+
+---
+
+# *emba* : visualize biomarker results (2)
+
+![](img/druglogics/PI-D1_A498_link.svg)
+
+---
+
+# Future Work
+
+**Full analysis based on automatically generated topology**: [https://bblodfon.github.io/gitsbe-model-analysis/atopo/cell-lines-2500/a498-model-analysis.html](https://bblodfon.github.io/gitsbe-model-analysis/atopo/cell-lines-2500/a498-model-analysis.html)
+
+--
+
+- Perform *emba*-enabled analysis on 
+  - Different cell lines
+  - Different topology (**Cascade**)
+--
+
+- Biomarker results can be used to **calibrate training steady state size** for 
+prediction performance improvement
+
+--
+- Use **Machine Learning methods** to perform *feature extraction*
+  - Linear Regression Models with Regularization (LASSO, Elastic Nets) 
+  - Random Forests 
+  - Effective combinations of the above
+
+---
+
+# Acknowledgements .smaller[(.red[<i class="fa fa-heart"></i>] our sponsors!)]
+
+&lt;br/&gt;
+
+.pull-left-large[
+  &lt;img src="img/druglogics/druglogics_team.png"&gt;
+]
+ 
+.pull-right-small[
+  &lt;img src="img/ack/eracosysmed.gif"&gt;
+  
+  &lt;img src="img/ack/cost.png"&gt;
+  
+  &lt;img src="img/ack/ntnu_helse.jpg"&gt;
+]
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+Code for these slides: [https://github.com/bblodfon/r-pres](https://github.com/bblodfon/r-pres)
+<i class="fab fa-github"></i>
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
