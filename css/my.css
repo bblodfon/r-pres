@@ -1,0 +1,33 @@
+/* font sizes */
+.big { font-size: 200% }
+.larger { font-size: 140% }
+.large { font-size: 120% }
+.small { font-size: 70% }
+.smaller { font-size: 50% }
+.tiny { font-size: 30% }
+
+/* font colors */
+.red { color: red }
+.blue { color: blue }
+.green { color: green }
+.orange { color: orange }
+.purple { color: purple }
+
+/* column layout */
+.pull-left-large {
+  float: left;
+  width: 67%;
+}
+
+.pull-right-small {
+  float: right;
+  width: 27%;
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 0%;
+}
+
