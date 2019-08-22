@@ -83,7 +83,8 @@ We have designed and developed a fully automated computational pipeline for drug
 
 ## .red[`r shiny::icon("question")`] Research questions .red[`r shiny::icon("question")`]
 
-- Understand why specific drug combinations work better (more **synergistically**) than others
+- Understand *why* specific drug combinations work better (more **synergistically**) than others
+- Investigate *when* synergistic drug combinations should be prescribed to cell lines (or patients)
 - Identify network nodes (**biomarkers**) that explain the mechanism by which these synergies happen
 
 --
@@ -92,7 +93,7 @@ We have designed and developed a fully automated computational pipeline for drug
 
 Github `r shiny::icon("github")`: [https://github.com/bblodfon/emba](https://github.com/bblodfon/emba)
 
-```{r, eval=FALSE}
+```{r install, eval=FALSE}
 devtools::install_github("bblodfon/emba")
 ```
 
@@ -103,7 +104,7 @@ devtools::install_github("bblodfon/emba")
 ![:scale 95%](img/druglogics/emba.png)
 --
 
-```{r, eval=FALSE}
+```{r emba_usage, eval=FALSE}
 # With emba you simply write:
 res = biomarker_tp_analysis(model.predictions, models.stable.state, 
   models.link.operator, observed.synergies, threshold = 0.7)
@@ -112,6 +113,19 @@ res = biomarker_tp_analysis(model.predictions, models.stable.state,
 ---
 
 # *emba* : visualize biomarker results (1)
+
+```{r gen_graph_from_A498_model_analysis, include=FALSE, eval=FALSE}
+res = biomarker_synergy_analysis(model.predictions, models.stable.state, 
+                                 models.link.operator, observed.synergies, 
+                                 threshold = 0.7)
+
+plot_avg_state_diff_graph(net, diff = res$diff.state.synergies.mat["PI-D1",],
+                          layout = nice.layout, 
+                          title = "A498 Cell Line: Prediction of PI-D1 synergy (Activity State Differences)")
+plot_avg_link_operator_diff_graph(net, diff = res$diff.link.synergies.mat["PI-D1",],
+                                  layout = nice.layout, 
+                                  title = "A498 Cell Line: Prediction of PI-D1 synergy (Link Operator Differences)")
+```
 
 ![](img/druglogics/PI-D1_A498_state.svg)
 
@@ -151,10 +165,10 @@ prediction performance improvement
 
 # Acknowledgements .smaller[(.red[`r shiny::icon("heart")`] our sponsors!)]
 
-<br/>
-
 .pull-left-large[
-  <img src="img/druglogics/druglogics_team.png">
+  <img src="img/druglogics/druglogics_org.svg">
+  
+  <img src="img/ack/st_olavs.svg">
 ]
  
 .pull-right-small[
@@ -163,6 +177,8 @@ prediction performance improvement
   <img src="img/ack/cost.png">
   
   <img src="img/ack/ntnu_helse.jpg">
+  
+  <img src="img/ack/Samarbeidsorganet.gif">
 ]
 
 ---
