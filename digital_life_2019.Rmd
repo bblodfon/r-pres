@@ -50,7 +50,7 @@ layout: true
 
 ![](img/druglogics/cascade_77.png)
 
-Flobak A. et al. (2015). Discovery of drug synergies in gastric cancer cells predicted by logical modeling. PLoS Comput. Biol. 11:e1004426. doi: [10.1371/journal.pcbi.1004426](https://doi.org/10.1371/journal.pcbi.1004426)
+Flobak A. et al. (2015). *Discovery of drug synergies in gastric cancer cells predicted by logical modeling.* PLoS Comput. Biol. 11:e1004426. doi: [10.1371/journal.pcbi.1004426](https://doi.org/10.1371/journal.pcbi.1004426)
 
 ---
 
