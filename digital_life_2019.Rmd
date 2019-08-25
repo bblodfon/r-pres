@@ -42,7 +42,7 @@ layout: true
 
 # DrugLogics .smaller[(in keywords!)]
 
-![:scale 85%](img/druglogics/druglogics_keywords.png)
+![](img/druglogics/druglogics_keywords.svg)
 
 ---
 
@@ -56,7 +56,7 @@ Flobak A. et al. (2015). *Discovery of drug synergies in gastric cancer cells pr
 
 # Intro to Logical Modeling
 
-![](img/druglogics/intro_logical_modeling.png)
+![](img/druglogics/intro_logical_modeling.svg)
 --
 
 **Model System Dynamics**: find *attractors* (fixpoints, etc.) and apply reasoning
@@ -101,11 +101,12 @@ devtools::install_github("bblodfon/emba")
 
 # Ensemble Boolean Model Analysis .smaller[(How it works!)]
 
-![:scale 95%](img/druglogics/emba.png)
+![:scale 90%](img/druglogics/emba.svg)
+
 --
 
 ```{r emba_usage, eval=FALSE}
-# With emba you simply write:
+* # Use emba library function
 res = biomarker_tp_analysis(model.predictions, models.stable.state, 
   models.link.operator, observed.synergies, threshold = 0.7)
 ```
@@ -115,6 +116,7 @@ res = biomarker_tp_analysis(model.predictions, models.stable.state,
 # *emba* : visualize biomarker results (1)
 
 ```{r gen_graph_from_A498_model_analysis, include=FALSE, eval=FALSE}
+library(emba)
 res = biomarker_synergy_analysis(model.predictions, models.stable.state, 
                                  models.link.operator, observed.synergies, 
                                  threshold = 0.7)
