@@ -1,8 +1,8 @@
 div.my-footer {
     background-color: #2626a8;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
     height: 40px;
     width: 100%;
 }
@@ -31,6 +31,7 @@ div.my-footer span {
 .inverse {
   background-color: #FFFFFF;
   color: #d6d6d6;
+  font-size: 1.5em; /* added because the title's fonts were too small...probably has to do with remarkjs library*/
 }
 
 .inverse h1, .inverse h2, .inverse h3 {

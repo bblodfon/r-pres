@@ -1,4 +1,5 @@
 /* font sizes */
+.bigger { font-size: 250% }
 .big { font-size: 200% }
 .larger { font-size: 140% }
 .large { font-size: 120% }
@@ -12,6 +13,9 @@
 .green { color: green }
 .orange { color: orange }
 .purple { color: purple }
+
+/* bold */
+.bold { font-weight: bold }
 
 /* column layout */
 .pull-left-large {
@@ -28,6 +32,9 @@
   margin: 0;
   position: absolute;
   top: 25%;
-  left: 0%;
+  left: 0;
 }
 
+.just {
+  text-align:justify;
+}
