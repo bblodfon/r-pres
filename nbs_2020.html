@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>VSM: How to Easily Plant Complex Ideas into Computers</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Zobolas   PhD Student" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ntnu.css" type="text/css" />
+    <link rel="stylesheet" href="css/my.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# VSM: How to Easily Plant Complex Ideas into Computers
+## 56th NBS Contact Meeting, Voss
+### John Zobolas <br/> PhD Student
+### Department of Biology, NTNU
+### January 24th, 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;
+  &lt;img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;"&gt;
+&lt;/span&gt;
+&lt;/div&gt; 
+
+---
+
+# Outline
+
+.larger[
+&lt;ul&gt;
+  &lt;li&gt;Intro: .red[Understanding the Problem(s)]&lt;/li&gt;&lt;/br&gt;
+  &lt;li&gt;VSM: .purple[Visual Syntax Method]&lt;/li&gt;&lt;/br&gt;
+  &lt;li&gt;Example app: .green[causalBuilder]&lt;/li&gt;&lt;/br&gt;
+&lt;/ul&gt;
+]
+
+---
+
+# The Science Machine
+
+![](img/vsm/science_machine.png)
+--
+
+.bigger.center.red[IT IS NOT SO!]
+
+???
+
+Picture of what a perfect science system should be:
+"Where everyone builds on top of what others found out before. 
+And everyone shares their new findings with all the others, in an efficient way. 
+So the next scientist can immediately build further, upon the new sum of human knowledge.
+So that we eventually can reach the TRUTH!!!"
+
+---
+
+# Data vs Information
+
+Monkey named 'Lukas', Subject No. 5, ate 4 bananas! (**NUMERICAL DATA**) &lt;/br&gt;
+.center[
+![:scale 47%](img/vsm/monkey.jpg)
+&lt;/br&gt;.smaller[Source: https://www.telegraph.co.uk/news/earth/wildlife/10570569/Banana-ban-for-health-kick-monkeys-at-Paignton-Zoo.html]]
+
+--
+... vs "Monkeys prefer bananas over pizza!" (**INTERPRETED DATA**)
+
+--
+&lt;ul&gt;
+  &lt;li&gt;Data are structured, information can be in .bold[any form]!&lt;/li&gt;
+&lt;/ul&gt;
+  ... like an abstract/summary of a paper!
+--
+&lt;ul&gt;
+  &lt;li&gt; Information comes with .big.purple[**CONTEXT!**]&lt;/li&gt;
+&lt;/ul&gt;
+
+---
+
+# Why is context so important?
+
+.larger["The cat ate the fish. Now **IT** is dead” =&gt; **WHO DIED**?]
+
+.pull-left[![](img/vsm/cat_fish.png)]
+--
+.pull-right[.larger[Add .purple[**CONTEXT**]:&lt;/br&gt; “The fish was poisoned” =&gt; **NOW WHO DIED**?]]
+--
+&lt;/br&gt;
+.center.big.red[CONTEXT FACILITATES REASONING!]
+
+???
+It’s super hard to make a computer program ‘understand’ stuff like that, and especially in science... 
+It would need to learn all about how the world works first, before it can decipher text.
+
+---
+
+# The knowledge pile
+
+![](img/vsm/life_sciences_literature.png)
+&amp;emsp;&amp;emsp; .large[Not just .red.large[**BIG**], but also .purple.large[**COMPLEX**] information]
+&lt;/br&gt;
+.small[Source: https://www.nlm.nih.gov/bsd/medline_cit_counts_yr_pub.html]
+
+---
+
+![:scale 83%](img/vsm/how_biology_systems_work.png)
+
+.large[It takes .purple.large[**TIME**] for a human to *understand* and *process* text]
+
+---
+
+# Discovery effort disanalogous with result accessibility (free-text)
+
+![](img/vsm/burial_of_discovery.png)
+
+???
+We are spending monumental efforts to make plenty of discoveries, but then we 
+bury them all again into a **free-text format** that’s hardly accessible at all!
+
+---
+
+# Biocurators: .small[the Guardians of the Life Sciences]
+
+![](img/vsm/biocurator.png)
+
+.large.center[Natural Language .green[piece of information] =&gt; biocuration =&gt; .green[Computable Information]]
+
+&lt;ul&gt;
+  &lt;li&gt;Good-hearted and often underpaid people that read PDFs all day!&lt;/li&gt;&lt;/br&gt;
+  &lt;li&gt;...and fill in the databases we so much use!&lt;/li&gt;&lt;br&gt;
+  &lt;li&gt;Make information .bold[easily reusable], either for themselves or for others&lt;/li&gt;&lt;/br&gt;
+&lt;/ul&gt;
+
+???
+
+And try to decipher what the cryptic authors actually meant to say. 
+And sometimes need to email them to be sure. 
+And then nicely package it so it fits on the trains.
+
+Yes, a lot of work goes into filling the databases.
+Even though some scientific funding managers think this just happens magically.
+
+---
+
+# State of the Art: Biocuration Tools
+
+&lt;ol&gt;
+
+&lt;li&gt; .bold[Sheets/Tables] &lt;/li&gt;
+&lt;img src="img/vsm/excel_tools.png"&gt;&lt;/br&gt;&lt;/br&gt;
+--
+&lt;li&gt; .bold[Formal/Math Languages] (&lt;a href="https://language.bel.bio/"&gt;Biological Expression Language&lt;/a&gt;) &lt;/li&gt;
+
+&lt;p&gt;‘&lt;em&gt;repression of the transcription of miR-21 by FOXO3 protein transcriptional activity&lt;/em&gt;’ =&gt; &lt;code&gt;act(p(HGNC:FOXO3),ma(tscript)) =| r(HGNC:MIR21)&lt;/code&gt;&lt;/p&gt;
+--
+&lt;li&gt; .bold[RDF/Semantic-based tools] (&lt;a href="http://noctua.geneontology.org/"&gt;Noctua Modeling Tool&lt;/a&gt;)&lt;/li&gt;
+
+&lt;p&gt; Used by experts in knowledge management&lt;/p&gt;
+
+&lt;/ol&gt;
+
+???
+- Databases/Sheets: INFLEXIBLE
+- Formal Languages: long list of rules and symbology! HARD TO LEARN for curators. 
+And then the computer may misunderstand them when a rule is forgotten: "John eats chicken with fork!"
+- RDF-based tools are used by experts in knowledge management
+
+---
+
+# The Problem: How to piece all this knowledge together?
+
+.pull-left-large[![:scale 80%](img/vsm/patient.png)]
+
+.pull-right-large[
+&lt;ul&gt;
+    &lt;li&gt;We miss pieces from the puzzle!&lt;/li&gt;&lt;/br&gt;
+    &lt;li&gt;We do not .bold[fully benefit] from the decades of expensive research results that exist out there!&lt;/li&gt;&lt;/br&gt;
+    &lt;li&gt;.bold[Modeling and understanding] all the complexity becomes infeasible&lt;/li&gt;&lt;/br&gt;
+    &lt;li&gt;Temporary solutions are favored (e.g. cancer drugs)&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+???
+...using the previous curation tools and knowledge as it currently is being represented...
+
+---
+
+# A Horse Analogy!
+
+Communication in science is like living in the .red[mid-1800s]!!!
+
+--
+
+![](img/vsm/horses.png)
+
+&lt;ul&gt;
+  &lt;li&gt;Trains: structured data whooshes from mind to mind on rails!&lt;/li&gt;&lt;/br&gt;
+  &lt;li&gt;Horses are .bold[too slow] but .bold[really popular]!&lt;/li&gt;&lt;/br&gt;
+  &lt;li&gt;Complex vs one-type cargo&lt;/li&gt;
+&lt;/ul&gt;
+
+---
+
+class: center
+
+![:scale 90%](img/vsm/horses2.png)
+
+---
+
+# The Tesla Moment
+
+![](img/vsm/tesla.png)
+--
+
+.center.large[.purple.large[**TESLA**] =&gt; Easy-to-use tool thats creates digital summaries of **PDFs**!]
+
+--
+
+.large[(...and remember: **"Hold your horses!!!"**)]
+
+???
+... a tool with which the computer can do something meaningful - apply **reasoning** and solve the cancer problem in the next slide!
+"hold your horses:" Scientific prose is still valuable for showing how conclusions were reached and why they are meaningful!
+
+---
+
+# VR-game: Beat The Cancer genes
+
+![](img/vsm/how_science_should_work.png)
+
+... a tool with which the computer can do something meaningful - apply .purple.large[**REASONING**] and solve the cancer problem
+
+???
+When you tell a computer everything you know about some biological system, it can let you explore that system in a kind of abstract “Virtual Reality“ (VR)!
+
+Then you can play around in this dynamic, digital, simulated world. You can modify one or two things, and study how many many other things are logically bound to react.You can also test if what you know so far about biology makes sense on its own, by checking of your virtual world responds in the same way as real-world biological experiments do. And you can hypothesize which tiny things you could fix, in order to change the entire virtual world’s state from e.g. ‘cancer’ to ‘healthy’.
+
+---
+
+# What new technology is needed?
+
+![](img/vsm/vsm.png)
+
+---
+
+class: center, middle, inverse
+
+# VSM: .purple[Visual Syntax Method]
+
+---
+
+# Visual Syntax Method: *VSM-terms*
+
+![](img/vsm/vsm_summary1.png)
+
+---
+
+# Visual Syntax Method: *VSM-connectors*
+
+![](img/vsm/vsm_summary2.png)
+
+---
+
+# Visual Syntax Method: Summary 3 + Example
+
+Example: John eats chicken with fork example?
+
+![](img/vsm/vsm_summary3.png)
+
+---
+
+# VSM app: *causalBuilder*
+
+- A web tool that supports the annotation of molecular causal interactions, following the [MI2CAST guidelines](https://github.com/MI2CAST/MI2CAST/blob/master/docs/MI2CAST_guideline.md)
+
+--
+- Let's annotate a paper: ["Characterization of E2F8, a novel E2F-like cell-cycle regulated repressor of E2F-activated transcription" by Christensen et al. (2005)](https://doi.org/10.1093/nar/gki855)
+
+--
+- A **biocurator** read the paper and wrote the following nice summary:
+
+.just[‘**E2F8** is a *protein* that **down-regulates** the **transcription** of **CCNE1** *gene*. 
+This causal statement has been a *manually assessed* from a **luciferase reporter gene assay** that is described in the **Christensen et al.'s article**. 
+In the experiment, both entities were engineered: CCNE1's transcription regulatory region only and E2F8 has been overexpressed.
+This causal statement occurs in **human**, specifically in this example, in the **nucleus of the human osteosarcoma cell line**’]
+
+.center[![:scale 60%](img/vsm/tf-tg.svg)]
+
+---
+
+# Example annotation with *causalBuilder*
+
+GIF HERE!
+
+---
+
+# Acknowledgements .smaller[(.red[<i class="fa fa-heart"></i>] our sponsors!)]
+
+.pull-left-large[
+&lt;img src="img/druglogics/druglogics_org.svg"&gt;
+
+Special thanks to: **Vasundra Touré** (MI2CAST, causalBuilder), **Steven Vercruysse** (VSM creator) and **Martin Kuiper** (Supervision)]
+
+.pull-right-small[
+  &lt;img src="img/ack/eracosysmed.gif"&gt;
+  
+  &lt;img src="img/ack/cost.png"&gt;
+  
+  &lt;img src="img/ack/ntnu_helse.jpg"&gt;
+  
+  &lt;img src="img/ack/Samarbeidsorganet.gif"&gt;
+]
+
+---
+
+class: center, middle
+
+# Thanks!
+
+*VSM pages*: http://scicura.org/vsm/intro.html
+
+*causalBuilder*: https://vtoure.github.io/causalBuilder/
+
+----
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)
+
+Code for the slides: [https://github.com/bblodfon/r-pres](https://github.com/bblodfon/r-pres)
+<i class="fab fa-github"></i>
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
