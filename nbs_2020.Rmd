@@ -148,11 +148,11 @@ Even though some scientific funding managers think this just happens magically.
 
 <li> .bold[Sheets/Tables] </li>
 <img src="img/vsm/excel_tools.png"></br></br>
---
+
 <li> .bold[Formal/Math Languages] (<a href="https://language.bel.bio/">Biological Expression Language</a>) </li>
 
 <p>‘<em>repression of the transcription of miR-21 by FOXO3 protein transcriptional activity</em>’ => <code>act(p(HGNC:FOXO3),ma(tscript)) =| r(HGNC:MIR21)</code></p>
---
+
 <li> .bold[RDF/Semantic-based tools] (<a href="http://noctua.geneontology.org/">Noctua Modeling Tool</a>)</li>
 
 <p> Used by experts in knowledge management</p>
@@ -176,7 +176,6 @@ And then the computer may misunderstand them when a rule is forgotten: "John eat
     <li>We miss pieces from the puzzle!</li></br>
     <li>We do not .bold[fully benefit] from the decades of expensive research results that exist out there!</li></br>
     <li>.bold[Modeling and understanding] all the complexity becomes infeasible</li></br>
-    <li>Temporary solutions are favored (e.g. cancer drugs)</li>
 </ul>
 ]
 
@@ -194,9 +193,9 @@ Communication in science is like living in the .red[mid-1800s]!!!
 ![](img/vsm/horses.png)
 
 <ul>
-  <li>Trains: structured data whooshes from mind to mind on rails!</li></br>
-  <li>Horses are .bold[too slow] but .bold[really popular]!</li></br>
-  <li>Complex vs one-type cargo</li>
+  <li>.purple[**Trains**]: structured data whooshes from mind to mind on rails!</li></br>
+  <li>.green[**Horses**] are .bold[too slow] but .bold[really popular]!</li></br>
+  <li>.green[**Complex**] vs .purple[**one-type**] cargo</li>
 </ul>
 
 ---
@@ -210,7 +209,6 @@ class: center
 # The Tesla Moment
 
 ![](img/vsm/tesla.png)
---
 
 .center.large[.purple.large[**TESLA**] => Easy-to-use tool thats creates digital summaries of **PDFs**!]
 
@@ -228,7 +226,8 @@ class: center
 
 ![](img/vsm/how_science_should_work.png)
 
-... a tool with which the computer can do something meaningful - apply .purple.large[**REASONING**] and solve the cancer problem
+<br>
+.center.large[... a tool that applies .purple.large[**REASONING**] and solves the cancer problem!]
 
 ???
 When you tell a computer everything you know about some biological system, it can let you explore that system in a kind of abstract “Virtual Reality“ (VR)!
@@ -249,23 +248,44 @@ class: center, middle, inverse
 
 ---
 
-# Visual Syntax Method: *VSM-terms*
+# Visual Syntax Method: .green[*VSM-terms*]
 
 ![](img/vsm/vsm_summary1.png)
+.larger[
+- Like words of a language, but clearer - **not ambiguous**!
+
+- A VSM-term is always a specific ‘*thing*’
+
+- VSM supports **homonyms** and **synonyms**
+]
+
+???
+
+- The **VSM-Connector** is derived from the **RDF** triple: (Subject, Relation, Object)
+- **Homonym**: terms with multiple meanings
+- **Synonym**: multiple terms may be used to represent the same concept
 
 ---
 
-# Visual Syntax Method: *VSM-connectors*
+# Visual Syntax Method: .green[*VSM-connectors* + *VSM-Principles*]
 
 ![](img/vsm/vsm_summary2.png)
+--
+
+The .red[3 principles]:
+- **Reformulate** the information
+- Think all **terms as nouns** or *things*
+- Connectors make **terms specific** (enriching meaning by adding .purple[**context**])
+
+Combining 2+3 => connect more terms to terms, thus making them more specific!
 
 ---
 
-# Visual Syntax Method: Summary 3 + Example
+# Visual Syntax Method: .green[Example]
 
-Example: John eats chicken with fork example?
+![](img/vsm/john_and_chicken.webp)
 
-![](img/vsm/vsm_summary3.png)
+- Play at http://scicura.org/vsm/examples.html
 
 ---
 
@@ -276,7 +296,6 @@ Example: John eats chicken with fork example?
 --
 - Let's annotate a paper: ["Characterization of E2F8, a novel E2F-like cell-cycle regulated repressor of E2F-activated transcription" by Christensen et al. (2005)](https://doi.org/10.1093/nar/gki855)
 
---
 - A **biocurator** read the paper and wrote the following nice summary:
 
 .just[‘**E2F8** is a *protein* that **down-regulates** the **transcription** of **CCNE1** *gene*. 
@@ -290,7 +309,7 @@ This causal statement occurs in **human**, specifically in this example, in the 
 
 # Example annotation with *causalBuilder*
 
-GIF HERE!
+![](img/vsm/causalBuilder_example.webp)
 
 ---
 
