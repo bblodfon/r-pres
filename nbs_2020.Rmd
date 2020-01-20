@@ -28,11 +28,11 @@ layout: true
 
 # Outline
 
-.larger[
+.big[
 <ul>
   <li>Intro: .red[Understanding the Problem(s)]</li></br>
-  <li>VSM: .purple[Visual Syntax Method]</li></br>
-  <li>Example app: .green[causalBuilder]</li></br>
+  <li>VSM: .green[Visual Syntax Method]</li></br>
+  <li>Example app: .purple[causalBuilder]</li></br>
 </ul>
 ]
 
@@ -62,7 +62,6 @@ Monkey named 'Lukas', Subject No. 5, ate 4 bananas! (**NUMERICAL DATA**) </br>
 ![:scale 47%](img/vsm/monkey.jpg)
 </br>.smaller[Source: https://www.telegraph.co.uk/news/earth/wildlife/10570569/Banana-ban-for-health-kick-monkeys-at-Paignton-Zoo.html]]
 
---
 ... vs "Monkeys prefer bananas over pizza!" (**INTERPRETED DATA**)
 
 --
@@ -85,8 +84,8 @@ Monkey named 'Lukas', Subject No. 5, ate 4 bananas! (**NUMERICAL DATA**) </br>
 --
 .pull-right[.larger[Add .purple[**CONTEXT**]:</br> “The fish was poisoned” => **NOW WHO DIED**?]]
 --
-</br>
-.center.big.red[CONTEXT FACILITATES REASONING!]
+<br>
+.center.big.red[<br>CONTEXT FACILITATES REASONING!]
 
 ???
 It’s super hard to make a computer program ‘understand’ stuff like that, and especially in science... 
@@ -98,7 +97,8 @@ It would need to learn all about how the world works first, before it can deciph
 
 ![](img/vsm/life_sciences_literature.png)
 &emsp;&emsp; .large[Not just .red.large[**BIG**], but also .purple.large[**COMPLEX**] information]
-</br>
+
+<br>
 .small[Source: https://www.nlm.nih.gov/bsd/medline_cit_counts_yr_pub.html]
 
 ---
@@ -191,13 +191,13 @@ Communication in science is like living in the .red[mid-1800s]!!!
 --
 
 ![](img/vsm/horses.png)
-
+.larger[
 <ul>
   <li>.purple[**Trains**]: structured data whooshes from mind to mind on rails!</li></br>
   <li>.green[**Horses**] are .bold[too slow] but .bold[really popular]!</li></br>
   <li>.green[**Complex**] vs .purple[**one-type**] cargo</li>
 </ul>
-
+]
 ---
 
 class: center
@@ -244,13 +244,14 @@ Then you can play around in this dynamic, digital, simulated world. You can modi
 
 class: center, middle, inverse
 
-# VSM: .purple[Visual Syntax Method]
+# VSM: .green[Visual Syntax Method]
 
 ---
 
 # Visual Syntax Method: .green[*VSM-terms*]
 
 ![](img/vsm/vsm_summary1.png)
+
 .larger[
 - Like words of a language, but clearer - **not ambiguous**!
 
@@ -277,11 +278,11 @@ The .red[3 principles]:
 - Think all **terms as nouns** or *things*
 - Connectors make **terms specific** (enriching meaning by adding .purple[**context**])
 
-Combining 2+3 => connect more terms to terms, thus making them more specific!
+**Combine 2+3** => connecting more terms, thus making them even more specific!
 
 ---
 
-# Visual Syntax Method: .green[Example]
+# Visual Syntax Method: .green[*VSM-box* &nbsp;Example]
 
 ![](img/vsm/john_and_chicken.webp)
 
@@ -289,7 +290,7 @@ Combining 2+3 => connect more terms to terms, thus making them more specific!
 
 ---
 
-# VSM app: *causalBuilder*
+# VSM app: .purple[*causalBuilder*]
 
 - A web tool that supports the annotation of molecular causal interactions, following the [MI2CAST guidelines](https://github.com/MI2CAST/MI2CAST/blob/master/docs/MI2CAST_guideline.md)
 
@@ -307,7 +308,7 @@ This causal statement occurs in **human**, specifically in this example, in the 
 
 ---
 
-# Example annotation with *causalBuilder*
+# Example annotation with .purple[*causalBuilder*]
 
 ![](img/vsm/causalBuilder_example.webp)
 
