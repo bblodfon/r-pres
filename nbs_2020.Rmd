@@ -103,7 +103,7 @@ It would need to learn all about how the world works first, before it can deciph
 
 ---
 
-![:scale 83%](img/vsm/how_biology_systems_work.png)
+![:scale 80%](img/vsm/how_biology_systems_work.png)
 
 .large[It takes .purple.large[**TIME**] for a human to *understand* and *process* text]
 
@@ -202,7 +202,7 @@ Communication in science is like living in the .red[mid-1800s]!!!
 
 class: center
 
-![:scale 90%](img/vsm/horses2.png)
+![:scale 85%](img/vsm/horses2.png)
 
 ---
 
