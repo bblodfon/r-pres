@@ -109,7 +109,7 @@ It would need to learn all about how the world works first, before it can deciph
 
 ---
 
-# Discovery effort disanalogous with result accessibility (free-text)
+# Discovery effort disproportionate with result accessibility (free-text)
 
 ![](img/vsm/burial_of_discovery.png)
 
@@ -123,7 +123,11 @@ bury them all again into a **free-text format** that’s hardly accessible at al
 
 ![](img/vsm/biocurator.png)
 
-.large.center[Natural Language .green[piece of information] => biocuration => .green[Computable Information]]
+----
+
+Natural Language .green[information] => Biocuration => .green[Computable Information]
+
+----
 
 <ul>
   <li>Good-hearted and often underpaid people that read PDFs all day!</li></br>
@@ -210,11 +214,11 @@ class: center
 
 ![](img/vsm/tesla.png)
 
-.center.large[.purple.large[**TESLA**] => Easy-to-use tool thats creates digital summaries of **PDFs**!]
+.center.large[.purple.large[**TESLA**] => Easy-to-use tool that is used to create digital summaries of **PDFs**!]
 
 --
 
-.large[(...and remember: **"Hold your horses!!!"**)]
+.center.large[(...and remember: **"Hold your horses!!!"**)]
 
 ???
 ... a tool with which the computer can do something meaningful - apply **reasoning** and solve the cancer problem in the next slide!
@@ -319,7 +323,7 @@ This causal statement occurs in **human**, specifically in this example, in the 
 .pull-left-large[
 <img src="img/druglogics/druglogics_org.svg">
 
-Special thanks to: **Vasundra Touré** (MI2CAST, causalBuilder), **Steven Vercruysse** (VSM creator) and **Martin Kuiper** (Supervision)]
+Special thanks to: **Steven Vercruysse** (VSM creator), **Vasundra Touré** (MI2CAST, causalBuilder) and **Martin Kuiper** (Supervision)]
 
 .pull-right-small[
   <img src="img/ack/eracosysmed.gif">
