@@ -1,0 +1,86 @@
+---
+title: "Reproducible Science"
+subtitle: "Lecture for BI8040 Logical Modeling Course"
+author: " John Zobolas <br/> PhD Student"
+institute: "Department of Biology, NTNU"
+date: "August 20th, 2020"
+output:
+  xaringan::moon_reader:
+    css: [default, default-fonts, css/ntnu.css, css/my.css]
+    self_contained: false
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: macros.js
+---
+
+layout: true
+
+<div class="my-footer">
+<span>
+  <img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;">
+</span>
+</div> 
+
+---
+
+# Outline
+
+.large[
+<ul>
+  <li><b>Tales</b> of Science</li></br>
+  <li>What is <b>NOT</b> Reproducibility!</li></br>
+  <li>Most research findings are .red[FALSE] ... but what can we do about it?</li></br>
+  <li>Example: The Reproducible Report (.purple[rtemps])</li></br>
+  <li>Research Software Engineering concepts in Reproducible Modeling (.purple[PySB])</li></br>
+  <li>(MAYBE) .purple[Galaxy, WholeTale] Platforms</li> </br>
+  <li>Discussion</li>
+</ul>
+]
+
+---
+
+# Reproducibility
+
+- Crisis in Science: Most of the statistically significant results are either FP (false positives) or exaggerated [Ioannidis2]
+- Estimated 85% of research resources are wasted!
+- Reproducibility vs Replicability
+- New era: The Reproducibility Wars (Replication crisis)
+- How to make more published research true? [Ioannidis (2014)]
+
+???
+- Advice by Ioannidis: based on a reproducibility Nature study => read only Nature & Science and cut the results (effect-wise) in half!
+- Also in Crisis: Methods in papers are not well explained, no data sharing (access policies), links don’t work, libraries are deprecated, results are not reproducible - worse you get different results (with big data the so-called Janus effect)!
+
+---
+# Reproducibility
+
+“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”
+
+[Ioannidis (2014)]
+---
+
+# Discussion
+
+- What problems did you phase? (*REFLECT*)
+- Any questions?
+
+---
+
+class: center, middle
+
+# Thanks!
+
+<img src="https://media.giphy.com/media/Vfie0DJryAde8/giphy.gif">
+
+----
+
+Slides created with the R package [**xaringan**](https://github.com/yihui/xaringan)
+
+Code for the slides: [https://github.com/bblodfon/r-pres](https://github.com/bblodfon/r-pres)
+`r shiny::icon("github")`
+
+
+
