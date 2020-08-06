@@ -1,12 +1,12 @@
 ---
 title: "Reproducible Science"
-subtitle: "Lecture for BI8040 Logical Modeling Course"
-author: " John Zobolas <br/> PhD Student"
+subtitle: "Lecture for the BI8040 Logical Modeling Course"
+author: "John Zobolas <br/> PhD Student"
 institute: "Department of Biology, NTNU"
 date: "August 20th, 2020"
 output:
   xaringan::moon_reader:
-    css: [default, default-fonts, css/ntnu.css, css/my.css]
+    css: [default, default-fonts, css/ntnu.css, css/my.css, css/title.css]
     self_contained: false
     lib_dir: libs
     nature:
@@ -28,44 +28,135 @@ layout: true
 
 # Outline
 
-.large[
-<ul>
-  <li><b>Tales</b> of Science</li></br>
-  <li>What is <b>NOT</b> Reproducibility!</li></br>
-  <li>Most research findings are .red[FALSE] ... but what can we do about it?</li></br>
-  <li>Example: The Reproducible Report (.purple[rtemps])</li></br>
-  <li>Research Software Engineering concepts in Reproducible Modeling (.purple[PySB])</li></br>
-  <li>(MAYBE) .purple[Galaxy, WholeTale] Platforms</li> </br>
-  <li>Discussion</li>
-</ul>
+.bigger[
+- .blue[Science Tales]
+- .red[General Crisis] in Science and what to do about it
+- .green[Practical examples] enhancing Reproducibility
+- .purple[Discussion]
 ]
 
 ---
 
-# Reproducibility
+# Science as a Tale
 
-- Crisis in Science: Most of the statistically significant results are either FP (false positives) or exaggerated [Ioannidis2]
-- Estimated 85% of research resources are wasted!
-- Reproducibility vs Replicability
-- New era: The Reproducibility Wars (Replication crisis)
-- How to make more published research true? [Ioannidis (2014)]
+.pull-left[
+<img src="https://media.giphy.com/media/KBimavlZz1gHe/giphy.gif" height=450>
+]
+--
+.pull-right.larger[
+- Great Scientists are like granpa's with good old' tales!
+<br><br>
+- Elements of a good story
+<br><br>
+- Science dissemination (historical perspective)
+<br><br>
+- Techonological progress
+]
 
 ???
-- Advice by Ioannidis: based on a reproducibility Nature study => read only Nature & Science and cut the results (effect-wise) in half!
-- Also in Crisis: Methods in papers are not well explained, no data sharing (access policies), links don’t work, libraries are deprecated, results are not reproducible - worse you get different results (with big data the so-called Janus effect)!
+- Elements of a good story: concise, easy to rememeber, *carries a central message* that others can carry further on, there is some **magic** to it that captivates you
+- Science dissemination has changed: from **text (story)** now we have to present **evidence** (experiments, be it computational or lab) that accompany it (even in Math some proofs are now computational).
+That has brought a challenge: **experiments that cannot be reproduced are blocking progress**.
+- Paradigm shift in Science dissemination with techonology's progress has brought more challenges (**Material and Methods in papers, presenting reports**, etc...)
 
 ---
-# Reproducibility
 
-“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”
+# Crisis in Science?
+
+- Research on Reserach: A meta-research perspective
+--
+
+- Why Most Published Research Findings Are .red[False] [Ioannidis (2005)]
+- Most of the proposed associations and/or effects are either .red[False or exaggerated] [Ioannidis (2008)]
+- Estimated /red[85%] of research resources are wasted! [Macleod et. al (2014)]
+--
+
+What causes this crisis?
+
+- Methods not well explained
+- Insufficient data sharing (access policies)
+- Links don't work
+- Results are not reproducible
+--
+
+- The Reproducibility Wars era!
+
+???
+- *are either False or exaggerated* => False here means False Positives
+- Ioannidis (2005) provides statistical arguments based on modeling the Framework for False Positive Findings (general meta-research perspective)
+- Also in Crisis: results are not reproducible - worse you get different results (with big data the so-called Janus effect)!
+
+---
+
+# How to make more published research true?
+
+.larger[*“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”*]
 
 [Ioannidis (2014)]
+
+--
+
+- Stakeholders: Diverse Motives (peer review?)
+- Research Currencies: a better Reward system for Science
+
+???
+
+- Advice by Ioannidis: based on a reproducibility Nature study => read only Nature & Science and cut the results (effect-wise) in half!
+
 ---
 
+# .small[Top Tips to Make Your Research (Ir)-reproducible!] .tiny.red[a non-exhaustive list!]
+
+.large[
+1. Think “Big Picture”
+2. Be abstract
+3. Short and sweet
+4. The deficit model
+5. Don't share
+]
+
+--
+
+.larger[.blue[Top Tip]: *“to ensure your work is irreproducible, make sure that you cannot reproduce it yourself”*]
+
+--
+
+.larger[.blue[Sad Outcome]: *“After Publishing Research, Irreproducibility Lets False Observations Obtain Longevity!”*]
+
+???
+1. Don't describe experimental stuff, people are interested in Science!
+2&3. No need to show all the **subtle implementation details** and expose the limitations to your methods
+4. **Hierarchy** of experts and non-experts (you are the expert, you define what is what, benchmarks, etc.)
+5. Other people to scoop your research ideas, understand how your code actually works instead of why you say it does, or worst of all to understand that **your code doesn’t actually work at all**.
+
+---
+
+# Reproducibility needs work!
+
+<img src="https://thecodinglove.com/content/038/SLFSVsF.gif">
+
+Find the *balance* between doing the work and validation/reproducibility!
+
+???
+- Reproducibility (should be easy to achieve) vs Replicability (difficult) argument
+
+---
+# How to make a Reproducible Report in R
+
+- (.purple[rtemps])
+
+
+
+
+---
+# Research Software Engineering concepts in Reproducible Modeling (.purple[PySB])
+
+
+---
 # Discussion
 
-- What problems did you phase? (*REFLECT*)
-- Any questions?
+- .purple[REFLECT] on the way you do science?
+- Reproducibility and Responsibility (RRI)
 
 ---
 
