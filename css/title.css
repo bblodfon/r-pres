@@ -1,0 +1,26 @@
+/* Separate CSS for title (more fancy) */
+
+/* change title font */
+.title-slide h1:nth-of-type(1) {
+  font-weight: bold;
+  font-style: italic;
+}
+/* change sub-title font */
+.title-slide h1:nth-of-type(1) {
+  color: purple;
+}
+
+/* change author */
+.title-slide h3:nth-of-type(1) {
+    color: blue;
+}
+
+/* change institute */
+.title-slide h3:nth-of-type(2) {
+    color: gray;
+}
+
+/* change date */
+.title-slide h3:nth-of-type(3) {
+    color: gray;
+}
