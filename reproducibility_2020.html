@@ -40,9 +40,8 @@ layout: true
 
 .big[
 - .blue[Science Tales]
-- .red[General Crisis] in Science 
-- What to do about it?
-- .green[Practical examples] enhancing Reproducibility
+- .red[General Crisis] in Science?
+- .green[Reproducibility] via examples
 - .purple[Discussion]
 ]
 
@@ -65,10 +64,11 @@ layout: true
 ]
 
 ???
-- Elements of a good story: concise, easy to rememeber, *carries a central message* that others can carry further on, there is some **magic** to it that captivates you
+- Elements of a good story: **concise, easy to rememeber, carries a central message** that others can carry further on, there is some **magic** to it that captivates you
 - Science dissemination has changed: from **text (story)** now we have to present **evidence** (experiments, be it computational or lab) that accompany it (even in Math some proofs are now computational).
-That has brought a challenge: **experiments that cannot be reproduced are blocking progress**.
+- Woods in the fire and taking measurements =&gt; experimental evidence!
 - Paradigm shift in Science dissemination with techonology's progress has brought more challenges (**Material and Methods in papers, presenting reports**, etc...)
+- That has brought a challenge: **experiments that cannot be reproduced are blocking progress**.
 
 ---
 
@@ -77,29 +77,36 @@ That has brought a challenge: **experiments that cannot be reproduced are blocki
 .large[Research on Research: **meta-research**]
 --
 
-- Why Most Published Research Findings Are .red[False] .purple[Ioannidis (2005)]
-- Most of the proposed associations and/or effects are either .red[False or exaggerated] .purple[Ioannidis (2008)]
-- Estimated .red[85%] of research resources are wasted! .purple[Macleod et. al (2014)]
+- Most of the proposed associations and/or effects are either .red[False or exaggerated] .purple[Ioannidis (2005&amp;2008)]
+- Estimated .red[85%] of research resources are .red[wasted]! .purple[Macleod et. al (2014)]
 
 --
 
-.blue.large[LIKELY CAUSES]:
+.blue.large[LOTS OF REASONS]:
 
-- Methods not well explained  
-- Insufficient data sharing (access policies)  
-- Links don't work (resources access)  
-- Results are **not reproducible** 
-.  
-.  
-.  
+- Methods not well explained (**desing/analysis/standards flexibility**)   
+- Insufficient data sharing (**access policies, resource access**)  
+- Results are .red.bold[not reproducible]  
+- Lack of collaboration
+- Hot scientific field (**Proteus phenomenon**)
+- Financial interests and prejudices (**high bias**)
+- *P-hacking*, **confirmation and hindsight biases**
+- Small sample and effect sizes (**low study power** `\(1-\beta\)`)
+- **Low pre-study odds** `\(R\)`
 
+--
 
-.large[Welcome to the .red[Reproducibility Wars] era!]
+.large[... there is .green[progress] though - how can we can make things better?]
 
 ???
+- Notice that there are some risk factors associated with FP findings that are immutable, e.g. small effect sizes (**Finding a needle in a haystack**)
 - *are either False or exaggerated* =&gt; False here means False Positives
-- Ioannidis (2005): statistical analysis based on modeling the Framework for False Positive Findings finds the **key factors that make most research findings to be FALSE**: pre-study odds, bias and study power (they all relate to **PPV** - prob. of a statistical significant research finding to be TRUE)
-- Claimed Research Findings May Often Be Simply Accurate Measures of the Prevailing Bias [Ioannidis2005]
+- **Advice by Ioannidis (ECCB 2018)**: based on a reproducibility Nature study =&gt; read only Nature &amp; Science and cut the results (effect-wise) in half!
+- Ioannidis (2005): statistical analysis based on modeling the Framework for False Positive Findings finds the **key factors that make most research findings to be FALSE**: **pre-study odds, bias and study power** (they all relate to **PPV** - prob. of a statistical significant research finding to be TRUE)
+- The **Proteus phenomenon** is the tendency in science for early replications of a work to contradict the original findings, a consequence of publication bias and competition.
+- **Confirmation bias** (the tendency to focus on evidence that is in line with our expectations or favoured explanation) and **hindsight bias** (the tendency to see an event as having been predictable only after it has occurred) can easily lead us to false conclusions (+ apophenia =&gt; see relations in unrelated/random things)
+- Claimed Research Findings May Often Be Simply **Accurate Measures of the Prevailing Bias** [Ioannidis2005]
+- *Reproducibility Wars*!!!
 
 ---
 
@@ -111,12 +118,22 @@ That has brought a challenge: **experiments that cannot be reproduced are blocki
 
 --
 
-.large[Role of **Stakeholders** (diverse motives) and  
-**Research Currencies**: need for a better *Reward system* for Science]
+- .large[Role of .blue[Stakeholders] (diverse motives)]
+- .large[.blue[Research Currencies]: need for a better *Reward system* for Science]
 
 ???
 
-- Advice by Ioannidis: based on a reproducibility Nature study =&gt; read only Nature &amp; Science and cut the results (effect-wise) in half!
+- Transparency is superior to trust (reproducibility)
+- Peer review is changing: the collective wisdom of the scientific community can be harnessed: **PREPRINTS**
+- **Stakeholders** differ in their extent of interest with regards to research results that are **publishable, fundable (money in), translatable, profitable (money out)**.
+There are **complex dynamics** between different stakeholders that shape research practices.
+Note that a scientist can have many *stakeholding* roles!
+- **On Currencies**: Scientists may continue publishing and getting grants (2 key currencies) without making real progress, if **more publications and more grants are all that matters**.
+**Academic Hierarchy**: researchers at higher ranks have more papers and more grants.
+Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
+**(High quality) Peer review** is not rewarded.
+**Replication** is not rewarded.
+- Ioannidis (2014) proposes a table of changes and rewards and discusses what it would mean to have such a paradigm shift in how research is rewarded. 
 
 ---
 
@@ -136,7 +153,7 @@ That has brought a challenge: **experiments that cannot be reproduced are blocki
 
 --
 
-.larger[.blue[Sad Outcome]: *“After Publishing Research, Irreproducibility Lets False Observations Obtain Longevity!”*]
+.larger[.red[Sad Outcome]: *“After Publishing Research, Irreproducibility Lets False Observations Obtain Longevity!”*]
 
 ???
 1. Don't describe experimental stuff, people are interested in Science!
@@ -152,10 +169,34 @@ That has brought a challenge: **experiments that cannot be reproduced are blocki
 
 --
 
-Find the *balance* between work and validation/reproducibility!
+.larger[
+- Technical expertise
+- Use the right tools, follow *standards*
+- Ask for .blue[advice]!
+- Research work and Reproducibility practice .green[*balance*]
+]
 
 ???
 Reproducibility (should be easy to achieve) vs Replicability (difficult) argument
+
+---
+
+# .small[Good practises for Computational Reproducibility]
+
+.larger[
+- Publish your code (e.g. GitHub) .purple[Barnes (2010)]
+- Publish your data (e.g. Zenodo, Figshare)
+- Link executable code with data (*CodeOcean*)
+- Develop a .blue[culture of reproducibility] .purple[Peng (2011)]
+]
+
+![](img/reproducibility_spectrum.png)
+
+.small[Figure from .purple[Peng (2011) *Reproducible Research in Computational Science*]]
+
+???
+
+**Document and test** your code is equally important :)
 
 ---
 
@@ -200,7 +241,7 @@ class: center, middle
 
 # Thanks!
 
-&lt;img src="https://media.giphy.com/media/Vfie0DJryAde8/giphy.gif"&gt;
+&lt;img src="https://media.giphy.com/media/XHVmD4RyXgSjd8aUMb/giphy.gif"&gt;
 
 ----
 
