@@ -39,7 +39,7 @@ layout: true
 # Outline
 
 .big[
-- .blue[Science Tales]
+- .blue[Intro: Science Tales]
 - .red[General Crisis] in Science?
 - .green[Reproducibility] via examples
 - .purple[Discussion]
@@ -77,8 +77,9 @@ layout: true
 .large[Research on Research: **meta-research**]
 --
 
-- Most of the proposed associations and/or effects are either .red[False or exaggerated] .purple[Ioannidis (2005&amp;2008)]
-- Estimated .red[85%] of research resources are .red[wasted]! .purple[Macleod et. al (2014)]
+&gt; Most of the proposed associations and/or effects are either .red[False or exaggerated] .purple[Ioannidis (2005&amp;2008)]
+
+&gt; Estimated .red[85%] of research resources are .red[wasted]! .purple[Macleod et. al (2014)]
 
 --
 
@@ -87,7 +88,6 @@ layout: true
 - Methods not well explained (**desing/analysis/standards flexibility**)   
 - Insufficient data sharing (**access policies, resource access**)  
 - Results are .red.bold[not reproducible]  
-- Lack of collaboration
 - Hot scientific field (**Proteus phenomenon**)
 - Financial interests and prejudices (**high bias**)
 - *P-hacking*, **confirmation and hindsight biases**
@@ -96,7 +96,7 @@ layout: true
 
 --
 
-.large[... there is .green[progress] though - how can we can make things better?]
+... there is .bold.green[progress] though - how can we can make things better?
 
 ???
 - Notice that there are some risk factors associated with FP findings that are immutable, e.g. small effect sizes (**Finding a needle in a haystack**)
@@ -112,9 +112,7 @@ layout: true
 
 # How to make more published research true?
 
-.larger[*“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”*]
-
-.purple[Ioannidis (2014)]
+&gt; .larger[*“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”*] &lt;br&gt;&lt;br&gt;.purple[Ioannidis (2014)]
 
 --
 
@@ -136,24 +134,40 @@ Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 - Ioannidis (2014) proposes a table of changes and rewards and discusses what it would mean to have such a paradigm shift in how research is rewarded. 
 
 ---
+# Reproducibility 101
 
-# .small[Top 5 Tips to Make Your Research (Ir)-reproducible!] .tiny.red[a non-exhaustive list!]
+.large[**Three forms** of reproducibility: *statistical, empirical, and computational*] .purple[Stodden (2014)]
+
+&gt; .larger[*“A research project is .green[computationally reproducible] when a second investigator (including you in the future) can recreate the final reported results of the project, including key quantitative findings, tables, and figures, given only a set of files and written instructions.”*] &lt;br&gt;&lt;br&gt;.purple[Kitzes (2017)]
+
+--
+
+&lt;br&gt;
+.large[.blue[Replication = new data + isomorphic methods] or getting exactly the same results computationally (.red[harder])]
+
+???
+
+- Gain a minimum level of credibility
+- Reproducibility (should be easy to achieve) vs Replicability (difficult) argument
+
+---
+
+# .little[Top 5 Tips to Make Your Research Irreproducible!]
 
 .larger[
-1. Think “**Big Picture**”
-2. Be **abstract**
+1. Think “.bold.green[Big Picture]”
+2. .bold.blue[Be abstract]
 3. Short and sweet
-4. The deficit model
-5. **Don't share**
+4. The *deficit* model
+5. .red.bold[Don't share]
 ]
 
+.purple[Hong et al. (2015)]
+
 --
 
+&lt;br&gt;
 .larger[.blue[Top Tip]: *“to ensure your work is irreproducible, make sure that you cannot reproduce it yourself”*]
-
---
-
-.larger[.red[Sad Outcome]: *“After Publishing Research, Irreproducibility Lets False Observations Obtain Longevity!”*]
 
 ???
 1. Don't describe experimental stuff, people are interested in Science!
@@ -171,69 +185,128 @@ Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 
 .larger[
 - Technical expertise
-- Use the right tools, follow *standards*
+- Use the right tools, follow .green[*standards*]
 - Ask for .blue[advice]!
 - Research work and Reproducibility practice .green[*balance*]
 ]
 
 ???
-Reproducibility (should be easy to achieve) vs Replicability (difficult) argument
+- How much information suffices for reproduction becomes clear only when it is attempted
 
 ---
 
-# .small[Good practises for Computational Reproducibility]
+# .little[Good Practises for Computational Reproducibility]
 
-.larger[
-- Publish your code (e.g. GitHub) .purple[Barnes (2010)]
-- Publish your data (e.g. Zenodo, Figshare)
-- Link executable code with data (*CodeOcean*)
-- Develop a .blue[culture of reproducibility] .purple[Peng (2011)]
-]
+- .larger[Publish your **code** (e.g. GitHub)] .large.purple[Barnes (2010)]
+- .larger[Publish your **data** (e.g. Zenodo, Figshare)]
+- .larger[**Link executable code with data** (e.g. Code Ocean] .large.purple[Clyburne-Sherin et al. (2019)] .larger[, WholeTale] .large.purple[Brinckman et. al (2019)].larger[)]
+- .larger[Develop a .blue[culture of reproducibility]] .large.purple[Peng (2011)]
 
-![](img/reproducibility_spectrum.png)
+![:scale 95%](img/reproducibility_spectrum.png)
 
 .small[Figure from .purple[Peng (2011) *Reproducible Research in Computational Science*]]
 
 ???
 
-**Document and test** your code is equally important :)
+- **Document and test** your code is equally important :)
+- Code Ocean is a **cloud-based computational reproducibility platform** (uses Docker) - anything can be reproduced with the press of a button, and each published capsule is assigned a DOI.
+- Related work includes Galaxy
 
 ---
 
-# Example 0: Using the Docker Technology
-
-- Image
-- Docker as a Future-proof container of knowledge
-- The CoLoMoTo Docker
-
----
 # Example 1: A Reproducible Report in R
 
-- .purple[rtemps]
+.blue.larger[Quidelines]
 
-Use Github and Github pages
-1 Figure = 1000 words
-Nobody needs to see your code but it needs to be there (button hide)
-Cite your References
-Make sure your links work
-CSS Color boxes + notes for important messages (capture reader's attention)
-TOC (always on the left, provides an abstract view of report)
+.large[
+- Use Rmarkdown, GitHub and GitHub pages <i class="fab fa-github"></i>
+- *1 Figure = 1000 words* <i class="fa fa-images"></i>
+- .red[Include Software versions, dependencies] <i class="fa fa-file-code"></i>
+- Hide your code!
+- Make sure your .purple[links work]! <i class="fa fa-link"></i>
+- Cite your References
+- .green[Color boxes] for important messages (**capture reader's attention**)
+- *TOC* (always on the left, provides a bird-eye view)
+]
+--
+&lt;br&gt;
+.large[`rtemps` R package: [United-HTML Report](https://bblodfon.github.io/rtemps/united-html/united-html.html)]
 
 ---
-# Example 2: Software Engineering concepts in Reproducible Modeling
+# Example 2: Docker Containers ![:scale 10%, 10%](img/docker.png)
 
-- .purple[PySB]
+.larger[**Docker** allows you to package an application with all of it's dependencies into a .blue[standardized unit] for reproducible (software) research]
 
+.larger.green[Advantages]
+- .large[Fast instantiation]
+- .large[Native performance]
+- .large[Easy to use, build, share and publish]
+- .large[Lightweight and Portable]
+
+--
+
+&lt;img src="https://media.giphy.com/media/103gOGGaHcBq3C/giphy.gif" style="width:220px;height:150px;"&gt;
+.large[ =&gt; Your own .bold[compute [time-capsule](https://codeocean.com/capsule/8235972/tree/v6)]!!!]
+
+???
+
+- **Lightweight**: a Docker container “does not replicate the full operating system, only the libraries and binaries of the application being virtualized”
 
 ---
+
+# .small[Example 3: SE .red[&lt;sup&gt;(*)&lt;/sup&gt;] concepts in Reproducible Modeling]
+
+.blue[PySB]: a Python-based framework for *rule-based*, *programmatic*, ODE modeling .purple[Lopez et. al (2013)] - **models are programs**!!!
+
+![](img/pysb.png)
+
+.red[(*) =&gt; Software Engineering]
+
+???
+
+- **Motives**: Difficult to manage equations directly or to combine previously developed models (historical perspective)
+**Absense of validation and testing** (models published before or around 2010)
+- **Reversible binding of proteins L and R** ("Hello World" program) reads as follows: when the proteins L and R both have empty binding sites s (e.g., L(s=None)), they reversibly bind to form a complex that shares a single ‘bond’ (e.g., L(s=1) % R(s=1)), at rates kf (forward) and kr (reverse)
+
+---
+
+# .small[SE concepts in Reproducible Modeling: .blue[Abstraction &lt;br&gt; and Composition]]
+
+![:scale 80%](img/pysb-macros.png)
+
+???
+
+- Through **abstraction**, the core features of a concept or process are separated from the particulars: for example, **a pattern of biochemical reactions** (e.g., phosphorylation–dephosphorylation of a substrate) is described once in a generic form as a subroutine and then instantiated for specific models simply by specifying the arguments.
+- Functions can be built up from other functions, a process known as **composition**.
+- A **catalytic reaction** in which active *Caspase-8 (C8)* binds to untruncated *Bid* (Bid(state=U)) to yield *tBid* (Bid(state=T)).
+- **Assembly of a pore in a sequential fashion** in which monomers bind to form dimers, dimers bind monomers to form trimers, trimers bind monomers to form tetramers, etc. 
+**5 rules** (for binding of monomers to monomers, monomers to dimers, monomers to trimers, etc) and **** species and ODEs (monomers through hexamers).
+
+---
+
+# .small[SE concepts in Reproducible Modeling: .blue[Modularization]]
+
+.pull-left[![](img/pysb-reuse1.png)]
+.pull-right[![:scale 80%](img/pysb-reuse2.png)]
+
+???
+
+- A: **Direct reuse and subsequent modification** of pre-existing model code.
+- B: **Reuse of modules using macros**. 
+Macros instantiating the components for the upstream (rec_to_bid) and downstream (pore_to_parp) portions of the extrinsic apoptosis pathway are placed in a Python file, `earm_modules.py`. 
+Variant models differing only in the reaction topology for MOMP initiation (e.g., model_variant.py) are then created by invoking these macros for the shared **upstream and downstream elements.**
+- **MOMP**: Mitochondrial outer-membrane permeabilization
+- There is also **Class Reuse**: a more sophisticated approach that exploits the class inheritance mechanism in Python.
+- Enable **test and validation** of submodules!
+
+---
+
 # Discussion
 
-- .purple[REFLECT] on the way you do science?
-- Reproducibility and Responsibility (RRI)
-- From Reproducible Reports to actual papers
-.  
-.  
-.
+.center[
+.large[Reproducibility and Responsibility (.blue[RRI == REFLECT])] &lt;br&gt; &lt;br&gt;
+&lt;img src="https://media.giphy.com/media/jpbnkneOMU9UeXXCfd/giphy.gif"&gt;
+]
 
 ---
 
