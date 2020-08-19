@@ -104,10 +104,8 @@ layout: true
 
 > .larger[*“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”*] <br><br>.purple[Ioannidis (2014)]
 
---
-
-- .large[Role of .blue[Stakeholders] (diverse motives)]
-- .large[.blue[Research Currencies]: need for a better *Reward system* for Science]
+.large[Role of .blue[Stakeholders] (diverse motives)]  
+.large[.blue[Research Currencies]: need for a better *Reward system* for Science]
 
 ???
 
@@ -129,8 +127,6 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 .large[**Three forms** of reproducibility: *statistical, empirical, and computational*] .purple[Stodden (2014)]
 
 > .larger[*“A research project is .green[computationally reproducible] when a second investigator (including you in the future) can recreate the final reported results of the project, including key quantitative findings, tables, and figures, given only a set of files and written instructions.”*] <br><br>.purple[Kitzes (2017)]
-
---
 
 <br>
 .large[.blue[Replication = new data + isomorphic methods] or getting exactly the same results computationally (.red[harder])]
@@ -218,7 +214,7 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 - .green[Color boxes] for important messages (**capture reader's attention**)
 - *TOC* (always on the left, provides a bird-eye view)
 ]
---
+
 <br>
 .large[`rtemps` R package: [United-HTML Report](https://bblodfon.github.io/rtemps/united-html/united-html.html)]
 
