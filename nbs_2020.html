@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>VSM: How to Easily Plant Complex Ideas into Computers</title>
     <meta charset="utf-8" />
     <meta name="author" content="John Zobolas   PhD Student" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
-    <link href="libs/font-awesome-5.3.1/css/all.min.css" rel="stylesheet" />
-    <link href="libs/font-awesome-5.3.1/css/v4-shims.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/ntnu.css" type="text/css" />
     <link rel="stylesheet" href="css/my.css" type="text/css" />
   </head>
@@ -181,13 +182,13 @@ And then the computer may misunderstand them when a rule is forgotten: "John eat
 
 # The Problem: How to piece all this knowledge together?
 
-.pull-left-large[![:scale 80%](img/vsm/patient.png)]
+.pull-left-large[![:scale 70%](img/vsm/patient.png)]
 
 .pull-right-large[
 &lt;ul&gt;
     &lt;li&gt;We miss pieces from the puzzle!&lt;/li&gt;&lt;/br&gt;
-    &lt;li&gt;We do not .bold[fully benefit] from the decades of expensive research results that exist out there!&lt;/li&gt;&lt;/br&gt;
-    &lt;li&gt;.bold[Modeling and understanding] all the complexity becomes infeasible&lt;/li&gt;&lt;/br&gt;
+    &lt;li&gt;We do not &lt;b&gt;fully benefit&lt;/b&gt; from the decades of expensive research results that exist out there!&lt;/li&gt;&lt;/br&gt;
+    &lt;li&gt;&lt;b&gt;Modeling and understanding&lt;/b&gt; all the complexity becomes infeasible&lt;/li&gt;&lt;/br&gt;
 &lt;/ul&gt;
 ]
 
@@ -326,7 +327,7 @@ This causal statement occurs in **human**, specifically in this example, in the 
 
 ---
 
-# Acknowledgements .smaller[(.red[<i class="fa fa-heart"></i>] our sponsors!)]
+# Acknowledgements .smaller[(.red[<i class="fa fa-heart" role="presentation" aria-label="heart icon"></i>] our sponsors!)]
 
 .pull-left-large[
 &lt;img src="img/druglogics/druglogics_org.svg"&gt;
@@ -358,7 +359,7 @@ class: center, middle
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)
 
 Code for the slides: [https://github.com/bblodfon/r-pres](https://github.com/bblodfon/r-pres)
-<i class="fab fa-github"></i>
+<i class="fab fa-github" role="presentation" aria-label="github icon"></i>
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -407,6 +408,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -424,17 +451,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {

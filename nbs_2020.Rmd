@@ -173,13 +173,13 @@ And then the computer may misunderstand them when a rule is forgotten: "John eat
 
 # The Problem: How to piece all this knowledge together?
 
-.pull-left-large[![:scale 80%](img/vsm/patient.png)]
+.pull-left-large[![:scale 70%](img/vsm/patient.png)]
 
 .pull-right-large[
 <ul>
     <li>We miss pieces from the puzzle!</li></br>
-    <li>We do not .bold[fully benefit] from the decades of expensive research results that exist out there!</li></br>
-    <li>.bold[Modeling and understanding] all the complexity becomes infeasible</li></br>
+    <li>We do not <b>fully benefit</b> from the decades of expensive research results that exist out there!</li></br>
+    <li><b>Modeling and understanding</b> all the complexity becomes infeasible</li></br>
 </ul>
 ]
 
