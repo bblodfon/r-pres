@@ -173,9 +173,9 @@ And then the computer may misunderstand them when a rule is forgotten: "John eat
 
 # The Problem: How to piece all this knowledge together?
 
-.pull-left-large[![:scale 70%](img/vsm/patient.png)]
+.pull-left-73[![:scale 70%](img/vsm/patient.png)]
 
-.pull-right-large[
+.pull-right-27[
 <ul>
     <li>We miss pieces from the puzzle!</li></br>
     <li>We do not <b>fully benefit</b> from the decades of expensive research results that exist out there!</li></br>
@@ -320,12 +320,12 @@ This causal statement occurs in **human**, specifically in this example, in the 
 
 # Acknowledgements .smaller[(.red[`r shiny::icon("heart")`] our sponsors!)]
 
-.pull-left-large[
+.pull-left-67[
 <img src="img/druglogics/druglogics_org.svg">
 
 Special thanks to: **Steven Vercruysse** (VSM creator), **Vasundra Touré** (MI2CAST, causalBuilder) and **Martin Kuiper** (Supervision)]
 
-.pull-right-small[
+.pull-right-27[
   <img src="img/ack/eracosysmed.gif">
   
   <img src="img/ack/cost.png">

@@ -167,13 +167,13 @@ prediction performance improvement
 
 # Acknowledgements .smaller[(.red[`r shiny::icon("heart")`] our sponsors!)]
 
-.pull-left-large[
+.pull-left-67[
   <img src="img/druglogics/druglogics_org.svg">
   
   <img src="img/ack/st_olavs.svg">
 ]
  
-.pull-right-small[
+.pull-right-27[
   <img src="img/ack/eracosysmed.gif">
   
   <img src="img/ack/cost.png">

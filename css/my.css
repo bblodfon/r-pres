@@ -21,24 +21,19 @@
 .bold { font-weight: bold }
 
 /* column layout */
-.pull-left-large {
-  float: left;
-  width: 67%;
-}
-
-.pull-left-58 {
-  float: left;
-  width: 58%;
-}
-
 .pull-left-73 {
   float: left;
   width: 73%;
 }
 
-.pull-right-small {
+.pull-right-27 {
   float: right;
   width: 27%;
+}
+
+.pull-left-67 {
+  float: left;
+  width: 67%;
 }
 
 .pull-right-33 {
@@ -46,16 +41,14 @@
   width: 33%;
 }
 
+.pull-left-58 {
+  float: left;
+  width: 58%;
+}
+
 .pull-right-42 {
   float: right;
   width: 42%;
-}
-
-.center2 {
-  margin: 0;
-  position: absolute;
-  top: 25%;
-  left: 0;
 }
 
 .just {
