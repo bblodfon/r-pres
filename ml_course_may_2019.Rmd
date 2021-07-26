@@ -74,4 +74,4 @@ for teaching ML
 
 ## Questions
 
-![](img/questions.jpeg)
+![](img/ack/questions.jpeg)

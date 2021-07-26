@@ -188,7 +188,7 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 - .larger[**Link executable code with data** (e.g. Code Ocean] .large.purple[Clyburne-Sherin et al. (2019)] .larger[, WholeTale] .large.purple[Brinckman et. al (2019)].larger[)]
 - .larger[Develop a .blue[culture of reproducibility]] .large.purple[Peng (2011)]
 
-![:scale 95%](img/reproducibility_spectrum.png)
+![:scale 95%](img/reproducibility/reproducibility_spectrum.png)
 
 .small[Figure from .purple[Peng (2011) *Reproducible Research in Computational Science*]]
 
@@ -219,7 +219,7 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 .large[`rtemps` R package: [United-HTML Report](https://bblodfon.github.io/rtemps/united-html/united-html.html)]
 
 ---
-# Example 2: Docker Containers ![:scale 10%, 10%](img/docker.png)
+# Example 2: Docker Containers ![:scale 10%, 10%](img/reproducibility/docker.png)
 
 .larger[**Docker** allows you to package an application with all of it's dependencies into a .blue[standardized unit] for reproducible (software) research]
 
@@ -244,7 +244,7 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 
 .blue[PySB]: a Python-based framework for *rule-based*, *programmatic*, ODE modeling .purple[Lopez et. al (2013)] - **models are programs**!!!
 
-![](img/pysb.png)
+![](img/reproducibility/pysb.png)
 
 .red[(*) => Software Engineering]
 
@@ -258,7 +258,7 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 
 # .small[SE concepts in Reproducible Modeling: .blue[Abstraction <br> and Composition]]
 
-![:scale 80%](img/pysb-macros.png)
+![:scale 80%](img/reproducibility/pysb-macros.png)
 
 ???
 
@@ -272,8 +272,8 @@ Sexism, nepotism, cronyism => might also influence academic currencies.
 
 # .small[SE concepts in Reproducible Modeling: .blue[Modularization]]
 
-.pull-left[![](img/pysb-reuse1.png)]
-.pull-right[![:scale 80%](img/pysb-reuse2.png)]
+.pull-left[![](img/reproducibility/pysb-reuse1.png)]
+.pull-right[![:scale 80%](img/reproducibility/pysb-reuse2.png)]
 
 ???
 

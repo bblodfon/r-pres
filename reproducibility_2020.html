@@ -32,7 +32,7 @@ layout: true
 &lt;span&gt;
   &lt;img src="img/ntnu/ntnu-logo-neg.png" style="width:160px;height:30px;"&gt;
 &lt;/span&gt;
-&lt;/div&gt; 
+&lt;/div&gt;
 
 ---
 
@@ -85,9 +85,9 @@ layout: true
 
 .blue.large[LOTS OF REASONS]:
 
-- Methods not well explained (**desing/analysis/standards flexibility**)   
-- Insufficient data sharing (**access policies, resource access**)  
-- Results are .red.bold[not reproducible]  
+- Methods not well explained (**desing/analysis/standards flexibility**)
+- Insufficient data sharing (**access policies, resource access**)
+- Results are .red.bold[not reproducible]
 - Hot scientific field (**Proteus phenomenon**)
 - Financial interests and prejudices (**high bias**)
 - *P-hacking*, **confirmation and hindsight biases**
@@ -114,7 +114,7 @@ layout: true
 
 &gt; .larger[*“To make more published research true, practises [should] include the adoption of large-scale collaborative research; replication culture, registration; sharing, reproducibility practices; better statistical methods; standardization of definitions and analyses; more appropriate (usually more stringent) statistical thresholds; and improvement in study design standards, peer review, reporting and dissemination of research and training of the scientific workforce.”*] &lt;br&gt;&lt;br&gt;.purple[Ioannidis (2014)]
 
-.large[Role of .blue[Stakeholders] (diverse motives)]  
+.large[Role of .blue[Stakeholders] (diverse motives)]
 .large[.blue[Research Currencies]: need for a better *Reward system* for Science]
 
 ???
@@ -129,7 +129,7 @@ Note that a scientist can have many *stakeholding* roles!
 Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 **(High quality) Peer review** is not rewarded.
 **Replication** is not rewarded.
-- Ioannidis (2014) proposes a table of changes and rewards and discusses what it would mean to have such a paradigm shift in how research is rewarded. 
+- Ioannidis (2014) proposes a table of changes and rewards and discusses what it would mean to have such a paradigm shift in how research is rewarded.
 
 ---
 # Reproducibility 101
@@ -198,7 +198,7 @@ Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 - .larger[**Link executable code with data** (e.g. Code Ocean] .large.purple[Clyburne-Sherin et al. (2019)] .larger[, WholeTale] .large.purple[Brinckman et. al (2019)].larger[)]
 - .larger[Develop a .blue[culture of reproducibility]] .large.purple[Peng (2011)]
 
-![:scale 95%](img/reproducibility_spectrum.png)
+![:scale 95%](img/reproducibility/reproducibility_spectrum.png)
 
 .small[Figure from .purple[Peng (2011) *Reproducible Research in Computational Science*]]
 
@@ -229,7 +229,7 @@ Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 .large[`rtemps` R package: [United-HTML Report](https://bblodfon.github.io/rtemps/united-html/united-html.html)]
 
 ---
-# Example 2: Docker Containers ![:scale 10%, 10%](img/docker.png)
+# Example 2: Docker Containers ![:scale 10%, 10%](img/reproducibility/docker.png)
 
 .larger[**Docker** allows you to package an application with all of it's dependencies into a .blue[standardized unit] for reproducible (software) research]
 
@@ -254,7 +254,7 @@ Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 
 .blue[PySB]: a Python-based framework for *rule-based*, *programmatic*, ODE modeling .purple[Lopez et. al (2013)] - **models are programs**!!!
 
-![](img/pysb.png)
+![](img/reproducibility/pysb.png)
 
 .red[(*) =&gt; Software Engineering]
 
@@ -268,28 +268,28 @@ Sexism, nepotism, cronyism =&gt; might also influence academic currencies.
 
 # .small[SE concepts in Reproducible Modeling: .blue[Abstraction &lt;br&gt; and Composition]]
 
-![:scale 80%](img/pysb-macros.png)
+![:scale 80%](img/reproducibility/pysb-macros.png)
 
 ???
 
 - Through **abstraction**, the core features of a concept or process are separated from the particulars: for example, **a pattern of biochemical reactions** (e.g., phosphorylation–dephosphorylation of a substrate) is described once in a generic form as a subroutine and then instantiated for specific models simply by specifying the arguments.
 - Functions can be built up from other functions, a process known as **composition**.
 - A **catalytic reaction** in which active *Caspase-8 (C8)* binds to untruncated *Bid* (Bid(state=U)) to yield *tBid* (Bid(state=T)).
-- **Assembly of a pore in a sequential fashion** in which monomers bind to form dimers, dimers bind monomers to form trimers, trimers bind monomers to form tetramers, etc. 
+- **Assembly of a pore in a sequential fashion** in which monomers bind to form dimers, dimers bind monomers to form trimers, trimers bind monomers to form tetramers, etc.
 **5 rules** (for binding of monomers to monomers, monomers to dimers, monomers to trimers, etc) and **** species and ODEs (monomers through hexamers).
 
 ---
 
 # .small[SE concepts in Reproducible Modeling: .blue[Modularization]]
 
-.pull-left[![](img/pysb-reuse1.png)]
-.pull-right[![:scale 80%](img/pysb-reuse2.png)]
+.pull-left[![](img/reproducibility/pysb-reuse1.png)]
+.pull-right[![:scale 80%](img/reproducibility/pysb-reuse2.png)]
 
 ???
 
 - A: **Direct reuse and subsequent modification** of pre-existing model code.
-- B: **Reuse of modules using macros**. 
-Macros instantiating the components for the upstream (rec_to_bid) and downstream (pore_to_parp) portions of the extrinsic apoptosis pathway are placed in a Python file, `earm_modules.py`. 
+- B: **Reuse of modules using macros**.
+Macros instantiating the components for the upstream (rec_to_bid) and downstream (pore_to_parp) portions of the extrinsic apoptosis pathway are placed in a Python file, `earm_modules.py`.
 Variant models differing only in the reaction topology for MOMP initiation (e.g., model_variant.py) are then created by invoking these macros for the shared **upstream and downstream elements.**
 - **MOMP**: Mitochondrial outer-membrane permeabilization
 - There is also **Class Reuse**: a more sophisticated approach that exploits the class inheritance mechanism in Python.

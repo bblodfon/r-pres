@@ -64,7 +64,7 @@ Connection with [BioPortal](https://github.com/vsmjs/vsm-dictionary-bioportal/) 
 
 - When programmers nowadays hear the word .large[`JSON`]:
 
-.center[<img src="img/dog_face.gif" style="width:300px;height:200px;">]
+.center[<img src="img/gifs/dog_face.gif" style="width:300px;height:200px;">]
 
 ---
 
@@ -119,7 +119,7 @@ More on their (last) [paper](https://academic.oup.com/nar/article/47/W1/W636/544
 --
 
 .pull-right[
-<img src="img/gilfoyle_waits.gif" style="width:320px;height:220px;">
+<img src="img/gifs/gilfoyle_waits.gif" style="width:320px;height:220px;">
 ]
 
 --
@@ -130,7 +130,7 @@ More on their (last) [paper](https://academic.oup.com/nar/article/47/W1/W636/544
 
 class: center, middle
 
-<img src="img/questions.jpeg">
+<img src="img/ack/questions.jpeg">
 
 # Thanks!
 
