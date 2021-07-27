@@ -2,6 +2,10 @@
 
 Various presentations I have given, built using the [xaringan](https://github.com/yihui/xaringan) R package:
 
+## 2021
+
+- [PhD Thesis Presentation (10 Aug, Trondheim)](https://bblodfon.github.io/r-pres/phd_thesis.html)
+
 ## 2020
 
 - [Reproducible Science: BI8040 Logical Modeling course (20 Aug, Trondheim)](https://bblodfon.github.io/r-pres/reproducibility_2020.html)
