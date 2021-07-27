@@ -1,0 +1,7 @@
+.hljs {
+  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
+  font-size: 47%;
+  background: #eee;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}
