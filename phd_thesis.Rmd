@@ -373,7 +373,9 @@ Synergy assessment analysis module: https://github.com/druglogics/drabme `r shin
 
 ???
 
-- ROC vs PR => 2nd better because of **imbalanced data**, see Saito (2015)
+- **Explain differences** between ROC (validation) vs PR (prevalence/balance of data)
+  - Validation means better than random classifier (ROC-AUC=0.5)
+  - PR more proper for imbalanced data .purple[Saito (2015)]
 - Normalization of synergy scores to topology predictions (Random)
 - **Random => random yet proliferative** training data profile
 - We could in principle have reduced our full drug screen to only test 29% percent of the
@@ -555,6 +557,15 @@ plot_avg_link_operator_diff_graph(net, diff = res$diff.link.synergies.mat["PI-D1
 .pull-left[![](img/druglogics/PI-D1_A498_state.svg)]
 .pull-right[![](img/druglogics/PI-D1_A498_link.svg)]
 
+???
+
+- Library is very easy to use (once you have the data :)
+  - Development effort/abstraction that led to an **one-liner**!
+- The visualization helps you pinpoint the biomarkers and see if they are close or not
+  - (Depends on the size of the networks of course and the number of returned biomarkers)
+  - Might be better than looking at the data results when few biomarkers
+  - Comparing parameterization and stable state differences in a visual way
+
 ---
 
 class: center, middle
@@ -564,27 +575,6 @@ class: center, middle
 # Boolean function metrics can assist modelers to check and choose logical rules
 
 ----
-
----
-
-# Some notation...
-
-- Boolean regulatory functions $f_{BRF}:\{0,1\}^n \rightarrow \{0,1\}$
-- **Link operator functions** with a total of $n = m + k$ regulators:
-  - $m \ge 1$ .green[activators] $x=\{x_i\}_{i=1}^{m}$
-  - $k \ge 1$ .red[inhibitors] $y=\{y_j\}_{j=1}^{k}$ 
-
-- $f_{AND-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \land \lnot \left(\bigvee_{j=1}^{k} y_j\right)$, from .purple[Mendoza (2006)]
-
-- $f_{OR-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \lor \lnot \left(\bigvee_{j=1}^{k} y_j\right)$
-
-- $f_{Pairs}(x,y) = \bigvee_{\forall (i,j)}^{m,k}(x_i\land \lnot y_j) = \left(\bigvee_{i=1}^{m} x_i\right) \land \left(\bigvee_{j=1}^{k} \lnot y_j\right)$
-
-- <p><b>Threshold functions</b>: <span class="math inline">\(\begin{align}  f_{Act-win}(x,y) &amp;= \begin{cases}  1, &amp; \sum_{i=1}^{m} x_i \ge \sum_{j=1}^{k} y_j \\  0, &amp; \text{otherwise} \end{cases}  \end{align}\)</span>, where activators "win" on equality, otherwise: <span class="math inline">\(f_{Inh-win(x,y)}\)</span></p>
-
-???
-
-- **Threshold functions**: the activities of the positive and negative regulators are combined in an **additive** manner (and not **combinatorial**), with their respective assigned weights set to ±1 and the threshold parameter to 0, formulating thus a **majority rule** which defines the value of the function.
 
 ---
 
@@ -612,6 +602,27 @@ class: center, middle
 ???
 
 - Boolean Function Space is **double exponential**
+
+---
+
+# Some notation...
+
+- Boolean regulatory functions $f_{BRF}:\{0,1\}^n \rightarrow \{0,1\}$
+- **Link operator functions** with a total of $n = m + k$ regulators:
+  - $m \ge 1$ .green[activators] $x=\{x_i\}_{i=1}^{m}$
+  - $k \ge 1$ .red[inhibitors] $y=\{y_j\}_{j=1}^{k}$
+
+- $f_{AND-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \land \lnot \left(\bigvee_{j=1}^{k} y_j\right)$, from .purple[Mendoza (2006)]
+
+- $f_{OR-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \lor \lnot \left(\bigvee_{j=1}^{k} y_j\right)$
+
+- $f_{Pairs}(x,y) = \bigvee_{\forall (i,j)}^{m,k}(x_i\land \lnot y_j) = \left(\bigvee_{i=1}^{m} x_i\right) \land \left(\bigvee_{j=1}^{k} \lnot y_j\right)$
+
+- <p><b>Threshold functions</b>: <span class="math inline">\(\begin{align}  f_{Act-win}(x,y) &amp;= \begin{cases}  1, &amp; \sum_{i=1}^{m} x_i \ge \sum_{j=1}^{k} y_j \\  0, &amp; \text{otherwise} \end{cases}  \end{align}\)</span>, where activators "win" on equality, otherwise: <span class="math inline">\(f_{Inh-win(x,y)}\)</span></p>
+
+???
+
+- **Threshold functions**: the activities of the positive and negative regulators are combined in an **additive** manner (and not **combinatorial**), with their respective assigned weights set to ±1 and the threshold parameter to 0, formulating thus a **majority rule** which defines the value of the function.
 
 ---
 
