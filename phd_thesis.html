@@ -358,12 +358,18 @@ class: center, middle
 
 ![:scale 90%](img/thesis/genetic_algo.png)
 
+- From generic to **cell-specific models**
 - Models **mutate** across generations
   - **Logical rule** mutations (AND-NOT &lt;=&gt; OR-NOT)
   - **Topology (edge)** mutations
 - Parallel evolutionary simulations: **ensemble of models**
 
 Genetic algorithm for creation of logical model ensembles: https://github.com/druglogics/gitsbe <i class="fab fa-github" role="presentation" aria-label="github icon"></i>
+
+???
+
+- From a naive model (agnostic of cell activity states) to a **cell-specific model**
+- Explain training data
 
 ---
 
@@ -380,6 +386,7 @@ Synergy assessment analysis module: https://github.com/druglogics/drabme <i clas
 
 ???
 
+- ROC vs PR =&gt; 2nd better because of **imbalanced data**, see Saito (2015)
 - Normalization of synergy scores to topology predictions (Random)
 - **Random =&gt; random yet proliferative** training data profile
 - We could in principle have reduced our full drug screen to only test 29% percent of the
@@ -431,6 +438,7 @@ combinations (6 out of 21), had we guided our experiments by model simulations
 
 ???
 
+- Explain key analysis steps that resulted in these figures
 - 3 types of topology scrambling + all these applied together
 - **Even low levels of randomization in the curated knowledge significantly reduce the predictive power of the models**
 
@@ -467,7 +475,8 @@ combinations (6 out of 21), had we guided our experiments by model simulations
 .pull-right[
 #### ERK active in AGS cells
 
-&lt;br&gt;
+- Conflicting evidence of ERK activity in literature
+
 ![](img/thesis/erk-pool-cpm-pr.png)
 ]
 
@@ -477,7 +486,8 @@ combinations (6 out of 21), had we guided our experiments by model simulations
 - **Cancer Gene Census (CGC)** describes a curated catalogue of genes driving every form of human cancer
 - Proteins from genes annotated as oncogenes in COSMIC tend to be active, while proteins from genes annotated as tumor suppressor genes (TSG) tend to be inactive in overall steady states. This is biologically plausible and attests to the **capability of our
 mechanistic model to generate hypotheses about the underlying molecular biology**.
-- We found that the predictive performance of model versions with ERK being active was significantly higher than the sub-ensemble where ERK is inactive, suggesting that from a functional point of view ERK should be considered active in AGS cells.
+- **Conflicting evidence of ERK activity in publications**! 
+- ERK-active sub-ensemble is more predictive, suggesting that from a functional point of view ERK should be considered active in AGS cells.
 
 ---
 
@@ -530,6 +540,15 @@ class: center, middle
 ![:scale 90%](img/druglogics/emba.svg)
 
 CRAN `R` package: https://github.com/bblodfon/emba <i class="fab fa-github" role="presentation" aria-label="github icon"></i>
+
+???
+
+- Explain figure
+- Why is emba important for others? 
+  - Data analysis software for same kind of datasets
+  - Find biomarkers
+  - Comparing results with other methodologies
+  - Refining model parameters (as stated in the figure)
 
 ---
 
@@ -739,6 +758,7 @@ class: center, middle
 
 ???
 
+- Explain how to read the graph
 - More **bias** with increasing numbers of regulators
 - **7-10** regulators: that's where biased behavior starts
 - For each specific number of regulators, every possible combination of at least one activator and one inhibitor that add up to that number, results in a different truth table output with its corresponding truth density value.
@@ -862,7 +882,7 @@ exclude:true
 # Acknowledgements .smaller[(.red[<span>&lt;i class="fas  fa-heart faa-bounce animated faa-fast "&gt;&lt;/i&gt;</span>] our sponsors!)]
 
 .center.pull-left-67[
-![:scale 80%](img/druglogics/druglogics_org.svg)
+![:scale 90%](img/druglogics/druglogics_org_2021.svg)
 
 &lt;img src="https://media.giphy.com/media/IvTIFDvulINIA/giphy.gif" height="150px"&gt;&lt;/img&gt;
 
