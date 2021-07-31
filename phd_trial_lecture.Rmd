@@ -37,185 +37,213 @@ class: middle
 
 ???
 
-- Current: few years, all papers will be 2017 and after! 
+- Present **some** frameworks, not all of them! 
+- Use practical examples/applications and then discuss the associated frameworks
+- Point is to **state the differences** and **highlight drawbacks and assets of each discussed framework in practice**
+- Target audience is Master-level students
 
 ---
 class: center, middle
 
 # .larger.blue[Introduction to Cancer Modeling]
 ----
+<img src="https://media.giphy.com/media/680qJiuIMtNle/source.gif"></img>
 
 ---
 
-# Why study Cancer?
+## Why study cancer?
 
-- 2nd cause of death worldwide
-  - Ageing and increasing population growth
-  - Most solid tumors are incurable
-- In-vitro and in-vivo approaches are not effective in the clinic (< 4% of drugs succeed in clinical trials)
-  - Need for basic science
-  - Need for integrative approaches and optimization (in-silico/computational approaches!)
-- High complexity (main problem)
-  - Complex biological machinery, the Hallmarks
-  - Difficult to find predictive biomarkers for patient response
-  - Heterogeneity
-    - 2 types: Intra-tumor (within one patient) and Inter-tumor (between patients)
+- **2nd cause of death worldwide** .small.purple[Ritchie & Roser (2018)]
+  - Problem exacerbates due to aging and population growth
+- Curing every cancer type is impossible
+
+## Why is cancer challenging?
+
+- Research findings are **not translational**
+  - *In-vitro* and *in-vivo* approaches are .red[not effective] in the clinic
+  - .red[< 4% of drugs succeed] in clinical trials .small.purple[Wong (2019)]
+  - Need for .green[basic science] and .green[integrative (in-silico) approaches]
+- **High complexity**
+  - Multiscale process
+  - Heterogeneity .small.purple[Senft (2017)]
+      - Intra-tumor (within a patient)
+      - Inter-tumor (patients diversity)
+- **Acquired resistance to therapy**
+- **Lack of biomarkers** that correlate with patient response
+  - Need strategies for .green[patient stratification]
+
+???
+
+- The cancer hallmarks .purple[Hanahan & Weinberg (2011)] as a guide to understand the complex processes that drive cancer
 
 ---
 
-## The Scientific Method: Models + experiments
+# How to study cancer?
 
-- Cancer modeling, a historical perspective: .purple[Rashevsky (1940)]
-- What are models?
-  - Usually: **Mathematics** + **computational** tools (software for simulation and analysis)
-  - So modeling combines theory (equations) with computational experiments
-  - Can use a lot of data for training (.e.g Machine Learning are data-driven models)
-- Model-experiment (data production) iterative refinement pattern/cycle (TODO: make a simple figure)
-  - Use data to calibrate and validate models
-  - Use models to confirm or invalidate biological hypotheses
-  - Use models to make new predictions, to be tested experimentally (faster and with less cost)
-  - Models guide us towards more informative experiments
+.pull-left-58[
+### The Scientific Method
+
+![](img/trial-lecture/model_experiment.svg)
+]
+
+.pull-right-42[
+### Cancer Modeling popularity
+
+![](img/trial-lecture/pubmed_cancer.png)
+
+<p style="text-align:right">.purple.small[Brady (2019)]</p>
+]
+
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+
+.little.purple[Rashevsky (1940). Mathematical biophysics in its relation to the cancer problem]
+
+???
+
+- Models + experiments hand-in-hand paradigm
+- Models are a mix of **Mathematics** (theory) and **computational** (software) tools
+- Model-experiment (data production) iterative refinement pattern/cycle
+  - Use models can make new predictions and drive new hypotheses for further experimental investigations (**faster and with less cost**) and **guide us towards more informative experiments**
+  - 2 **optimization** self-loops can be used in both models and experiments nodes
+- Rashevsky (1940) talks about:
+1. The usefulness of theoretical research for experimental science
+2. Mathematical study of cell division and its relation to cancer
 
 ---
 
 # Goals of computational cancer modeling
 
-- Generate biological insights
-- Predict new therapies (e.g. drug combinations)
-  - Has to do that part very well! (match experimental data)
-- Provide mechanistic interpretations (be explanatory)
-- Personalized treatment
-- Patient stratification (biomarkers)
-- Optimize clinical trial design
+![:scale 85%](img/trial-lecture/goals_cancer_modeling.svg)
+
+???
+
+- Be **explanatory/mechanistic**
+- Predict new therapies (e.g. **identify new targets** or synergistic drug combinations)
+- Personalized treatment: **optimal drug-patient match**
+- Patient stratification (biomarkers) - **overcome patient diversity**
+- Optimize clinical trial design (e.g. **better dosing schedules, optimize chemotherapy delivery, reduce drug toxicity**)
+- Deliver robust and reproducible results
+  - **VVUQ**: verification, validation (match observations) and uncertainty quantification .small.purple[Groen (2021)]
 
 ---
 
-# Modeling framework classifications
+# Modeling frameworks: an overview
 
-1. **Structural** vs **dynamical/mechanistic** models
-  - Structural models are network models
-  - Can be inferred from data, see review on some methods .small.purple[Marbach (2012)]
-  - Dynamical are mathematical models (so networks + equations)
-  - Dynamical models are becoming increasing more popular since the 1990s .small.purple[Bekisz (2020)]
-  - Stick to the dynamical for this lecture
-2. **System (state) representation**: discrete vs continuous (can be mixed as well)
-3. **Spatial characteristics**: spatial vs non-spatial
-3. **Molecular scale**: molecule-level to population-level
-4. **Time scale**: single-scale vs multi-scale (hybrid)
-5. **Nature of reaction processes**: deterministic vs stohastic
-6. **Area of application**: tumor growth, metabolism, vasculature, microenvironment, immunity, invasion, treatment and resistance, etc.
+.pull-left-58[
+![](img/trial-lecture/multiscale.jpeg)
+]
 
----
+.pull-right-42[
+### .center[What to consider?]
 
-# An overview of modeling methodologies (1)
+- Discrete to continuous state and treatment of time
+- Spatial information
 
-### Non-spatial frameworks
+- Stochasticity of reactions
+
+- Structure vs dynamical
+
+- Black-box vs White-box
+
+- Area of application
+]
+
+<br/>&nbsp;<br/>
+
+- .green[Biological detail] `r shiny::icon("arrow-up")` = .red[Data] + .red[Computation Demand] `r shiny::icon("arrow-up")`
+- Moving towards **multiscale hybrid modeling**
+
+???
+
+### Granularity in species' states and treatment of time
 
 .small[
-1. Logical (or Discrete) modeling
-  - Kauffmann (1969) - seminal paper in the field
-  - Discrete time steps and discrete outputs (e.g. Boolean 0/1)
-  - Can be multi-leveled
-  - Boolean model dynamics (attractors) have been shown to be biologically meaningful:
-    - Representing specific phenotypic outputs
-    - Transitions between system states like in the cell cycle or differentiation of cell types
-  - GINsim, and other tools, see [CoLoMoTo Naldi 2018 paper]
-2. Ordinary Differential Equations (ODEs)
+1. **Logical modeling**
+  - .purple[Kauffman (1969)] - seminal paper in the field
+  - Discrete time steps and active/inactive outputs (e.g. Boolean 0/1) - can also be multi-valued
+  - .green[Easy rule formulation, high interpretability, less+discretized data data are needed for training]
+  - .green[Attractors are **biologically meaningful**]:
+      - Representing specific phenotypic outputs
+      - Transitions between system states like in the cell cycle or differentiation of cell types (T cell differentiation)
+  - **GINsim**, and other tools, see **CoLoMoTo** .purple[Naldi (2018)] paper
+2. **Ordinary Differential Equations (ODEs)**
   - Time is an independent, continuous variable 
-  - Species concentrations are the unknown continuous state variables
-  - Need for more data (kinetic rates, concentration parameters)
-  - Assumptions
-    - Reaction processes are deterministic
-    - Molecular quantities are high (describe species concentrations)
-  - PySB [Lopez (2013)]: nice Python-based tool: from software programs to ODEs and simulations
-  - Tellurium software: ODE solving, parameter estimation, visualization
-3. Mixed Discrete-Continuous modeling
-  - The good of both worlds :)
-  - Use Fig. 2b from [Morris2010] to explain differences between ODEs and Boolean and in-between???
-  - Logic-ODEs (Wittman's 2011 paper methodology)
-  - Fuzzy Modeling
-  - Stochastic Boolean Modeling (MaBoSS)
-  - CellNOpt [2020] as a tool that offers a lot of the above mixed options + training/optimizing models to perturbation data
+  - Species concentrations are the unknowns
+  - .red[Need for data (kinetic rates, concentration parameters)]
+  - Software **Tellurium** (.purple[Choi (2018)]): ODE solving, parameter estimation, visualization
+3. **Mixed Discrete-Continuous (hybrid) modeling**
+  - .green[Pro: Simplicity of logical modeling without the need to specify kinetic rates, but still output is continuous]
+  - Example 1: Logic-ODEs .purple[Wittmann (2009)]
+  - Example 2: Fuzzy Modeling .purple[Morris (2016)]
+  - Example 3: Stochastic Boolean Modeling (MaBoSS 2.0 .purple[Stoll (2017)])
+  - **CellNOpt** .purple[Gjerga (2020)]: software that offers a lot of the above example frameworks + training and optimizing models to perturbation data
 ]
 
-???
-
-- Tellurium uses libRoadRunner as the default SBML simulation engine which supports deterministic simulations, stochastic simulations, and steady-state analyses.
-- Tellurium is like CoLoMoTo but for the continuous!
-
----
-
-# An overview of modeling methodologies (2)
-
-### Spatial frameworks
+### PDEs and Stochastic models
 
 .small[
-4. Partial Differential Equations (PDEs)
-  - Time + space as unknown variables
-  - Spatial organization of the studied system very important!
-    - Example of Calcium (Ca2+), a fundamental intracellular signal, that achieves specificity over wide temporal and spatial changes
-  - Cell geometry
-  - RD (Reaction-Diffusion) modeling: spatial distribution and diffusion of molecules in highly localized spaces are explicitly considered
-  - Large system of PDEs could produce prohibitively expensive computations   
-5. Stochastic Modeling
-  - Number of species/molecules low (less than 100-1000)
-  - A discrete view of the system (compared to ODEs)
-  - Chemical Master Equation (CME) determines the distribution of species across time and space (cannot be solved exactly)
-  - Use of stochastic simulation algorithm (SSA) - commonly known as Gillespie algorithm
-  - Population-based method
-  - Even more computationally demanding
-  - Greater level of detail compared to previous methods
-  - Sub-category: particle-based methods
-    - Molecular Dynamics: deterministically solve equations for every atom in the studied system
+- **Partial Differential Equations (PDEs)**
+  - Time + space as unknown variables, .red[hard to solve in general]
+  - Example 1: **Calcium (Ca2+)**, a fundamental intracellular signal, that achieves specificity over wide temporal and spatial changes
+  - Example 2: Cell geometry, compartments (e.g. in whole-cell modeling)
+- **Stochastic modeling**
+  - Reaction processes are not deterministic .green[More realistic models]
+  - .green[Molecular quantities are low] (#species <100-1000)
+  - .red[Need to solve the even harder **CME (Chemical Master Equation)**]: distribution of species across time and space
+  - Approximate solutions: stochastic simulation algorithm (**Gillespie** algorithm + variations)
+  - Particle-based methods (MD: **Molecular Dynamics**: solve equations for every atom in the system!)
 ]
 
-???
-- COPASI software can deal with ODEs and stochastic simulations or hybrids
-
----
-
-# An overview of modeling methodologies (3)
-
-### Multi-cellular frameworks
+### Agent-Based Modeling (ABM)
 
 .small[
-6. Cellular Automata (CA) or Automata Networks (AN)
-  - Simple example: Conway's Game of Life
-  - Figure from [Pauleve2017] (Pint paper)
-  - Explicit definition of local transitions rather than function-based as in logical models for example
-7. Petri Nets (PN)
-  - Graphical mathematical representation of concurrent, async, distributed systems
-  - PNs have been applied to many areas such as communication protocols, industrial systems, and distributed software systems (not so much in cancer though, I found only one paper)
-  - Many variants: timed, stochastic, continuous, hybrid, colored
-8. Agent-Based Modeling (ABM)
-  - An ABM consists of a number of agents interacting with one another over time and space, typically by exchanging messages
-  - Emphasis on the entities/individuals
-  - Agents are free to move everywhere, they are not fixed in space (like in CA in a grid)
-  - Environment is non-deterministic, so agents have to learn and adapt their behavior to achieve their goals
-  - Has been used for modeling multi-cellular (cells as agents) and is part of multi-scale (different time and space) environments
-  - However, owing to the complex nature of interactions between agents, analysis of ABMs may not provide an understanding of the underlying mechanisms
+- **Autonomous agents** freely interacting with one another over time and space by exchanging messages
+- Environment is non-deterministic, so **agents have to learn and adapt their behavior** to achieve their goals
+- .green[ABM is intuitive for multi-cellular modeling (cells as agents)]
+- .red[Complex nature of agent interactions => lack of mechanistic interpretation]
+- .red[Very computationally intensive] (tracking agents across space and time)
 ]
 
-???
+### Structural/network vs dynamical/mechanistic models
+  
+.small[
+- Structural models are network-based (connectivity)
+  - .green[Exploit topological properties (e.g. graph theory) to derive associations/prove hypotheses/make predictions]
+- Dynamical are mathematical models (so networks + equations)
+]
 
-- Software for multi-cellular modeling:
-  - Chaste (JOSS 2020 paper)
-  - Virtual Cell or VCell software (Rule-based framework): combines ODEs + Stohastic + agent-based modeling
-    - Uses BioNetGen (rule-based modeling and simulation) and the NFSim engine (simulator of multiple frameworks).
+### White-box vs Black-box models
+.small[
+- .red[Accuracy vs. Interpretability trade-off]
+- White-box: **mechanistic/hypothesis-driven**, use knowledge
+  - ODEs, Boolean modeling, simple statistical models (linear regression, decision trees)
+- Black-box: **empirical/data-driven**, .red[use A LOT of data]
+  - Random forests, NNs, Deep Learning
+- Grey-box: new Neural Network approaches
+]
 
----
+### Area of application
 
-# An overview of modeling methodologies (4)    
+.small[
+- **Tumor growth**, metabolism, vasculature, **microenvironment, immunity**, invasion, **treatment and resistance**, etc.
+- Important for considering the modeling framework
+]
 
-### Data-driven frameworks
+### Multiscale hybrid modeling
 
-9. Network modeling
-  - Connectivity most important
-  - Can be derived from data (GRN inference - Bayesian statistics like Mutual Information)
-  - Exploit topological properties to derive associations or prove hypotheses
-10. Machine Learning and Neural Networks
-  - Black-box mostly, interpretable ML new trend now
-  - Deep neural networks have shown large promise
+.small[
+- Moving from **scale-specific** to **multiscale models**
+- Incorporating different biological scales is important for **clinical translation**
+- **Software** for multiscale modeling:
+  - .green[Example]: Use ODEs or logical models for intracellular signaling and agent-based modeling (ABM) for interactions between cells (**PhysiBoSS** = PhysiCell + MaBoSS, see .purple[Letort (2018)])
+  - **COPASI** (.purple[Hoops (2006)]): ODEs and stochastic simulations or hybrids of these
+  - **Chaste: Cancer, Heart and Soft Tissue Environment** .purple[Cooper (2020)]
+      - Cardiac electrophysiology
+      - Cell-based modeling, application in tissue carcinogenesis
+      - Multiscale lung ventilation simulations
+  - **Virtual Cell** .purple[Blinov (2017)] (rule-based framework): combines ODEs + Stochastic + agent-based modeling.
+]
 
 ---
 class: center, middle
@@ -224,27 +252,34 @@ class: center, middle
 ----
 ## Examples from current research
 
----
+<img src="https://media.giphy.com/media/d7SnByEMkrdeoVQ2lT/giphy.gif"></src>
 
-# Logical Modeling
+.small.purple[Game of Life, John Conway]
 
-Saadatpour (2011): Blood cancer paper (T-LGL leukemia)
+???
 
-(Maybe not! - better to give more mixed examples!)
+- Game of Life is a famous **Cellular Automaton (CA)**, demonstrating how complexity can arise from simple rules
+- **Epilog** .purple[Varela (2018)]: software that defines an CA in 2D to represent a multi-cellular environment using a logical model framework for describing cell behavior
 
 ---
 
 # Mixed Discrete-Continuous Modeling
 
 - Logic-ODEs (Eduati's paper or Tognetti's paper?)
-- Fuzzy Modeling (Morris2016 paper?)
 - MaBoSS: Bael's 2021 paper?
 
 ---
 
-# ODE Modeling
+# ODE Modeling (vs standard black-box ML)
 
 - Frolich 2018 paper
+
+---
+
+# ??????
+
+- gene mutation data (patient specificity) => don't deal with the interactions
+
 
 ---
 
@@ -260,11 +295,32 @@ combo-FM paper or Yang2020 (black-box ML)
 
 (or maybe not, first the next)
 
+> The potential machine learning (ML) or artificial
+intelligence (AI) applications to healthcare have
+recently received particular notice in the media
+with **IBM’s Watson**, applications to radiology and
+diagnoses aided by wearable technology amongst
+many others. Each of these examples are exciting, but
+the full promise of personalized medicine remains
+unrealized. While the amount and types of clinical data
+being generated for each cancer patient is increasing
+dramatically, there are no holistic approaches or
+algorithms available that can incorporate all this data
+to identify the best treatment for each individual
+patient. There are, obviously, many reasons for this,
+but a critical challenge is that cancer is a spatially
+complex, adaptive process and the data being collected,
+while vast, is quite limited in that it is showing, at best,
+infrequent snapshots of extremely small regions of
+the tumor. Ultimately, this means AI and ML models
+will not be able to be trained on the right data to make
+reliable predictions.
+
 ---
 
 # Deep Neural Networks
 
-- Visual Neural Network model: DrugCell paper (white-box ML)
+- Visual Neural Network model: DrugCell paper (white-box ML)s
 
 ---
 
@@ -275,7 +331,9 @@ combo-FM paper or Yang2020 (black-box ML)
 
 ---
 
-# Quote from Fitzgerald et al (2006)
+# Models don't have to be complex
+
+Quote from Fitzgerald et al (2006):
 
 > Lest one be tempted simply to wait for ‘final’ models to emerge, it
 is worth remembering that "all models are wrong; some are useful" [Box (1979)]. We specifically reject the critique that experimentally validated mathematical analysis of cellular networks will be useful only when ‘complete’ models of cells or tissues are available. **Quantitative modeling of bridges and buildings was essential for mechanical engineering long before it was practical to represent every beam and bolt or to understand the atomic properties of steel**. Whatever the limitations of emerging mathematical models of cellular physiology, they will almost certainly be better guides for drug development than the prevailing practice of representing biochemistry pictorially and reporting network interactions piecemeal.
