@@ -62,11 +62,20 @@ class: center, middle
 
 .pull-left-73[.center[![](img/thesis/history.svg)]]
 .pull-right-27[
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+.small[
 .purple[Dawkins (1976). The Selfish Gene]
 
 .purple[Kitano (2002). Computational systems biology]
 
 .purple[Noble (2008). The music of life: biology beyond genes]
+]
 ]
 
 ???
@@ -159,12 +168,12 @@ class: center, middle
 
 ???
 
-- **Biocurators**: make knowledge *computable* and easily reusable
+- **Biocurators**: make knowledge *computable* and easily reusable, extract the Causal statements
 - Molecular Interaction standards
 - Curation tools
 - Need for uniform access to **Controlled Vocabularies (CVs)** and **ontologies**
 - Data formats
-- Causal interactions are the **building blocks** for the Prior Knowledge Networks that are used to construct logical models, which we are going to discuss later!
+- .green[Causal interactions are the] **building blocks** for the Prior Knowledge Networks that are used to construct logical models, which we are going to discuss later!
 
 ---
 
@@ -175,7 +184,8 @@ class: center, middle
 ![:scale 80%](img/thesis/identifiers.svg)
 ]
 
-**Guidelines**: https://github.com/MI2CAST/MI2CAST/blob/master/docs/MI2CAST_guideline.md
+.littler[**Guidelines**: https://github.com/MI2CAST/MI2CAST/blob/master/docs/MI2CAST_guideline.md]
+
 .small.purple[Touré (2020). The Minimum Information about a Molecular Interaction Causal Statement (MI2CAST)]
 
 ???
@@ -186,8 +196,11 @@ class: center, middle
 
 # **V**isual **S**yntax **M**ethod: .green.small[General-purpose curation tool]
 
-.center[![:scale 90%](img/vsm/john_and_chicken.webp)]
+![](img/vsm/vsm-box-example.gif)
 
+![:scale 40%](img/vsm/sro.png)
+
+- Dictionaries make VSM-terms accessible
 - More info: https://vsm.github.io/vsm-pages/intro
 
 .small.purple[Vercruysse and Kuiper (2020). Intuitive representation of computable knowledge]
@@ -205,7 +218,7 @@ class: center, middle
 
 ![](img/thesis/causalBuilder_screenshot.png)
 
-Supports **CausalTAB** export!
+- **CausalTAB** export
 
 .small.purple[
 Touré (2021). CausalBuilder: bringing the MI2CAST causal interaction annotation standard to the curator
@@ -228,14 +241,7 @@ Perfetto (2019). CausalTAB: the PSI-MITAB 2.8 updated format for signalling data
 .pull-left[
 ## Implemented UBDs
 
-- BioPortal .purple[Whetzel (2011)]
-- PubMed (biomedical literature)
-- Noctua Entity Ontology
-- UniProt .purple[The UniProt Consortium (2019)]
-- Ensembl .purple[Zerbino (2018)]
-- Ensembl Genomes .purple[Howe (2020)]
-- RNAcentral .purple[The RNAcentral Consortium (2018)]
-- Complex Portal .purple[Meldal (2019)]
+![](img/trial-lecture/ubds_image.png)
 ]
 
 .pull-right[
@@ -335,7 +341,7 @@ class: center, middle
 - **Manually optimized rules**
 - **AGS** cell line
 - 4 **experimentally confirmed synergies** out of 21 drug combinations
-- Model identified *synergistic* effect of joint `PI3K` and `MEK` inhibition (**PI-5Z**)
+- Model identified *synergistic* effect of joint `Pi3k` and `Tak1` inhibition
 
 .small.purple[Flobak (2015). Discovery of drug synergies in gastric cancer cells predicted by logical modeling]
 
@@ -416,18 +422,22 @@ combinations (6 out of 21), had we guided our experiments by model simulations
 
 ---
 
-### Impact of incorrect prior knowledge on model performance
+## .little[Impact of incorrect prior knowledge on model performance]
 
-.pull-left[
-![:scale 83%](img/thesis/topo_quality_1.png)
-![:scale 83%](img/thesis/topo_quality_2.png)
-]
-.pull-right[
-![:scale 83%](img/thesis/topo_quality_3.png)
-![:scale 83%](img/thesis/topo_quality_4.png)
-]
+.pull-left[![](img/thesis/topo_quality_1.png)]
+.pull-right[![](img/thesis/topo_quality_2.png)]
 
-.green[**Small randomization decreases prediction performance**]
+<br/>&nbsp;<br/><br/>&nbsp;<br/><br/>&nbsp;<br/>
+<br/>&nbsp;<br/><br/>&nbsp;<br/><br/>&nbsp;<br/>
+
+.large[
+- **Scrambling** CASCADE 2.0 topology
+  - Swap source
+  - Swap target
+  - Sign inversion
+  - All the above
+- .green[**Small randomization decreases prediction performance**]
+]
 
 ???
 
@@ -455,22 +465,22 @@ combinations (6 out of 21), had we guided our experiments by model simulations
 
 ---
 
-# Mechanistic insights (1)
+# Mechanistic insights
 
 .pull-left[
-#### Active Oncogenes vs inactive Tumor Suppresor Genes
-
-![](img/thesis/cosmic.png)
-
-.small.purple[Sondka (2018). The COSMIC Cancer Gene Census: describing genetic dysfunction across all human cancers]
-
-]
-.pull-right[
 #### ERK active in AGS cells
 
 - Contradictory evidence of ERK activity in literature
 
 ![](img/thesis/erk-pool-cpm-pr.png)
+]
+
+.pull-right[
+#### Active Oncogenes vs inactive Tumor Suppresor Genes
+
+![](img/thesis/cosmic.png)
+
+.small.purple[Sondka (2018). The COSMIC Cancer Gene Census: describing genetic dysfunction across all human cancers]
 ]
 
 ???
@@ -483,6 +493,7 @@ mechanistic model to generate hypotheses about the underlying molecular biology*
 - ERK-active sub-ensemble is more predictive, suggesting that from a functional point of view ERK should be considered active in AGS cells.
 
 ---
+exclude:true
 
 # Mechanistic insights (2)
 
