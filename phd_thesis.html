@@ -608,30 +608,43 @@ class: center, middle
 
 ---
 
-# Motivation
+# Motivation .small.green[(with an example!)]
 
-.large[
-1. **No single right BRF**:
-  - Noisy data
-  - Sparse data
-  - Discrete data &amp; modeling
-  - Enormous function space: `\(2^{2^n}\)`
-2. Which equations **make sense**?
-  - **Semantics**
-  - Check **regulatory consistency** from formula?
-3.  `\(f_{AND-NOT} \rightarrow 0\)`, `\(f_{OR-NOT} \rightarrow 1\)`, for large `\(n\)`
-  - Proof?
-  - Biased behavior?
-  - How large `\(n\)` needs to be practically?
-  - Effect of number of activators `\(m\)` and inhibitors `\(k\)`?
-4. Metric that defines **expected function output** for every BRF?
-  - Compare different link operator functions?
-  - Use this knowledge to better **match observations**?
+.pull-left-58[![](img/thesis/interpretability.svg)
+
+
+]
+.pull-right-42[
+- **Interpretability** issues (semantics)
+
+- **Consistency** with regulatory topology?
+
+- Which is the **right** equation?
+
+- **Expected** function output?
+
+- Match **observations**?
 ]
 
 ???
 
-- Boolean Function Space is **double exponential**
+1. Semantics: Which equations more **make sense**?
+  - Derive the exact conditions that make target **active**?
+  - Derive a meaningful characterization that allows the comparison with other BRFs?
+  - More regulators, more complexity!
+  - What happens when I use other link operators or other BRFs?
+  - Check **regulatory consistency** from formula?
+2. **No single right BRF**
+  - Noisy and sparse data
+  - Enormous function space: `\(2^{2^n}\)` (double exponential)
+3.  `\(f_{AND-NOT} \rightarrow 0\)`, `\(f_{OR-NOT} \rightarrow 1\)`, for large `\(n\)`
+  - Proof?
+  - Biased behavior?
+  - How large `\(n\)` needs to be practically?
+  - **Effect of number of activators `\(m\)` and inhibitors `\(k\)`?**
+4. Metric that defines **expected function output** for every BRF?
+  - Compare different link operator functions?
+  - Use this knowledge to better **match observations**?
 
 ---
 
@@ -642,41 +655,17 @@ class: center, middle
   - `\(m \ge 1\)` .green[activators] `\(x=\{x_i\}_{i=1}^{m}\)`
   - `\(k \ge 1\)` .red[inhibitors] `\(y=\{y_j\}_{j=1}^{k}\)`
 
-- `\(f_{AND-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \land \lnot \left(\bigvee_{j=1}^{k} y_j\right)\)`, from .purple[Mendoza (2006)]
+  1. `\(f_{AND-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \land \lnot \left(\bigvee_{j=1}^{k} y_j\right)\)`, from .purple[Mendoza (2006)]
 
-- `\(f_{OR-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \lor \lnot \left(\bigvee_{j=1}^{k} y_j\right)\)`
+  2. `\(f_{OR-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \lor \lnot \left(\bigvee_{j=1}^{k} y_j\right)\)`
 
-- `\(f_{Pairs}(x,y) = \bigvee_{\forall (i,j)}^{m,k}(x_i\land \lnot y_j) = \left(\bigvee_{i=1}^{m} x_i\right) \land \left(\bigvee_{j=1}^{k} \lnot y_j\right)\)`
+  3. `\(f_{Pairs}(x,y) = \bigvee_{\forall (i,j)}^{m,k}(x_i\land \lnot y_j) = \left(\bigvee_{i=1}^{m} x_i\right) \land \left(\bigvee_{j=1}^{k} \lnot y_j\right)\)`
 
 - &lt;p&gt;&lt;b&gt;Threshold functions&lt;/b&gt;: &lt;span class="math inline"&gt;\(\begin{align}  f_{Act-win}(x,y) &amp;amp;= \begin{cases}  1, &amp;amp; \sum_{i=1}^{m} x_i \ge \sum_{j=1}^{k} y_j \\  0, &amp;amp; \text{otherwise} \end{cases}  \end{align}\)&lt;/span&gt;, where activators "win" on equality, otherwise: &lt;span class="math inline"&gt;\(f_{Inh-win(x,y)}\)&lt;/span&gt;&lt;/p&gt;
 
 ???
 
 - **Threshold functions**: the activities of the positive and negative regulators are combined in an **additive** manner (and not **combinatorial**), with their respective assigned weights set to ±1 and the threshold parameter to 0, formulating thus a **majority rule** which defines the value of the function.
-
----
-
-# Interpretability issues in Boolean modeling
-
-.pull-left-67[![](img/thesis/interpretability.svg)]
-.pull-right-33[
-- Exact conditions that make target **active**?
-
-- More regulators, more complexity!
-
-- Other link operators?
-
-- Other BRFs?
-
-- Derive **meaning** directly from formula?
-
-- Check **consistency** with regulatory topology
-]
-
-???
-
-- Can I, by looking at the formula, derive a meaningful characterization, one that allows me to compare it with others?
-- Make sense? =&gt; consistency with underlying regulatory topology
 
 ---
 
