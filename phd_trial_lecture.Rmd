@@ -272,7 +272,7 @@ class: center, middle
 &nbsp; &nbsp; .bold[Dataset] .small.purple[Eduati (2017)]
 
 - 14 heterogeneous colon cancer cell lines
-- 14 measured phoshoproteins
+- 14 measured phosphoproteins
 - 43 perturbed conditions
   
 &nbsp; &nbsp; .bold[Observations]
@@ -591,8 +591,6 @@ So this method took not only mutation and gene expression data, but also network
 - Generic immune cells 
 - Other simplifications
 ]
-
-
 
 .small.purple[Ghaffarizadeh (2018)]
 
