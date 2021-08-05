@@ -5,6 +5,7 @@ Various presentations I have given, built using the [xaringan](https://github.co
 ## 2021
 
 - [PhD Thesis Presentation (10 Aug, Trondheim)](https://bblodfon.github.io/r-pres/phd_thesis.html)
+- [PhD Trial Lecture (10 Aug, Trondheim)](https://bblodfon.github.io/r-pres/phd_trial_lecture.html)
 
 ## 2020
 
