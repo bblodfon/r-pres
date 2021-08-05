@@ -33,7 +33,11 @@ class: middle
 
 ----
 
-# 2) .large.blue[Thesis Papers .small[(Motivation + Results)]]
+# 2) .large.blue[Thesis Papers]
+
+----
+
+# 3) .large.blue[Take-home messages]
 
 ---
 class: center, middle
@@ -53,6 +57,7 @@ class: center, middle
 ???
 
 - 56 million people died in 2017
+- In Norway, **cancer is first** (2021)!
 - Every sixth death was due to **cancer** (globally).
 - The **Global Burden of Disease** is a major global study on the causes of death and disease published in the medical journal *The Lancet*
 
@@ -68,7 +73,7 @@ class: center, middle
 <br/>&nbsp;<br/>
 <br/>&nbsp;<br/>
 <br/>&nbsp;<br/>
-<br/>&nbsp;<br/>
+
 .small[
 .purple[Dawkins (1976). The Selfish Gene]
 
@@ -106,8 +111,6 @@ class: center, middle
 .pull-left[![](img/thesis/hallmarks.jpeg)
 <br><br>
 .purple.small[Hanahan & Weinberg (2011). Hallmarks of cancer: the next generation]
-<br>
-.purple.small[Yaffe (2019). Why geneticists stole cancer research even though cancer is primarily a signaling disease]
 ]
 
 .pull-right[![](img/thesis/cell_circuit.jpg)
@@ -143,13 +146,19 @@ class: center, middle
 - Mention that due to **patient population variation**, there is a large number of non-responders to drugs, that brings up the question: "How many people should be tested to see a particular response in the clinic?"
 
 ---
-exclude: true
 
-# Modeling
+# General Thesis Motivation
 
-- Testing hypotheses *in silico* and generate new ones for experimental validation
-- Generating experimentally testable biological hypotheses
-- Make predictions about things that are not tested yet experimentally
+.center[![:scale 80%](img/thesis/curation.svg)]
+
+???
+Logical Model of gastric cancer cells
+- **Biocurators**: make knowledge *computable* and easily reusable, extract the Causal statements
+- Molecular Interaction standards
+- Curation tools
+- Need for uniform access to **Controlled Vocabularies (CVs)** and **ontologies**
+- Data formats
+- .green[Causal interactions are the] **building blocks** for the Prior Knowledge Networks that are used to construct logical models, which we are going to discuss later!
 
 ---
 
@@ -158,22 +167,9 @@ class: center, middle
 # .larger.blue[Paper 1]
 ----
 # UniBioDicts: Unified access to Biological Dictionaries
+
+.small[Zobolas, J., Touré, V., Kuiper, M., & Vercruysse, S. (2020). Bioinformatics, 37(1), 143–144. https://doi.org/10.1093/bioinformatics/btaa1065]
 ----
-
----
-
-# Motivation
-
-.center[![:scale 80%](img/thesis/curation.svg)]
-
-???
-
-- **Biocurators**: make knowledge *computable* and easily reusable, extract the Causal statements
-- Molecular Interaction standards
-- Curation tools
-- Need for uniform access to **Controlled Vocabularies (CVs)** and **ontologies**
-- Data formats
-- .green[Causal interactions are the] **building blocks** for the Prior Knowledge Networks that are used to construct logical models, which we are going to discuss later!
 
 ---
 
@@ -270,6 +266,8 @@ class: center, middle
 # .larger.blue[Paper 2]
 ----
 # Linking PubDictionaries with UniBioDicts to support Community Curation
+
+.small[Zobolas, J., Kim, J.-D., Kuiper, M., & Vercruysse, S. (2020). BioHackrXiv. https://doi.org/10.37044/osf.io/gzfa8]
 ----
 
 ---
@@ -317,6 +315,7 @@ class: center, middle
 ----
 # Fine tuning a logical model of cancer cells to predict drug synergies: combining manual curation and automated parameterization
 
+.small[Flobak, Å., Zobolas, J., Vazquez, M., Steigedal, T. S., Thommesen, L., Grislingås, A., Niederdorfer B., Folkesson E. & Kuiper, M. (2021). https://doi.org/10.1101/2021.06.28.450165]
 ----
 
 ---
@@ -333,15 +332,13 @@ class: center, middle
 
 ---
 
-# Logical Model of gastric cancer cells
+# Logical model of gastric cancer cells (AGS)
 
 .center[![:scale 90%](img/thesis/cascade_1.0.svg)]
 
-- CASCADE 1.0 topology (75 nodes, 149 edges)
-- **Manually optimized rules**
-- **AGS** cell line
-- 4 **experimentally confirmed synergies** out of 21 drug combinations
-- Model identified *synergistic* effect of joint `Pi3k` and `Tak1` inhibition
+- CASCADE 1.0 topology + **manually optimized rules**
+- **Experiments**: 4 synergies out of 21
+- **Model**: 5 synergies, including novel `Pi3k` and `Tak1` joint inhibition
 
 .small.purple[Flobak (2015). Discovery of drug synergies in gastric cancer cells predicted by logical modeling]
 
@@ -370,53 +367,50 @@ Genetic algorithm for creation of logical model ensembles: https://github.com/dr
 
 ---
 
-# Prediction performance: CASCADE 1.0
+## Synergy prediction performance .smaller[https://github.com/druglogics/drabme `r shiny::icon("github")`]
 
-.pull-left[![:scale 100%](img/thesis/roc_cascade1.png)]
-.pull-right[![:scale 100%](img/thesis/pr_cascade1.png)]
+.pull-left[
+![](img/thesis/pr_cascade1_2.png)
+.little[
+Automated pipeline **performs on par** with curated model from .purple[Flobak (2015)]
+  - **Top 6 predictions** include the 4 validated synergies
+]]
 
-- Automated pipeline performs on par with curated rules .purple[Flobak (2015)]
-- **Top 6 predictions** include the 4 validated synergies
-- **Calibrated better than Random** (proliferation profile)
+.pull-right[
+![](img/thesis/pr_cascade2_2.png)
 
-Synergy assessment analysis module: https://github.com/druglogics/drabme `r shiny::icon("github")`
-
-???
-
-- **Explain differences** between ROC (validation) vs PR (prevalence/balance of data)
-  - Validation means better than random classifier (ROC-AUC=0.5)
-  - PR more proper for imbalanced data .purple[Saito (2015)]
-- Normalization of synergy scores to topology predictions (Random)
-- **Random => random yet proliferative** training data profile
-- We could in principle have reduced our full drug screen to only test 29% percent of the
-combinations (6 out of 21), had we guided our experiments by model simulations
-- Chosen a synergy threshold of 0, 15 of 21 are synergistic!
-
----
-
-# Prediction performance: CASCADE 2.0
-
-.pull-left[![](img/thesis/roc_cascade2.png)]
-.pull-right[![](img/thesis/pr_cascade2.png)]
-
-- Larger topology (144 nodes, 367 edges)
-- Larger screen (153 drug combinations) from .purple[Flobak (2019)]
-- 6 **experimentally confirmed** synergies for AGS cells
-- **Reduce full drug screen** to .green[24%] (36 combos, .red[miss 2 observed synergies])
-- Importance of **normalization to topology predictions**
+.little[
+**Reduce drug screen** to .green[24%]
+  - 36 out of 153 combos
+  - .red[Miss 2 observed synergies]
+  
+.small.purple[Flobak (2019). A high-throughput drug combination screen of targeted small molecule inhibitors in cancer cell lines]
+]]
 
 ???
 
-- The 6 synergies were identified computationally and via curation assessment from the growth curves of the Flobak (2019) dataset for all the cell lines
+- CASCADE 1.0 and .purple[Flobak (2015)] dataset: **top 6 predictions** include the 4 validated synergies
+- CASCADE 2.0: larger topology (144 nodes, 367 edges)
+- Right figure tested on a larger screen (153 drug combinations) from .purple[Flobak (2019)]
+  - 6 **experimentally confirmed** synergies for AGS cells
+- Imbalanced dataset: so PR more proper .purple[Saito (2015)]
+  - **Explain differences** between ROC (validation) vs PR (prevalence/balance of data)
+- Mention importance of **normalization to topology predictions** (nah...)
+  - **Random => random yet proliferative** training data profiles
 
 ---
 
 ## Impact of data quality on model performance
 
-![:scale 70%](img/thesis/data_quality.png)
+![:scale 75%](img/thesis/data_quality.png)
+.large[
+- .green[**Performance correlates with data quality**]
+- **Topology** carries information for synergy prediction
+]
+
+???
 
 - Each model ensemble is trained to **partially incorrect data**
-- .green[**Data quality affects performance**]
 - Partially-fitted models predict **better than random** (PR AUC = 0.04)
   - **Topology** carries information for synergy prediction
 
@@ -435,7 +429,7 @@ combinations (6 out of 21), had we guided our experiments by model simulations
   - Swap source
   - Swap target
   - Sign inversion
-  - All the above
+  - All the above!
 - .green[**Small randomization decreases prediction performance**]
 ]
 
@@ -535,6 +529,7 @@ class: center, middle
 ----
 # emba: R package for analysis and visualization of biomarkers in Boolean model ensembles
 
+.small[Zobolas, J., Kuiper, M., & Flobak, Å. (2020). Journal of Open Source Software, 5(53), 2583. https://doi.org/10.21105/joss.02583]
 ----
 
 ---
@@ -590,17 +585,20 @@ class: center, middle
 ----
 # Boolean function metrics can assist modelers to check and choose logical rules
 
+.small[Zobolas, J., Monteiro, P. T., Kuiper, M., & Flobak, Å. (2021). arXiv. http://arxiv.org/abs/2104.01279]
 ----
 
 ---
 
 # Motivation .small.green[(with an example!)]
 
-.pull-left-58[![](img/thesis/interpretability.svg)
+.pull-left-67[
+![](img/thesis/interpretability.svg)
 
-
+.small.purple[Mendoza (2006). A method for the generation of standardized qualitative dynamical systems of regulatory networks] .small[(AND-NOT formula)]
 ]
-.pull-right-42[
+
+.pull-right-33[
 - **Interpretability** issues (semantics)
 
 - **Consistency** with regulatory topology?
@@ -641,7 +639,7 @@ class: center, middle
   - $m \ge 1$ .green[activators] $x=\{x_i\}_{i=1}^{m}$
   - $k \ge 1$ .red[inhibitors] $y=\{y_j\}_{j=1}^{k}$
 
-  1. $f_{AND-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \land \lnot \left(\bigvee_{j=1}^{k} y_j\right)$, from .purple[Mendoza (2006)]
+  1. $f_{AND-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \land \lnot \left(\bigvee_{j=1}^{k} y_j\right)$
 
   2. $f_{OR-NOT}(x,y) = \left(\bigvee_{i=1}^{m} x_i\right) \lor \lnot \left(\bigvee_{j=1}^{k} y_j\right)$
 
@@ -655,13 +653,12 @@ class: center, middle
 
 ---
 
-# DNF and Consistency metric
+## Disjunctive Normal Form and Consistency metric
 
-- **D**isjunctive **N**ormal **F**orm (**DNF**) links **semantics** with **mathematics**!
-- .purple[Cury (2019)] - **Consistent** BRFs:
-  1. Activators $\neq$ Inhibitors (no dual regulations, *monotone* BRFs)
-  2. All regulators are *essential*
-  3. **Unique Complete DNF** (CDNF)
+1. DNF links **semantics** with **mathematics**!
+2. Consistent Boolean regulatory functions
+  - 3 principles .small.purple[Cury (2019). Partial Order on the set of Boolean Regulatory Functions.]
+  - **Unique Complete DNF** (CDNF)
       - <span style="color:green">Activators</span> are the *positive* literals $(x)$
       - <span style="color:red">Inhibitors</span> are the *negative* literals $(\lnot y)$
 
@@ -677,12 +674,16 @@ class: center, middle
 
 ???
 
+- Consistency principles
+  1. Activators $\neq$ Inhibitors (no dual regulations, *monotone* BRFs)
+  2. All regulators are *essential*
+  3. 
 - **DNF**: biological characterization can be directly derived from the formula itself
-- **Results**: Only AND-NOT,OR-NOT,Pairs,Threshold function are consistent with the regulatory topology
+- **Results**: Only AND-NOT,OR-NOT,Pairs,Threshold function are consistent with the regulatory topology!
 
 ---
 
-# Truth Density: expected function output
+## Truth Density metric: expected function output
 
 .little[
 |<span class="math inline"><em>a</em></span>|<span class="math inline"><em>b</em></span>|<span class="math inline"><em>c</em></span>|<span class="math inline"><em>f</em><sub>1</sub> = (<em>a</em> ∧ ¬ <em>c</em>) ∨ (<em>b</em> ∧ ¬ <em>c</em>)</span>|<span class="math inline"><em>f</em><sub>2</sub> = <em>a</em> ∨ (¬ <em>b</em> ∧ ¬ <em>c</em>)</span>|<span class="math inline"><em>f</em><sub>3</sub> = 1</span>|
@@ -697,11 +698,12 @@ class: center, middle
 |1|1|1|0|.bold.green[1]|.bold.green[1]|
 ]
 
-- $TD = \{Prob: f = 1\}$
+- $TD = \{Prob: f = 1\} \in [0,1]$
 - $TD_{f_1}=3/8=0.375$, $TD_{f_2}=5/8=0.625$ and $TD_{f_3}=8/8=1$
-- $TD \in [0,1]$
-- $TD_f \rightarrow 1$ or $TD_f \rightarrow 0$ => **biased**
-- $TD_f \rightarrow 1/2$ => **balanced**
+
+`r shiny::icon("long-arrow-alt-right")` **Biased function**: $TD_f \rightarrow 1$ or $TD_f \rightarrow 0$
+
+`r shiny::icon("long-arrow-alt-right")` **Balanced function**: $TD_f \rightarrow 1/2$
 
 ???
 
@@ -710,7 +712,7 @@ class: center, middle
 - Limits on definitions of biased and balanced functions are used because we usually refer to the **change of a variable, like number of regulators**
 
 ---
-
+exclude:true
 ## Truth density formulas and Asymptotic study
 
 .pull-left[
@@ -754,26 +756,36 @@ $TD_{thres} \rightarrow 1/2$
 
 ---
 
-# Validation and Comparison (1)
+# Truth Density results and validation
 
-![](img/thesis/td-link-operator.svg)
+.pull-left[![](img/thesis/td-link-operator.svg)]
+.pull-right[![](img/thesis/td-thres.svg)]
+
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+
+.bold[Expected behavior for large number of regulators:]
+
+`r shiny::icon("long-arrow-alt-right")` $TD_{AND-NOT} = \frac{1}{2^k}-\frac{1}{2^n} \sim \frac{1}{2^k} \xrightarrow{k \rightarrow \infty} 0$ (depends on #.red[inhibitors])
+
+`r shiny::icon("long-arrow-alt-right")` $TD_{OR-NOT} = 1 - \frac{1}{2^m} + \frac{1}{2^n} \sim 1-\frac{1}{2^m} \xrightarrow{m \rightarrow \infty} 1$ (depends on #.green[activators])
+
+`r shiny::icon("long-arrow-alt-right")` .blue[Activator-to-inhibitor ratio] is important!
 
 ???
 
-- Explain how to read the graph
+- Explain how to read the figures!
+  - For each specific number of regulators, every possible combination of at least one activator and one inhibitor that add up to that number, results in a different truth table output with its corresponding truth density value.
 - More **bias** with increasing numbers of regulators
 - **7-10** regulators: that's where biased behavior starts
-- For each specific number of regulators, every possible combination of at least one activator and one inhibitor that add up to that number, results in a different truth table output with its corresponding truth density value.
-
----
-
-# Validation and Comparison (2)
-
-![](img/thesis/td-thres.svg)
-
-- More **balanced** behavior, following the activator-to-inhibitor ratio
-- A larger spectrum of possible truth density values
-
+- Threshold function behavior:
+  - More **balanced** behavior, following the activator-to-inhibitor ratio
+  - A larger spectrum of possible truth density values
+- Connect with next slide: we wanted to test the bias of these functions
 ---
 
 # abmlog: .small.green[From Topology to AND/OR-NOT Boolean models]
@@ -792,26 +804,30 @@ https://github.com/druglogics/abmlog `r shiny::icon("github")`
 
 ---
 
-# Signs of bias in a cancer signaling network
+## Link operator function bias in biological networks
 
-<br>
+.pull-left[
+### CASCADE 1.0
 
-.pull-left-67[![](img/thesis/ss-lo-agreement-per-node.svg)]
-.pull-right-33[
-**Analysis**
-- Use `abmlog` on CASCADE topology
+![](img/thesis/ss-lo-agreement-per-node.svg)
 
-- Keep single stable state models
+.large[
+- Higher than random agreement
+- .little[AND-NOT => 0, OR-NOT => 1]
+]]
 
-- One Contingency Table per node
+.pull-right[
+### Scale-free networks
 
-**Results**
-- Agreement higher than random $(50\%)$
+![](img/thesis/agree-stats-gamma2.svg)
 
-- Variability: **need for more regulators**!
-]
+.large[
+- Increasing agreement (.red[bias]) for #regulators >7-10
+]]
 
 ???
+
+### CASCADE 1.0
 
 - Used `abmlog` on CASCADE 1.0 (77 nodes, 149 interactions, 23 link operator nodes)
 - Produced $2^23$ boolean models
@@ -820,6 +836,13 @@ https://github.com/druglogics/abmlog `r shiny::icon("github")`
 - **Higher than random probability** that the assignment of the "AND-NOT" (resp. "OR-NOT") link operator formula in the Boolean equations will result in the inhibition (resp. activation) of the target nodes.
 - **Variable results** => need for more regulators!
 
+### Hub node bias in scale-free networks
+
+- Scale-free networks as a proxy to biological networks (with some supported evidence)
+- $n=50$ nodes per scale-free network
+- $\gamma$ is the power-law exponent: Comparing the scale-free networks generated with two gammas we observe that the $\gamma = 2$ have **more link operator nodes** and **higher degree hubs** than networks with $\gamma = 2.5$
+- In-degrees are drawn from Riemann Zeta distribution based on the work from .purple[Aldana (2003). Boolean dynamics of networks with scale-free topology]
+
 ---
 
 # Bias guides model parameterization
@@ -827,7 +850,7 @@ https://github.com/druglogics/abmlog `r shiny::icon("github")`
 .center[![:scale 66%](img/thesis/ss-lo-agreement-per-node-split.svg)]
 
 - High correlation $(\rho_{and-not} = -0.74$, $\rho_{or-not} = 0.85)$
-- *A priori* choose parameterization to match observations
+- *A priori* .green[choose parameterization to match observations]
 - `LRP_f` $(m=4,k=1)$: $TD_{AND−NOT}=0.47$, $TD_{OR−NOT}=0.97$
 - `TSC_f` $(m=1,k=4)$: $TD_{AND−NOT}=0.03$, $TD_{OR−NOT}=0.53$
 
@@ -843,41 +866,16 @@ https://github.com/druglogics/abmlog `r shiny::icon("github")`
 Also: $TD_{AND−NOT}=0.03=1/32=1/(2^5)$
 
 ---
+class: center, middle
 
-# Hub node bias in scale-free networks
-
-.pull-left-58[
-<br>
-![](img/thesis/agree-stats-gamma2.svg)
+# .larger.blue[Take-home messages]
+----
+.pull-left[
+### Curation of prior knowledge
+### Topology drives predictions
+### Mathematics as a valuable tool for modeling
 ]
-.pull-right-42[
-**Analysis**
-- Create many scale-free topologies $(\gamma = 2,2.5)$ <br>.small.purple[Aldana (2003)]
-- Use `abmlog` on **each** topology
-- Keep **all stable attractors**
-- Compare $\gamma = 2$ vs $\gamma = 2.5$
-  - More link-operator nodes
-  - Higher maximum degree
-
-**Results**
-- Increasing agreement (.red[bias]) for #regulators $>7-10$
-- AND-NOT => $0$, OR-NOT => $1$
-]
-
-???
-
-- Scale-free networks as a proxy to biological networks (with some supported evidence)
-- $n=50$ nodes per scale-free network
-- $\gamma$ is the power-law exponent: Comparing the scale-free networks generated with two gammas we observe that the $\gamma = 2$ have **more link operator nodes** and **higher degree hubs** than networks with $\gamma = 2.5$
-- In-degrees are drawn from Riemann Zeta distribution based on the work from .purple[Aldana (2003). Boolean dynamics of networks with scale-free topology]
-
----
-exclude:true
-
-# Other metrics...
-
-- Sensitivity .purple[Shmulevich (2004)]
-- Complexity .purple[Gherardi (2016)]
+.pull-right[![](img/thesis/curation.svg)]
 
 ---
 
