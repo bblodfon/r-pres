@@ -64,12 +64,22 @@ class: center, middle
 
 ## Why study cancer?
 
-- **2nd cause of death worldwide** .small.purple[Ritchie &amp; Roser (2018)]
-  - Problem exacerbates due to aging and population growth
-- Curing every cancer type is impossible
+.red[2nd cause of death] worldwide .small.purple[Ritchie &amp; Roser (2018)]
 
 ## Why is cancer challenging?
 
+![:scale 85%](img/trial-lecture/cancer_challenges.svg)
+
+???
+
+### Why study cancer?
+
+- Cancer problem exacerbates due to aging and population growth
+- Curing every cancer type is impossible
+
+### Cancer is challenging
+
+- The cancer hallmarks .purple[Hanahan &amp; Weinberg (2011)] as a guide to understand the complex processes that drive cancer
 - Research findings are **not translational**
   - *In-vitro* and *in-vivo* approaches are .red[not effective] in the clinic
   - .red[&lt; 4% of drugs succeed] in clinical trials .small.purple[Wong (2019)]
@@ -83,10 +93,6 @@ class: center, middle
 - **Lack of biomarkers** that correlate with patient response
   - Need strategies for .green[patient stratification]
 - **Lack or constrained access** to experimental and clinical data
-
-???
-
-- The cancer hallmarks .purple[Hanahan &amp; Weinberg (2011)] as a guide to understand the complex processes that drive cancer
 
 ---
 
@@ -137,16 +143,7 @@ class: center, middle
 - Deliver robust and reproducible results
   - **VVUQ**: verification, validation (match observations - multiomics/patient data) and uncertainty quantification .small.purple[Groen (2021)]
   - **Patient-specific** results!
-- **Data Integration and AI** =&gt; mention the promise of **IBM’s Watson**: applications to radiology and
-diagnoses aided by wearable technology amongst
-many others. Each of these examples are exciting, but
-the full promise of personalized medicine remains
-unrealized. While the amount and types of clinical data
-being generated for each cancer patient is increasing
-dramatically, there are no holistic approaches or
-algorithms available that can incorporate all this data
-to identify the best treatment for each individual
-patient.
+- **Data Integration and AI** =&gt; mention the promise of **IBM’s Watson**: applications to radiology and diagnoses aided by wearable technology amongst many others. Each of these examples are exciting, but **the full promise of personalized medicine remains unrealized**. While the amount and types of clinical data being generated for each cancer patient is increasing dramatically, there are no holistic approaches or algorithms available that can incorporate all this data to identify the best treatment for each individual patient.
 
 ---
 
@@ -157,9 +154,10 @@ patient.
 ]
 
 .pull-right-42[
-### .center[What to consider?]
+### &amp;nbsp; &amp;nbsp; Aspects to consider
 
-- Discrete to continuous state and treatment of time
+- System state and treatment of time
+
 - Spatial information
 
 - Stochasticity of reactions
@@ -177,31 +175,6 @@ patient.
 - Moving towards **multiscale hybrid modeling**
 
 ???
-
-### Granularity in species' states and treatment of time (**non-spatial**)
-
-.small[
-1. **Logical modeling**
-  - .purple[Kauffman (1969)] - seminal paper in the field
-  - .red[Discrete time steps] and active/inactive outputs (e.g. Boolean 0/1) - can also be multi-valued
-  - .green[Easy rule formulation, high interpretability, less data are needed for training]. 
-  - .red[Discretization of continuous data to Boolean is challenging].
-  - .green[Attractors are **biologically meaningful**]:
-      - Cell fates (phenotypes)
-      - Stable patterns of cell activity (e.g. cell cycle or T cell differentiation)
-  - **GINsim**, and other tools, see **CoLoMoTo** .purple[Naldi (2018)] paper
-2. **Ordinary Differential Equations (ODEs)**
-  - Time is an independent, continuous variable 
-  - Species concentrations are the unknowns
-  - .red[Need for data (kinetic rates, concentration parameters)]
-  - Software **Tellurium** (.purple[Choi (2018)]): ODE solving, parameter estimation, visualization
-3. **Mixed Discrete-Continuous (hybrid) modeling**
-  - .green[Pro: Simplicity of logical modeling without the need to specify kinetic rates, but still output is continuous]
-  - Example 1: Logic-ODEs .purple[Wittmann (2009)]
-  - Example 2: Fuzzy Modeling .purple[Morris (2016)]
-  - Example 3: Stochastic Boolean Modeling (MaBoSS 2.0 .purple[Stoll (2017)])
-  - **CellNOpt** .purple[Gjerga (2020)]: software that offers a lot of the above example frameworks + training and optimizing models to perturbation data
-]
 
 ### PDEs and Stochastic models
 
@@ -228,7 +201,6 @@ patient.
 
 ### White-box vs Black-box models
 .small[
-- .red[Accuracy vs. Interpretability trade-off], see .purple[Breiman (2001). Statistical Modeling: The Two Cultures]
 - White-box: **mechanistic/hypothesis-driven**, use knowledge
   - ODEs, Boolean modeling, simple statistical models (linear regression, decision trees)
 - Black-box: **empirical/data-driven**, .red[use A LOT of data]
@@ -263,16 +235,7 @@ class: center, middle
 
 # .larger.blue[Computational frameworks in cancer]
 ----
-## Examples from current research
-
-&lt;img src="https://media.giphy.com/media/d7SnByEMkrdeoVQ2lT/giphy.gif"&gt;&lt;/src&gt;
-
-.small.purple[Game of Life, John Conway]
-
-???
-
-- Game of Life is a famous **Cellular Automaton (CA)**, demonstrating **how complexity can arise from simple rules**
-- **Epilog** .purple[Varela (2018)]: software that defines an CA in 2D to represent a multi-cellular environment using a logical model framework for describing cell behavior
+## With some examples!
 
 ---
 
@@ -283,7 +246,7 @@ class: center, middle
 &amp;nbsp; &amp;nbsp; .bold[Dataset] .small.purple[Eduati (2017)]
 
 - 14 heterogeneous colon cancer cell lines
-- 14 measured phoshoproteins
+- 14 measured phosphoproteins
 - 43 perturbed conditions
   
 &amp;nbsp; &amp;nbsp; .bold[Observations]
@@ -309,6 +272,99 @@ class: center, middle
 - **Dataset provides information that is not contained in genomic data** 
   - Use of modeling to get insights on the network/signaling changes that lead to these heterogeneous responses
 
+![:scale 95%](img/trial-lecture/discrete_vs_continuous.svg)
+
+---
+
+![:scale 95%](img/trial-lecture/discrete_vs_continuous.svg)
+
+???
+
+Previous slide: we need modeling. Let's start with some basics first!
+
+- .green[Attractors are **biologically meaningful**]:
+  - Cell fates (phenotypes)
+  - Stable patterns of cell activity (e.g. cell cycle or T cell differentiation)
+
+---
+
+# Recap: Non-spatial modeling frameworks
+
+.pull-left[
+### Logical Modeling .small.purple[Kauffman (1969)]
+
+- Active/Inactive states (0/1)
+- .red[Lack of representation of time]
+- High interpretability
+- Less data needed for training and optimization
+- .green[Attractors are biologically meaningful]
+- Derivation of insights is challenging
+
+&lt;br&gt;
+.bold[Software]
+
+.small[
+.purple[Naldi (2018). Logical Modeling and Analysis of Cellular Regulatory Networks With GINsim 3.0]
+
+.purple[Naldi (2018). The CoLoMoTo Interactive Notebook: Accessible and Reproducible Computational Analyses for Qualitative Biological Networks]
+]]
+
+.pull-right[
+### ODE Modeling
+
+- Time is an independent, continuous variable
+- Species concentrations are the unknowns
+- .red[Need for kinetic data] (rates, equilibrium constants)
+  - More experiments
+  - Parameter estimation
+- .green[High explanatory capacity/closer to reality]
+
+.bold[Software]
+
+.small[
+.purple[Hoops (2006). COPASI: a COmplex PAthway SImulator]
+
+.purple[Choi (2018). Tellurium: An extensible python-based modeling environment for systems and synthetic biology]
+]]
+
+---
+
+## Mixed Discrete-Continuous (hybrid) modeling
+
+.pull-left-58[
+### Logical rules to ODEs .small.purple[Wittmann (2009)]
+
+`\(\frac{dx_i}{dt} = \tau_i(B_i(f(x_{1,i}),...,f(x_{N,i})) - x_i)\)`
+
+![:scale 60%](img/trial-lecture/eduati_parameters.jpg)]
+
+.pull-right-42[
+
+### .green[Assets]
+
+.little[
+- Minimum model complexity
+- Interpretable parameters
+- Capture signal strength and time dynamics
+- No need for kinetic data
+]
+
+### Other mixed formalisms
+
+.little[
+- Fuzzy logic modeling .small.purple[Morris (2016)]
+- Stochastic Boolean modeling (MaBoSS 2.0) .small.purple[Stoll (2017)]
+]]
+
+&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
+
+.small.purple[Gjerga (2020). Converting networks to predictive logic models from perturbation signalling data with CellNOpt]
+
+???
+
+- Each node is associated with a speed/responsiveness parameter `\(\tau\)`
+- Each edge/interaction is associated with a strength parameter `\(k\)`
+
 ---
 
 ## .little[Cell-specificity achieved with logic-based ODE modeling]
@@ -316,8 +372,12 @@ class: center, middle
 .pull-left-58[
 ![](img/trial-lecture/eduati_model_heterogeneity.jpg)
 
-.red.bold[Drawbacks]
+.small.purple[Eduati (2017). Drug Resistance Mechanisms in Colorectal Cancer Dissected with Cell Type-Specific Dynamic Logic Models]]
 
+.pull-right-42[
+&amp;nbsp; &amp;nbsp; .red.bold[Drawbacks]
+
+.little[
 - Manually curated PKN .small.purple[Türei (2016)]
 - Parameter Optimization
 - Regularization
@@ -325,17 +385,10 @@ class: center, middle
   - Keep the model sparse
 ]
 
-.pull-right-33[
-### Logical rules to ODEs .small.purple[Wittmann (2009)]
-
-![:scale 70%](img/trial-lecture/eduati_parameters.jpg)
-
-.green.bold[Assets]
+&amp;nbsp; &amp;nbsp; .green.bold[Assets]
 
 .little[
-- Minimum model complexity
-- Interpretable parameters
-- Continuous signal and time dynamics
+- Cell line heterogeneity
 ]]
 
 ???
@@ -345,16 +398,6 @@ class: center, middle
 - Manually curated
 - `OmniPath` .purple[Türei (2016)] (49 nodes, 86 edges)
 - Compress PKN to reduce model complexity without affecting logic consistency
-
-### Mixed Discrete-Continuous Modeling Framework
-
-- ODEs to capture the .green[continuous aspects] of signal strength and time dynamics
-- Logic formalism to .green[keep the model simple and with easily interpretable parameters]
-- **Translate Logical rules to ODEs** using .purple[Wittmann (2009)], implemented in the `CNORode` R package, part of the `CellNOpt` family of tools .purple[Gjerga (2020)]
-  - Each node is associated with a speed/responsiveness parameter `\(\tau\)`
-  - Each edge/interaction is associated with a strength parameter `\(k\)`
-- .red[Parameter optimization] to create cell-specific models
-  - **Regularization** to fit the training perturbation data which results in network sparsity (fewer nodes and edges)
   
 ### Heterogeneity of cell-specific models
 
@@ -432,16 +475,15 @@ class: center, middle
 
 ---
 
-## Mechanistic models vs standard ML methods
+### Mechanistic models vs standard Machine Learning methods &lt;br&gt; .small.purple[Fröhlich (2018)]
 
 .pull-left-67[
 .bold[Performance comparison]
 
 ![:scale 72%](img/trial-lecture/frolich_model_validation.jpg)
-.large[
+
 - .bold.green[Similar predictive power]
 - No prior knowledge and parameterization required for ML methods
-]
 ]
 
 .pull-right-33[
@@ -478,15 +520,14 @@ So this method took not only mutation and gene expression data, but also network
 
 - Parameters .green[link to cancer biology]
 - Elucidate drug's MoA
-- Predict combination treatment from single-drug data
 
 ### &amp;nbsp; &amp;nbsp; Statistical methods
 
 - .red[No mechanistic insights]
 - Do not exploit prior knowledge
-- Cannot predict latent variables (*)
 
-&amp;nbsp; &amp;nbsp;.small[(*) not experimentally measured]
+&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
+.small.purple[Fröhlich (2018). Efficient Parameter Estimation Enables the Prediction of Drug Response Using a Mechanistic Pan-Cancer Pathway Model]
 ]
 
 ???
@@ -507,9 +548,32 @@ So this method took not only mutation and gene expression data, but also network
   - MAPK-PI3K signaling responsible for **heterogeneity in drug resistance**
   - .green[Information about signal flow] (.red[not possible with ML models])
 
+---
+
+## Accuracy vs Interpretability trade-off
+
+.pull-left-67[
+&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
+![](img/trial-lecture/tradeoff.svg)
+]
+.pull-right-33[
+### Drug combination response prediction
+
+![](img/trial-lecture/comboFM_dose_response.png)
+
+ML methods .red[cannot predict latent variables]!
+
+.small.purple[Julkunen (2020). Leveraging multi-way interactions for systematic prediction of pre-clinical drug combination effects]
+]
+
+???
+
+- To link to the VNN and DrugCell
+
 ### Predict drug combination response
 
 - ML methods cannot predict drug combination data without being given drug combination data for training!
+- **Latent means not experimentally measured**
 - Another example of a very accurate drug combination prediction algorithm using tensor factorization method (order 5) that could outperform RFs is **comboFM** from .purple[Julkunen (2020)]. It predicts:
   - Missing entries in dose-response matrices
   - Dose-response of same two drugs, in a different cell line (tissue)
@@ -520,27 +584,39 @@ So this method took not only mutation and gene expression data, but also network
 
 # Deep Neural Networks
 
-- Visual Neural Network model: DrugCell paper (white-box ML)s
+- Visual Neural Network model: DrugCell paper (white-box ML)
 
 ---
 
-## .little[PhysiCell: 3D growth simulation of a heterogeneous tumor]
+# Network Modeling
 
-.pull-left-58[
-&lt;iframe width="95%" height="315" src="https://www.youtube.com/embed/16EyDBf0l_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+- Jearger 2017 paper (predict synergies only with topology)
 
-.blue.bold[Spatiotemporal dynamics]
+---
 
-.little[
-- Loss of tumor symmetry and homogeneity
-- Cell mechanics drive proliferation
-- .red[2 weeks] worth of calculations!
+## Cellular Automata: emergent complexity
 
-.purple[Ghaffarizadeh (2018)]
+![](img/trial-lecture/ca.svg)
+
+.pull-left[
+&lt;img src="https://media.giphy.com/media/d7SnByEMkrdeoVQ2lT/giphy.gif"&gt;&lt;/src&gt;
+
+.small.purple[Game of Life, John Conway]
 ]
+
+.pull-right[
+.small.purple[Varela (2018). Epilog: A software for the logical modeling of epithelial dynamics]
+
+  - Multi-cellular modeling
+  - Logical model framework for describing cell behavior
+  
 ]
 
-.pull-right-42[
+---
+
+## .little[Agent-based modeling: tumor growth]
+
+.pull-left[
 .large.bold[Agent-Based Modeling]
 
 .green.bold[Assets]
@@ -557,6 +633,19 @@ So this method took not only mutation and gene expression data, but also network
 - Lack of mechanistic interpretation
 - Computationally intensive
 ]
+
+.pull-right[
+&lt;iframe width="100%" height="300" src="https://www.youtube.com/embed/16EyDBf0l_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+.blue.bold[Spatiotemporal dynamics]
+
+.little[
+- Loss of tumor symmetry and homogeneity
+- Cell mechanics drive proliferation
+- .red[2 weeks] worth of calculations!
+]]
+
+.small.purple[Ghaffarizadeh (2018). PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems]
 
 ???
 
@@ -585,7 +674,7 @@ So this method took not only mutation and gene expression data, but also network
 
 ---
 
-## PhysiCell: Simulation of cancer immunotherapy
+# Simulation of cancer immunotherapy
 
 .pull-left-67[
 ![](img/trial-lecture/physicell_cancer_immunology.png)
@@ -602,8 +691,6 @@ So this method took not only mutation and gene expression data, but also network
 - Generic immune cells 
 - Other simplifications
 ]
-
-
 
 .small.purple[Ghaffarizadeh (2018)]
 
@@ -630,13 +717,7 @@ In a follow-up study the authors used **HPC architecture workflows and Evolution
 
 - Their results explained the variation in patient response (2-20%).
 .green[The larger the simulated fraction of cancer cells killed, the smaller the viable design space was!]
-- .red[No identification fo molecular mechanisms that lead to cell behaviors and no 3D]
-
----
-
-# Network Modeling
-
-- Jearger 2017 paper (predict synergies only with topology)
+- .red[No identification of molecular mechanisms that lead to cell behaviors and no 3D]
 
 ---
 
@@ -657,6 +738,18 @@ Simple math and analysis ([Roux 2015] Mol. Sys. Biology paper: Fractional killin
 
 ---
 
+# Take-home messages
+
+Choose appropriate modeling framework based on;
+
+- Size of the model
+- The type of information (data) available
+- The granularity of answers sought from the simulations
+- Knowledge of pros and cons of each framework
+- Area of application
+
+---
+
 # References
 
 .small[
@@ -674,7 +767,12 @@ Simple math and analysis ([Roux 2015] Mol. Sys. Biology paper: Fractional killin
 #### Example Applications
 
 
-#### Others
+#### Software
+
+- Letort (2018)
+- COPASI (Hoops (2006): ODEs and stochastic simulations or hybrids of these
+- Chaste: Cancer, Heart and Soft Tissue Environment Cooper (2020)
+- Virtual Cell Blinov (2017)
 
 ]
     </textarea>
