@@ -41,10 +41,10 @@ class: middle
 # Outline
 
 ## 1) .large.blue[Introduction to Cancer Modeling]
-
 ----
-
 ## 2) .large.blue[Computational Frameworks in practice]
+----
+## 3) .large.blue[Take-home messages]
 
 ???
 
@@ -62,13 +62,15 @@ class: center, middle
 
 ---
 
-## Why study cancer?
+### Why study cancer?
 
-.red[2nd cause of death] worldwide .small.purple[Ritchie &amp; Roser (2018)]
+.red[2nd cause of death] worldwide 
 
-## Why is cancer challenging?
+.small.purple[Ritchie &amp; Roser (2018). Causes of Death. https://ourworldindata.org/causes-of-death]
 
-![:scale 85%](img/trial-lecture/cancer_challenges.svg)
+### Why is cancer challenging?
+
+![:scale 81%](img/trial-lecture/cancer_challenges.svg)
 
 ???
 
@@ -162,9 +164,9 @@ class: center, middle
 
 - Stochasticity of reactions
 
-- Structure vs dynamical
-
 - Black-box vs White-box
+
+- Structure vs dynamical
 
 - Area of application
 ]
@@ -211,7 +213,7 @@ class: center, middle
 ### Area of application
 
 .small[
-- **Tumor growth**, metabolism, vasculature, **microenvironment, immunity**, invasion, **treatment and resistance**, etc.
+- **Tumor growth**, metabolism, vasculature, **microenvironment, immunity**, invasion, metastasis, **treatment and resistance**, etc.
 - Important for considering the modeling framework
 ]
 
@@ -233,9 +235,9 @@ class: center, middle
 ---
 class: center, middle
 
-# .larger.blue[Computational frameworks in cancer]
+# .larger.blue[Mechanistic models]
 ----
-## With some examples!
+## Why do we need them?
 
 ---
 
@@ -272,7 +274,13 @@ class: center, middle
 - **Dataset provides information that is not contained in genomic data** 
   - Use of modeling to get insights on the network/signaling changes that lead to these heterogeneous responses
 
-![:scale 95%](img/trial-lecture/discrete_vs_continuous.svg)
+---
+
+class: center, middle
+
+# .larger.blue[Introduction to modeling formalisms]
+----
+## Boolean vs ODE modeling
 
 ---
 
@@ -288,7 +296,7 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 ---
 
-# Recap: Non-spatial modeling frameworks
+# Summary
 
 .pull-left[
 ### Logical Modeling .small.purple[Kauffman (1969)]
@@ -312,12 +320,14 @@ Previous slide: we need modeling. Let's start with some basics first!
 .pull-right[
 ### ODE Modeling
 
-- Time is an independent, continuous variable
-- Species concentrations are the unknowns
+- Species concentrations
+- Time as continuous variable
+- Lower interpretability
 - .red[Need for kinetic data] (rates, equilibrium constants)
-  - More experiments
+  - Experiments
   - Parameter estimation
-- .green[High explanatory capacity/closer to reality]
+- More realistic dynamics
+- .green[Model parameters directly link to mechanisms]
 
 .bold[Software]
 
@@ -329,10 +339,10 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 ---
 
-## Mixed Discrete-Continuous (hybrid) modeling
+# Mixed Discrete-Continuous modeling
 
 .pull-left-58[
-### Logical rules to ODEs .small.purple[Wittmann (2009)]
+### Logic-based ODE modeling .small.purple[Wittmann (2009)]
 
 `\(\frac{dx_i}{dt} = \tau_i(B_i(f(x_{1,i}),...,f(x_{N,i})) - x_i)\)`
 
@@ -345,7 +355,7 @@ Previous slide: we need modeling. Let's start with some basics first!
 .little[
 - Minimum model complexity
 - Interpretable parameters
-- Capture signal strength and time dynamics
+- Capture signal strength `\((k)\)` and time dynamics `\((\tau)\)`
 - No need for kinetic data
 ]
 
@@ -364,6 +374,14 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 - Each node is associated with a speed/responsiveness parameter `\(\tau\)`
 - Each edge/interaction is associated with a strength parameter `\(k\)`
+
+---
+
+class: center, middle
+
+# .larger.blue[Mechanistic models in practice]
+----
+## Building heterogeneous cancer models for personalized treatment
 
 ---
 
@@ -388,7 +406,9 @@ Previous slide: we need modeling. Let's start with some basics first!
 &amp;nbsp; &amp;nbsp; .green.bold[Assets]
 
 .little[
-- Cell line heterogeneity
+- Cell line heterogeneity &lt;br&gt; 
+`\((\)`different `\(k)\)`
+- **One model per cell line**
 ]]
 
 ???
@@ -439,10 +459,12 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 ---
 
-## A large-scale ODE mechanistic model .small.purple[Fröhlich (2018)]
+## Cell-specificity in a large-scale ODE mechanistic model
 
 .pull-left[
-![:scale 90%](img/trial-lecture/frolich_model.jpg)
+![:scale 85%](img/trial-lecture/frolich_model.jpg)
+
+ .small.purple[Fröhlich (2018)]
 
 - Curated, SBML format, .green[reusable]
 - Model structure .red[uncertainty]
@@ -453,7 +475,7 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 - .red[Parameter estimation] .smaller[(reaction rates)]
 - .green[Scalable] optimization with parallel computing
-- .green[Cell-specificity] (120 cell lines)
+- .bold.green[Cell-specificity] (120 cell lines)
   - Gene expression 
   - Somatic mutations
 ]
@@ -472,6 +494,14 @@ Previous slide: we need modeling. Let's start with some basics first!
 - .red[Parameter estimation and optimization for cell-specificity (reaction rate constants)]: Parameterization of the model to **120 cell lines from CCLE** (using only gene expression and mutation data).
   - .green[Scalable and parallelized optimization] by an order of magnitude: data training with 400 cores **took &lt; 1 week** (compared to years that it would take with other methods)
   - The gradient evaluation time was dramatically reduced by using adjoint sensitivities, exploiting sparsity, and parallelization.
+
+---
+
+class: center, middle
+
+# .larger.blue[Black-box vs White-box models]
+----
+## From performance to interpretability and the need for training data
 
 ---
 
@@ -550,20 +580,22 @@ So this method took not only mutation and gene expression data, but also network
 
 ---
 
-## Accuracy vs Interpretability trade-off
-
-.pull-left-67[
-&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
-![](img/trial-lecture/tradeoff.svg)
-]
-.pull-right-33[
-### Drug combination response prediction
+.pull-left-42[
+### Black-box models need training data!
 
 ![](img/trial-lecture/comboFM_dose_response.png)
 
-ML methods .red[cannot predict latent variables]!
+Predicting response without drug combo data:
+
+- ML methods .red[<i class="fa fa-times" role="presentation" aria-label="times icon"></i>] .small.purple[Julkunen (2020)]
+- ODE models .green[<i class="fa fa-check" role="presentation" aria-label="check icon"></i>] .small.purple[Fröhlich (2018)]
 
 .small.purple[Julkunen (2020). Leveraging multi-way interactions for systematic prediction of pre-clinical drug combination effects]
+]
+
+.pull-right-58[
+### Accuracy vs Interpretability trade-off
+![](img/trial-lecture/tradeoff.svg)
 ]
 
 ???
@@ -582,15 +614,77 @@ ML methods .red[cannot predict latent variables]!
 
 ---
 
-# Deep Neural Networks
+## Interpretable Machine Learning: Grey-box modeling!
 
 - Visual Neural Network model: DrugCell paper (white-box ML)
 
+???
+
+### New trend in AI research
+
+Deep NNs have almost exhausted their utility (recognize objects, self-driving cars, beating world-champion at chess and Go), need for fresh approaches, going back to the roots (studying how babies learn, what is intelligence, how do we achieve generalization - take what you learn and use it in new situations, common sense, etc.). Towards this trend are efforts that make existing methods **more intepretable**, e.g. why Deep NNs make the decisions that they make.
+
 ---
 
-# Network Modeling
+class: center, middle
 
-- Jearger 2017 paper (predict synergies only with topology)
+# .larger.blue[Structural/Network models]
+----
+## Exploiting topological knowledge
+
+---
+
+## Topology-based measure identifies synergistic drug combinations for breast cancer
+
+.pull-left-73[
+<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> .bold.green[Hypothesis]: Cancer exploits cross-talk signaling to develop resistance
+
+![](img/trial-lecture/jaeger_pci.jpg)
+
+.small.purple[Jaeger (2017). Quantification of pathway cross-talk reveals novel synergistic drug combinations for breast cancer]
+]
+
+.pull-right-27[
+
+### &amp;nbsp; &amp;nbsp; Analysis Steps
+
+- Build network
+- Compute PCI (\*)
+- .little[PCI <i class="fa fa-arrow-up" role="presentation" aria-label="arrow-up icon"></i> = synergy <i class="fa fa-arrow-up" role="presentation" aria-label="arrow-up icon"></i>]
+
+![](img/trial-lecture/jaeger_validation.jpg)
+
+&amp;nbsp; &amp;nbsp; .small[(\*) PCI = **P**athway **C**ross- &lt;br&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; talk **I**nhibition]
+]
+
+???
+
+- Pathway information from KEGG database
+- Network efficiency (NE) is defined as the sum of **the inverse length of the shortest path between all network elements**. Topology 100%.
+  - NE ranges between 0 and 1, where **1 indicates that all proteins communicate directly with each other**, that is, a fully connected network!
+- PCI (pathway cross-talk inhibition) is the relative reduction in network efficiency
+- **Right figure**: synergistic combinations (assessed in a previous screen experimentally) have a significantly higher PCI than non-synergistic drug pairs and particularly antagonistic ones
+- .green[In silico analysis identified 390 novel anticancer drug pairs], likely to **diminish pathway cross-talk**
+- .green[Authors experimentally validated selected drug combos, which showed high PCI in the analysis as synergistic]
+
+---
+
+# Model complexity vs usefulness
+
+"all models are wrong; some are useful" [Box (1979)]
+
+Simple math model from [Roux 2015] to explain cell‐to‐cell variability by the overcoming of a caspase activity threshold
+
+???
+
+- .green[Even without topological knowledge, fancy equations, or sophisticated deep neural network architectures, models can be very useful] .purple.small[Fitzgerald (2006)]
+
+---
+class: center, middle
+
+# .larger.blue[Modeling multi-cellular systems]
+----
+## Cellular Automata and Agent-based modeling
 
 ---
 
@@ -598,23 +692,50 @@ ML methods .red[cannot predict latent variables]!
 
 ![](img/trial-lecture/ca.svg)
 
-.pull-left[
+.center.pull-left[
 &lt;img src="https://media.giphy.com/media/d7SnByEMkrdeoVQ2lT/giphy.gif"&gt;&lt;/src&gt;
 
-.small.purple[Game of Life, John Conway]
+.purple[Game of Life, John Conway]
 ]
 
 .pull-right[
 .small.purple[Varela (2018). Epilog: A software for the logical modeling of epithelial dynamics]
 
-  - Multi-cellular modeling
   - Logical model framework for describing cell behavior
-  
+
+.purple.small[Cooper (2020). Chaste: Cancer, Heart and Soft Tissue Environment]
+
+ - Model tissue carcinogenesis
 ]
 
 ---
 
-## .little[Agent-based modeling: tumor growth]
+## Two examples of Cellular Automata in cancer modeling
+
+.pull-left[
+.bold[Tumor-associated angiogenesis and vascular flow (2D)]
+
+![:scale 80%](img/trial-lecture/ca_tumor_angiogenesis.jpeg)
+
+.small.purple[McDougall (2006) Mathematical modelling of dynamic adaptive tumour-induced angiogenesis: Clinical implications and therapeutic targeting strategies]
+]
+
+.pull-right[
+.bold[Modeling the interaction between TNBC and stromal cells (3D)]
+
+![](img/trial-lecture/ca_stem_cells.jpeg)
+.small.purple[Norton (2018) Modeling triple-negative breast cancer heterogeneity: Effects of stromal macrophages, fibroblasts and tumor vasculature]
+]
+
+???
+
+1. (Left) =&gt; Tumors need nutrients and oxygen to proliferate. Angiogenesis is the process of generating new vasculature networks able to provide the required nutrients to tumors and thus enable their sustained growth. **Inducing angiogenesis is one of hallmarks of cancer**. The image shows the results from a mathematical model which simultaneously couples vessel growth with blood flow through the vessels—dynamic adaptive tumor-induced angiogenesis (DATIA). Authors studied this system in terms of how to best deliver chemotherapeutic drugs to the tumor. In this image, the parameters of the model are set as logically as possible (so-to-speak) and the .green[result is that the drug largely by-passes the tumor and recirculates to the parent vessel!]
+2. (Right) =&gt; A 3D cellular automaton model (with stem-cell effects) of how chemical signaling with fibroblasts and macrophages can drive triple-negative breast cancer (TNBC). Triple-negative breast cancer (TNBC) accounts for about 10-15% of all breast cancers. The term triple-negative breast cancer refers to the fact that **the cancer cells don't have estrogen or progesterone receptors and also don't make too much of the protein called HER2**.
+Stem cells proliferated and differentiated into progenitor cells, and cancer cells exchanged chemical signals with fibroblasts and infiltrating macrophages. Among their results, they found that .red[**increasing the stromal effect on cancer cell proliferation**] decreased overall tumor size, whereas .green[**increasing the stromal effect on cancer cell migration**] increased tumor size.
+
+---
+
+## .little[Agent-based modeling: tumor growth in 3D]
 
 .pull-left[
 .large.bold[Agent-Based Modeling]
@@ -678,21 +799,20 @@ ML methods .red[cannot predict latent variables]!
 
 .pull-left-67[
 ![](img/trial-lecture/physicell_cancer_immunology.png)
-- Parameter optimization in 2D simulations explained patient response .purple[Ozik (2019)]
+
+.small.purple[Ghaffarizadeh (2018). PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems]
+
+<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> Parameter optimization in 2D simulations correlated with patient response to immunotherapy .smalli.purple[Ozik (2019). Learning-accelerated discovery of immune-tumour interactions]
 ]
 .pull-right-33[
-.green.bold[Assets]
-
 - A simple model of immune attack!
-- Stochastic immune cell migration
+- Biased stochastic immune cell migration leads to insufficient cancer killing
 
-.red.bold[Drawbacks]
-- More simulations are needed!
-- Generic immune cells 
-- Other simplifications
+&amp;nbsp; &amp;nbsp;.red.bold[Drawbacks]
+- Many simplifications
+- Need for more simulations
+- Computational cost
 ]
-
-.small.purple[Ghaffarizadeh (2018)]
 
 ???
 
@@ -700,14 +820,16 @@ ML methods .red[cannot predict latent variables]!
 
 ### Video description
 
-To model immunosurveillance, after simulating 14 days of growth we introduced generic immune cell agents that move towards tumor cells by **chemotaxis** (a random biased migration towards a tumor-cell-released chemical factor), test for contact with cells, stochastically form spring-like adhesions to any cell in close contact, and then test for **immunogenicity**. While adhered to a target cell, the immune cell agent attempts to induce apoptosis (e.g., by the FAS receptor pathway35) with a probability that scales linearly with immunogenicity (**higher oncoprotein, higher immunogenicity**). If successful, the tumor cell undergoes apoptosis, while the immune agent detaches and resumes its chemotactic search for additional tumor cell targets. If the immune cell does not kill the tumor cell, it remains attached while making further attempts to induce apoptosis until either succeeding or reaching a maximum attachment lifetime, after which it detaches without inducing apoptosis.
+To model immunosurveillance, after simulating 14 days of growth we introduced generic immune cell agents that move towards tumor cells by **chemotaxis** (a random biased migration towards a tumor-cell-released chemical factor), test for contact with cells, stochastically form spring-like adhesions to any cell in close contact, and then test for **immunogenicity**. While adhered to a target cell, the immune cell agent attempts to induce apoptosis (e.g., by the FAS receptor pathway35) with a probability that scales linearly with immunogenicity (**higher oncoprotein, higher immunogenicity, higher chance to induce apoptosis**). If successful, the tumor cell undergoes apoptosis, while the immune agent detaches and resumes its chemotactic search for additional tumor cell targets. If the immune cell does not kill the tumor cell, it remains attached while making further attempts to induce apoptosis until either succeeding or reaching a maximum attachment lifetime, after which it detaches without inducing apoptosis.
 
-- .green[We found that stochastic immune cell migration had a major impact on this system] by increasing spatial mixing between tumor and immune cells, **potentially contributing to more successful immune responses.**
+- Because immune cell migration was strongly biased along the gradient of the immunogenicity chemical factor, they pass by some tumor cells at the outer periphery. .green[These surviving cells repopulate the tumor].
+
+- .green[We found that stochastic immune cell migration had a major impact on this system] by increasing spatial mixing between tumor and immune cells, **potentially contributing to more successful immune responses.** Less biased migration would increase mixing of cancer and immune cells and increase the efficacy of the immune attack.
 
 ### Limitations
 
 - Generic immune cells (not specific, like T cell or dendritic cell)
-- .red[However, to further understand this system would require hundreds or thousands of additional simulations.].
+- .red[To further understand this system would require hundreds or thousands of additional simulations.].
 
 ## Follow-up study (parameter grid search in 2D)
 
@@ -720,33 +842,23 @@ In a follow-up study the authors used **HPC architecture workflows and Evolution
 - .red[No identification of molecular mechanisms that lead to cell behaviors and no 3D]
 
 ---
+class: center, middle
 
-# Models don't have to be complex to be interpretable
+# .larger.blue[Take-home messages]
+----
+### Things to consider when choosing a cancer modeling framework
 
-The power of models explainability without the use of topology, fancy equations, or sophisticated deep neural network architectures
+Knowledge of assets and drawbacks .green[<i class="fa fa-smile" role="presentation" aria-label="smile icon"></i>]
 
-Quote from Fitzgerald et al (2006):
+Availability of Prior Knowledge (model size)
 
-&gt; Lest one be tempted simply to wait for ‘final’ models to emerge, it
-is worth remembering that "all models are wrong; some are useful" [Box (1979)]. We specifically reject the critique that experimentally validated mathematical analysis of cellular networks will be useful only when ‘complete’ models of cells or tissues are available. **Quantitative modeling of bridges and buildings was essential for mechanical engineering long before it was practical to represent every beam and bolt or to understand the atomic properties of steel**.
+The type of information available (data)
 
----
+The granularity of answers sought from the simulations
 
-# A simple explanatory math model to explain anti-cancer therapy
+Area of application
 
-Simple math and analysis ([Roux 2015] Mol. Sys. Biology paper: Fractional killing arises from cell‐to‐cell variability in overcoming a caspase activity threshold)
-
----
-
-# Take-home messages
-
-Choose appropriate modeling framework based on;
-
-- Size of the model
-- The type of information (data) available
-- The granularity of answers sought from the simulations
-- Knowledge of pros and cons of each framework
-- Area of application
+Familiarity with the appropriate software
 
 ---
 
@@ -755,8 +867,10 @@ Choose appropriate modeling framework based on;
 .small[
 #### Reviews
 
-- Morris (2010). Logic-based models for the analysis of cell signaling networks.
-- ElKalaawy (2015). Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer.
+- Morris et al. (2010). Logic-based models for the analysis of cell signaling networks.
+- ElKalaawy et al. (2015). Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer.
+- Le Novere, N. (2015). Quantitative and logic modelling of molecular and gene networks. Nature Reviews Genetics, 16(3), 146–158. https://doi.org/10.1038/nrg3885
+- Metzcar et al. (2019). A Review of Cell-Based Computational Modeling in Cancer Biology. Https://Doi.Org/10.1200/CCI.18.00069, (3), 1–13. https://doi.org/10.1200/CCI.18.00069
 - Bekisz (2020). Cancer modeling: From mechanistic to data-driven approaches, and from fundamental insights to clinical applications.
 
 #### Precision/Systems Medicine
@@ -766,6 +880,9 @@ Choose appropriate modeling framework based on;
 
 #### Example Applications
 
+- Eduati 2017
+- Frolich 2018
+- DrugCell 2020
 
 #### Software
 
