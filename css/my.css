@@ -7,6 +7,7 @@
 .little { font-size: 90% }
 .littler { font-size: 80% }
 .small { font-size: 70% }
+.smalli { font-size : 60% }
 .smaller { font-size: 50% }
 .tiny { font-size: 30% }
 
@@ -50,6 +51,16 @@
 .pull-right-42 {
   float: right;
   width: 42%;
+}
+
+.pull-left-42 {
+  float: left;
+  width: 42%;
+}
+
+.pull-right-58 {
+  float: right;
+  width: 58%;
 }
 
 .just {
