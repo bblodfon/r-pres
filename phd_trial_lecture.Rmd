@@ -657,18 +657,6 @@ class: center, middle
 - .green[Authors experimentally validated selected drug combos, which showed high PCI in the analysis as synergistic]
 
 ---
-
-# Model complexity vs usefulness
-
-"all models are wrong; some are useful" [Box (1979)]
-
-Simple math model from [Roux 2015] to explain cell‐to‐cell variability by the overcoming of a caspase activity threshold
-
-???
-
-- .green[Even without topological knowledge, fancy equations, or sophisticated deep neural network architectures, models can be very useful] .purple.small[Fitzgerald (2006)]
-
----
 class: center, middle
 
 # .larger.blue[Modeling multi-cellular systems]
