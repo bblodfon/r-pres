@@ -499,7 +499,7 @@ class: center, middle
 
 ---
 
-### Mechanistic models vs standard Machine Learning methods <br> .small.purple[Fröhlich (2018)]
+### Mechanistic models vs standard Machine Learning methods
 
 .pull-left-67[
 .bold[Performance comparison]
@@ -508,6 +508,8 @@ class: center, middle
 
 - .bold.green[Similar predictive power]
 - No prior knowledge and parameterization required for ML methods
+
+.small.purple[Fröhlich (2018). Efficient Parameter Estimation Enables the Prediction of Drug Response Using a Mechanistic Pan-Cancer Pathway Model]
 ]
 
 .pull-right-33[
@@ -893,7 +895,6 @@ Familiarity with the appropriate software
 ???
 
 - Discuss e.g. benefits/ramifications for the clinic  - realistic data availability under those conditions, possible treatment suggestions for a clinician? Value for pre-clinical research (mechanisms and in silico screens) and clinical research
-- Maybe assess each approach against a possible pre-clinical or clinical application, this will make very clear the assets and drawbacks?
 
 ---
 
