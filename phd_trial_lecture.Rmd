@@ -943,3 +943,6 @@ class:center,middle
 # .blue.large[Thanks!]
 ----
 ![](img/ack/questions.jpeg)
+
+<br/>&nbsp;<br/>
+.little[.bold[Code for slides]: https://github.com/bblodfon/r-pres/blob/master/phd_trial_lecture.Rmd]

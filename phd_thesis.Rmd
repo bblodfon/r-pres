@@ -653,19 +653,19 @@ class: center, middle
 
 1. DNF links **semantics** with **mathematics**!
 2. Consistent Boolean regulatory functions
-  - 3 principles .small.purple[Cury (2019). Partial Order on the set of Boolean Regulatory Functions.]
+  - 3 principles .small.purple[Cury (2019). Partial Order on the set of Boolean Regulatory Functions]
   - **Unique Complete DNF** (CDNF)
       - <span style="color:green">Activators</span> are the *positive* literals $(x)$
       - <span style="color:red">Inhibitors</span> are the *negative* literals $(\lnot y)$
+
+----
 
 .blue[Example] with $2$ .green[activators] $(x_1,x_2)$ and $2$ .red[inhibitors] $(y_1,y_2)$:
 .small[
 |Link Operator BRF|CDNF|Biological Interpretation|Consistent|
 |:---:|:---:|:---:|:---:|
-|<span class="math inline">(<em>x</em><sub>1</sub> OR <em>x</em><sub>2</sub>)<strong> AND NOT </strong>(<em>y</em><sub>1</sub> OR <em>y</em><sub>2</sub>)</span>|<span class="math inline">(<em>x</em><sub>1</sub> AND NOT <em>y</em><sub>1</sub> AND NOT <em>y</em><sub>2</sub>)<strong> OR </span> <span class="math inline"></strong>(<em>x</em><sub>2</sub> AND NOT <em>y</em><sub>1</sub> AND NOT <em>y</em><sub>2</sub>)</span>|Presence of at least one activator **and** absence of all inhibitors|.bold.green[YES]|
-|<span class="math inline">(<em>x</em><sub>1</sub> OR <em>x</em><sub>2</sub>)<strong> OR NOT </strong>(<em>y</em><sub>1</sub> OR <em>y</em><sub>2</sub>)</span>|<span class="math inline"><em>x</em><sub>1</sub><strong> OR </strong><em>x</em><sub>2</sub><strong> OR</strong></span>  <span class="math inline">(NOT <em>y</em><sub>1</sub> AND</span> <span class="math inline">NOT <em>y</em><sub>2</sub>)</span>|Presence of any activator **or** absence of all inhibitors|.bold.green[YES]|
-|<span class="math inline">(<em>x</em><sub>1</sub> OR <em>x</em><sub>2</sub>)<strong> NAND </strong>(<em>y</em><sub>1</sub> OR <em>y</em><sub>2</sub>)</span>|<span class="math inline">(NOT <em>x</em><sub>1</sub> AND NOT <em>x</em><sub>2</sub>)<strong> OR</strong></span> <span class="math inline">(NOT <em>y</em><sub>1</sub> AND NOT <em>y</em><sub>2</sub>)</span>|Absence of all activators **or** absence of all inhibitors|.bold.red[NO]|
-|<span class="math inline">(<em>x</em><sub>1</sub> OR <em>x</em><sub>2</sub>)<strong> NOR NOT </strong>(<em>y</em><sub>1</sub> OR <em>y</em><sub>2</sub>)</span>|<span class="math inline">(<em>y</em><sub>1</sub> AND NOT <em>x</em><sub>1</sub> AND NOT <em>x</em><sub>2</sub>)<strong> OR</strong></span>  <span class="math inline">(<em>y</em><sub>2</sub> AND NOT <em>x</em><sub>1</sub> AND NOT <em>x</em><sub>2</sub>)</span>|Presence of at least one inhibitor **and** absence of all activators|.bold.red[NO]|
+|<span class="math inline">(<em>x</em><sub>1</sub> OR <em>x</em><sub>2</sub>)<strong> AND NOT </strong>(<em>y</em><sub>1</sub> OR <em>y</em><sub>2</sub>)</span>|<span class="math inline">(<em>x</em><sub>1</sub> AND NOT <em>y</em><sub>1</sub> AND NOT <em>y</em><sub>2</sub>)<strong> OR </span> <br/> <span class="math inline"></strong>(<em>x</em><sub>2</sub> AND NOT <em>y</em><sub>1</sub> AND NOT <em>y</em><sub>2</sub>)</span>|Presence of at least one activator **and** absence of all inhibitors|.bold.green[YES]|
+|<span class="math inline">(<em>x</em><sub>1</sub> OR <em>x</em><sub>2</sub>)<strong> NOR NOT </strong>(<em>y</em><sub>1</sub> OR <em>y</em><sub>2</sub>)</span>|<span class="math inline">(<span style="color:blue"><em>y</em><sub>1</sub></span> AND <span style="color:blue">NOT <em>x</em><sub>1</sub></span> AND <span style="color:blue">NOT <em>x</em><sub>2</sub></span>)<strong> OR</strong></span> <span class="math inline">(<em>y</em><sub>2</sub> AND NOT <em>x</em><sub>1</sub> AND NOT <em>x</em><sub>2</sub>)</span>|Presence of at least one inhibitor **and** absence of all activators|.bold.red[NO]|
 ]
 
 ???
@@ -890,11 +890,12 @@ class: center, middle
   ![](img/ack/ntnu_helse.jpg)
   ![](img/ack/Samarbeidsorganet.gif)
   
-  ----
+----
   
-  - .bold[[Code for slides](https://github.com/bblodfon/r-pres/blob/master/phd_thesis.Rmd)]
-  - .bold[[PhD Thesis](https://bblodfon.github.io/my-phd-thesis/)]
-]
+.little[
+- .bold[[Code for slides](https://github.com/bblodfon/r-pres/blob/master/phd_thesis.Rmd)] `r shiny::icon("github")`
+- .bold[[PhD Thesis](https://bblodfon.github.io/my-phd-thesis/)] `r shiny::icon("github")`
+]]
 
 ???
 

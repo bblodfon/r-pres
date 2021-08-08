@@ -667,19 +667,19 @@ class: center, middle
 
 1. DNF links **semantics** with **mathematics**!
 2. Consistent Boolean regulatory functions
-  - 3 principles .small.purple[Cury (2019). Partial Order on the set of Boolean Regulatory Functions.]
+  - 3 principles .small.purple[Cury (2019). Partial Order on the set of Boolean Regulatory Functions]
   - **Unique Complete DNF** (CDNF)
       - &lt;span style="color:green"&gt;Activators&lt;/span&gt; are the *positive* literals `\((x)\)`
       - &lt;span style="color:red"&gt;Inhibitors&lt;/span&gt; are the *negative* literals `\((\lnot y)\)`
+
+----
 
 .blue[Example] with `\(2\)` .green[activators] `\((x_1,x_2)\)` and `\(2\)` .red[inhibitors] `\((y_1,y_2)\)`:
 .small[
 |Link Operator BRF|CDNF|Biological Interpretation|Consistent|
 |:---:|:---:|:---:|:---:|
-|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; AND NOT &lt;/strong&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; OR &lt;/span&gt; &lt;span class="math inline"&gt;&lt;/strong&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|Presence of at least one activator **and** absence of all inhibitors|.bold.green[YES]|
-|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; OR NOT &lt;/strong&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|&lt;span class="math inline"&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;strong&gt; OR &lt;/strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;strong&gt; OR&lt;/strong&gt;&lt;/span&gt;  &lt;span class="math inline"&gt;(NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND&lt;/span&gt; &lt;span class="math inline"&gt;NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|Presence of any activator **or** absence of all inhibitors|.bold.green[YES]|
-|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; NAND &lt;/strong&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|&lt;span class="math inline"&gt;(NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; OR&lt;/strong&gt;&lt;/span&gt; &lt;span class="math inline"&gt;(NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|Absence of all activators **or** absence of all inhibitors|.bold.red[NO]|
-|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; NOR NOT &lt;/strong&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|&lt;span class="math inline"&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; OR&lt;/strong&gt;&lt;/span&gt;  &lt;span class="math inline"&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|Presence of at least one inhibitor **and** absence of all activators|.bold.red[NO]|
+|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; AND NOT &lt;/strong&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; OR &lt;/span&gt; &lt;br/&gt; &lt;span class="math inline"&gt;&lt;/strong&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|Presence of at least one activator **and** absence of all inhibitors|.bold.green[YES]|
+|&lt;span class="math inline"&gt;(&lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;strong&gt; NOR NOT &lt;/strong&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; OR &lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|&lt;span class="math inline"&gt;(&lt;span style="color:blue"&gt;&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/span&gt; AND &lt;span style="color:blue"&gt;NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/span&gt; AND &lt;span style="color:blue"&gt;NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/span&gt;)&lt;strong&gt; OR&lt;/strong&gt;&lt;/span&gt; &lt;span class="math inline"&gt;(&lt;em&gt;y&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; AND NOT &lt;em&gt;x&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;)&lt;/span&gt;|Presence of at least one inhibitor **and** absence of all activators|.bold.red[NO]|
 ]
 
 ???
@@ -904,11 +904,12 @@ class: center, middle
   ![](img/ack/ntnu_helse.jpg)
   ![](img/ack/Samarbeidsorganet.gif)
   
-  ----
+----
   
-  - .bold[[Code for slides](https://github.com/bblodfon/r-pres/blob/master/phd_thesis.Rmd)]
-  - .bold[[PhD Thesis](https://bblodfon.github.io/my-phd-thesis/)]
-]
+.little[
+- .bold[[Code for slides](https://github.com/bblodfon/r-pres/blob/master/phd_thesis.Rmd)] <i class="fab fa-github" role="presentation" aria-label="github icon"></i>
+- .bold[[PhD Thesis](https://bblodfon.github.io/my-phd-thesis/)] <i class="fab fa-github" role="presentation" aria-label="github icon"></i>
+]]
 
 ???
 
