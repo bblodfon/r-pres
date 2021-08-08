@@ -714,13 +714,13 @@ class: center, middle
 
 ![](img/trial-lecture/ca.svg)
 
-.center.pull-left[
+.center[
 &lt;img src="https://media.giphy.com/media/d7SnByEMkrdeoVQ2lT/giphy.gif"&gt;&lt;/src&gt;
 
 .purple[Game of Life, John Conway]
 ]
+???
 
-.pull-right[
 .small.purple[Varela (2018). Epilog: A software for the logical modeling of epithelial dynamics]
 
   - Logical model framework for describing cell behavior
@@ -728,7 +728,6 @@ class: center, middle
 .purple.small[Cooper (2020). Chaste: Cancer, Heart and Soft Tissue Environment]
 
  - Model tissue carcinogenesis
-]
 
 ---
 
@@ -757,37 +756,29 @@ Stem cells proliferated and differentiated into progenitor cells, and cancer cel
 
 ---
 
-## .little[Agent-based modeling: tumor growth in 3D]
+# An introduction to Agent-based modeling
 
 .pull-left[
-.large.bold[Agent-Based Modeling]
-
-.green.bold[Assets]
+### .green[Assets]
 
 - Autonomous agents
 - Incorporate space and stochasticity
 - Utilize parallelism
 - Reproduce emergent behavior
-- Intuitive for multi-cellular systems modeling
+- Intuitive for multi-cellular systems
+- Applications in 3D modeling
 
-.red.bold[Drawbacks]
+### .red[Drawbacks]
 
 - Lack of mechanistic interpretation
 - Computationally intensive
 ]
 
 .pull-right[
-&lt;iframe width="100%" height="300" src="https://www.youtube.com/embed/16EyDBf0l_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+![](img/trial-lecture/agent_based_modeling.jpg)
 
-.blue.bold[Spatiotemporal dynamics]
-
-.little[
-- Loss of tumor symmetry and homogeneity
-- Cell mechanics drive proliferation
-- .red[2 weeks] worth of calculations!
-]]
-
-.small.purple[Ghaffarizadeh (2018). PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems]
+.small.purple[ElKalaawy &amp; Wassal (2015). Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer.]
+]
 
 ???
 
@@ -805,29 +796,42 @@ Stem cells proliferated and differentiated into progenitor cells, and cancer cel
 - .red[Very computationally intensive] (tracking agents across space and time)
 ]
 
-### Description of video and observations
-
-- Cancer cells each have an individual expression of a .red[mutant oncoprotein], which drives proliferation. Yellow cells divide faster (lots of oncoprotein) than blue ones (very little oncoprotein). **All cancer cells consume oxygen!!!**
-- .red[Oxygen transport limits] have lead to the formation of **a necrotic core (brown central region)**
-- .green[Spatiotemporal dynamics]
-  - Starting from a random "salt and pepper" distribution of cell proliferation rates to **more homogeneous** patches of yellow color, more or less showing **clonal expansion**
-  - However, this effect is not uniform: in slower-growing regions with less growth substrate (oxygen) to drive proliferation, the "salt and pepper" distribution remains much longer, particularly near the necrotic core.
-  - The mechanics drive an interesting additional angle. Mechanics-free models (e.g., cellular automata) typically predict that clones grow out like sectors in a circle (pizzas). However, if you add the mechanics, the faster-growing clones are more circular, because **they can push inward as well as outward**. Moreover, this means that once .green[faster-growing sub-populations reach the outer edge of the tumor with the most resources, they start growing to surround the slower populations and eventually push them towards the necrotic core and ultimately to extinction.] This seems to accelerate selection.
-
 ---
-
-# Simulation of cancer immunotherapy
-
 .pull-left-67[
+.bold[Simulation of tumor growth]
+
+![](img/trial-lecture/physicell_tumor_growth.png)
+
+.bold[Simulation of cancer immunotherapy in 3D]
+
 ![](img/trial-lecture/physicell_cancer_immunology.png)
-
-.small.purple[Ghaffarizadeh (2018). PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems]
-
-<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> Parameter optimization in 2D simulations correlated with patient response to immunotherapy .smalli.purple[Ozik (2019). Learning-accelerated discovery of immune-tumour interactions]
 ]
+
+.pull-right-27[
+.green.bold[Lessons]
+.littler[
+- Clonal expansion
+- Mechanics of cell proliferation
+- Biased stochastic immune cell migration leads to insufficient cancer killing
+]
+
+.red.bold[Drawbacks]
+.littler[
+- 2 weeks of computations
+- Simplifications
+]
+
+.smaller.purple[Ghaffarizadeh (2018). PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems]
+
+.littler[<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> Parameter optimization in 2D simulations correlated with patient response to immunotherapy]
+
+.smaller.purple[Ozik (2019). Learning-accelerated discovery of immune-tumour interactions]
+]
+
+???
 .pull-right-33[
 - A simple model of immune attack!
-- Biased stochastic immune cell migration leads to insufficient cancer killing
+- 
 
 &amp;nbsp; &amp;nbsp;.red.bold[Drawbacks]
 - Many simplifications
@@ -837,7 +841,20 @@ Stem cells proliferated and differentiated into progenitor cells, and cancer cel
 
 ???
 
-## Exploring the spatial dynamics of stochastic tumor-immune contact interactions
+# Tumor growth in 3D
+
+&lt;!--&lt;iframe width="100%" height="300" src="https://www.youtube.com/embed/16EyDBf0l_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;--&gt;
+
+### Description of video and observations
+
+- Cancer cells each have an individual expression of a .red[mutant oncoprotein], which drives proliferation. Yellow cells divide faster (lots of oncoprotein) than blue ones (very little oncoprotein). **All cancer cells consume oxygen!!!**
+- .red[Oxygen transport limits] have lead to the formation of **a necrotic core (brown central region)**
+- .green[Spatiotemporal dynamics]
+  - Starting from a random "salt and pepper" distribution of cell proliferation rates to **more homogeneous** patches of yellow color, more or less showing **clonal expansion**
+  - However, this effect is not uniform: in slower-growing regions with less growth substrate (oxygen) to drive proliferation, the "salt and pepper" distribution remains much longer, particularly near the necrotic core.
+  - The mechanics drive an interesting additional angle. Mechanics-free models (e.g., cellular automata) typically predict that clones grow out like sectors in a circle (pizzas). However, if you add the mechanics, the faster-growing clones are more circular, because **they can push inward as well as outward**. Moreover, this means that once .green[faster-growing sub-populations reach the outer edge of the tumor with the most resources, they start growing to surround the slower populations and eventually push them towards the necrotic core and ultimately to extinction.] This seems to accelerate selection.
+
+# Exploring the spatial dynamics of stochastic tumor-immune contact interactions
 
 ### Video description
 
@@ -852,7 +869,7 @@ To model immunosurveillance, after simulating 14 days of growth we introduced ge
 - Generic immune cells (not specific, like T cell or dendritic cell)
 - .red[To further understand this system would require hundreds or thousands of additional simulations.].
 
-## Follow-up study (parameter grid search in 2D)
+# Follow-up study (parameter grid search in 2D)
 
 In a follow-up study the authors used **HPC architecture workflows and Evolutionary Algorithms** to optimally search a design parameter space (6 parameters, example: .green[oncoprotein threshold, immune cell kill rate, migration rate, apoptosis rate], etc.) and discover optimal cancer regression regions within biological and clinical constraints, thus paving the way for **improvements in cancer immunotherapy (kill more cells in the 2D simulations)**.
 
@@ -894,9 +911,10 @@ Familiarity with the appropriate software
 
 .littler[
 - .purple[Kauffman, S. A. (1969)]. Metabolic stability and epigenesis in randomly constructed genetic nets. Journal of Theoretical Biology, 22(3), 437–467. https://doi.org/10.1016/0022-5193(69)90015-0
+- .purple[Wooldridge, M. (2002)]. An Introduction to Multiagent Systems. John Wiley &amp; Sons
 - .purple[Morris et al. (2010)]. Logic-based models for the analysis of cell signaling networks. Biochemistry, 49(15), 3216–3224. https://doi.org/10.1021/bi902202q
 - .purple[Hanahan &amp; Weinberg (2011)]. Hallmarks of cancer: the next generation. Cell, 144(5), 646–674. https://doi.org/10.1016/j.cell.2011.02.013
-- .purple[ElKalaawy et al. (2015)]. Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer. Biosystems, 129, 1–18. https://doi.org/10.1016/J.BIOSYSTEMS.2015.01.008
+- .purple[ElKalaawy &amp; Wassal (2015)]. Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer. Biosystems, 129, 1–18. https://doi.org/10.1016/J.BIOSYSTEMS.2015.01.008
 - .purple[Le Novere, N. (2015)]. Quantitative and logic modelling of molecular and gene networks. Nature Reviews Genetics, 16(3), 146–158. https://doi.org/10.1038/nrg3885
 - .purple[Senft et al. (2017)]. Precision Oncology: The Road Ahead. Trends in Molecular Medicine, 23(10), 874–898. https://doi.org/10.1016/j.molmed.2017.08.003
 - .purple[Apweiler et al. (2018)]. Whither systems medicine? Experimental &amp; Molecular Medicine, 50(3), e453. https://doi.org/10.1038/emm.2017.290
