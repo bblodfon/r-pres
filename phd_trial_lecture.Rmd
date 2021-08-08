@@ -33,7 +33,7 @@ class: middle
 ----
 ## 2) .large.blue[Computational Frameworks in practice]
 ----
-## 3) .large.blue[Take-home messages]
+## 3) .large.blue[Summary]
 
 ???
 
@@ -100,12 +100,11 @@ class: center, middle
 
 ![](img/trial-lecture/pubmed_cancer.png)
 
-.purple.small[Brady (2019). Mathematical models of cancer: when to predict novel therapies, and when not to]
-]
+.purple.smaller[Brady & Enderling (2019). Mathematical Models of Cancer: When to Predict Novel Therapies, and When Not to. Bull Math Biol 81, 3722–3731 (2019). https://doi.org/10.1007/s11538-019-00640-x]]
 
 <br/>&nbsp;<br/>
 
-.little.purple[Rashevsky (1940). Mathematical biophysics in its relation to the cancer problem]
+.little.purple[Rashevsky (1940). Mathematical biophysics in its relation to the cancer problem. Acta Biotheoretica, 5(3), 139–154. https://doi.org/10.1007/BF01567693]
 
 ???
 
@@ -235,18 +234,18 @@ class: center, middle
 .pull-left-58[![:scale 100%,500px](img/trial-lecture/eduati_dataset.jpg)]
 .pull-right-42[
 &nbsp; &nbsp; .bold[Dataset] .small.purple[Eduati (2017)]
-
+.little[
 - 14 heterogeneous colon cancer cell lines
 - 14 measured phosphoproteins
 - 43 perturbed conditions
-  
+]
 &nbsp; &nbsp; .bold[Observations]
-
+.little[
 - .red[No correlation] between perturbation response and CMS (*) or genotype data
 - Signaling is .red[not determined by mutations]
 - Use modeling to .green[gain insights] on signaling changes
-
-&nbsp; &nbsp; .small[(*) CMS = consensus molecular subtype]
+]
+<p style='text-align: center;'>.small[(*) .purple[Guinney (2015). The consensus molecular subtypes of colorectal cancer. Nature medicine, 21(11), 1350–1356. https://doi.org/10.1038/nm.3967]]</p>
 ]
 
 ???
@@ -280,7 +279,7 @@ class: center, middle
 Previous slide: we need modeling. Let's start with some basics first!
 
 - .green[Attractors are **biologically meaningful**]:
-  - Cell fates (phenotypes)
+  - Cell fates (phenotypes): normal cell state vs a diseased state
   - Stable patterns of cell activity (e.g. cell cycle or T cell differentiation)
 
 ---
@@ -292,7 +291,6 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 - Active/Inactive states (0/1)
 - .red[Lack of representation of time]
-- High interpretability
 - Less data needed for training and optimization
 - .green[Attractors are biologically meaningful]
 - Derivation of insights is challenging
@@ -311,7 +309,6 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 - Species concentrations
 - Time as continuous variable
-- Lower interpretability
 - .red[Need for kinetic data] (rates, equilibrium constants)
   - Experiments
   - Parameter estimation
@@ -351,7 +348,7 @@ $\frac{dx_i}{dt} = \tau_i(B_i(f(x_{1,i}),...,f(x_{N,i})) - x_i)$
 ### Other mixed formalisms
 
 .little[
-- Fuzzy logic modeling .small.purple[Morris (2016)]
+- Fuzzy logic modeling .small.purple[Aldridge (2009)]
 - Stochastic Boolean modeling (MaBoSS 2.0) .small.purple[Stoll (2017)]
 ]]
 
@@ -385,7 +382,7 @@ class: center, middle
 &nbsp; &nbsp; .red.bold[Drawbacks]
 
 .little[
-- Manually curated PKN .small.purple[Türei (2016)]
+- Manually curated PKN
 - Parameter Optimization
 - Regularization
   - Prioritize good fit to data
@@ -433,6 +430,8 @@ $($different $k)$
 - **Mechanism-based** therapeutic strategy
 - **Personalized** combinatorial treatment
 ]
+
+.purple[Eduati (2017)]
 
 ???
 
@@ -613,6 +612,8 @@ Predicting response without drug combo data:
 
 Deep NNs have almost exhausted their utility (recognize objects, self-driving cars, beating world-champion at chess and Go), need for fresh approaches, going back to the roots (studying how babies learn, what is intelligence, how do we achieve generalization - take what you learn and use it in new situations, common sense, etc.). Towards this trend are efforts that make existing methods **more intepretable**, e.g. why Deep NNs make the decisions that they make.
 
+This model, called DrugCell, was made mechanistically interpretable, or ‘visible’ by directly mapping the neurons of a deep neural network into a large hierarchy of known and putative molecular components and pathways of the human cell.
+
 ---
 
 class: center, middle
@@ -662,6 +663,11 @@ class: center, middle
 # .larger.blue[Modeling multi-cellular systems]
 ----
 ## Cellular Automata and Agent-based modeling
+
+???
+
+- **Cancer is never a single-cell disease!**
+- Various types of cells in the tumor-microenvironment, each with a special role to play in the carcinogenesis.
 
 ---
 
@@ -821,7 +827,7 @@ In a follow-up study the authors used **HPC architecture workflows and Evolution
 ---
 class: center, middle
 
-# .larger.blue[Take-home messages]
+# .larger.blue[Summary]
 ----
 ### Things to consider when choosing a cancer modeling framework
 
@@ -837,35 +843,76 @@ Area of application
 
 Familiarity with the appropriate software
 
+???
+
+- Discuss e.g. benefits/ramifications for the clinic  - realistic data availability under those conditions, possible treatment suggestions for a clinician? Value for pre-clinical research (mechanisms and in silico screens) and clinical research
+- Maybe assess each approach against a possible pre-clinical or clinical application, this will make very clear the assets and drawbacks?
+
 ---
 
-# References
+## References (I)
+
+### General
+
+.littler[
+- .purple[Kauffman, S. A. (1969)]. Metabolic stability and epigenesis in randomly constructed genetic nets. Journal of Theoretical Biology, 22(3), 437–467. https://doi.org/10.1016/0022-5193(69)90015-0
+- .purple[Morris et al. (2010)]. Logic-based models for the analysis of cell signaling networks. Biochemistry, 49(15), 3216–3224. https://doi.org/10.1021/bi902202q
+- .purple[Hanahan & Weinberg (2011)]. Hallmarks of cancer: the next generation. Cell, 144(5), 646–674. https://doi.org/10.1016/j.cell.2011.02.013
+- .purple[ElKalaawy et al. (2015)]. Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer. Biosystems, 129, 1–18. https://doi.org/10.1016/J.BIOSYSTEMS.2015.01.008
+- .purple[Le Novere, N. (2015)]. Quantitative and logic modelling of molecular and gene networks. Nature Reviews Genetics, 16(3), 146–158. https://doi.org/10.1038/nrg3885
+- .purple[Senft et al. (2017)]. Precision Oncology: The Road Ahead. Trends in Molecular Medicine, 23(10), 874–898. https://doi.org/10.1016/j.molmed.2017.08.003
+- .purple[Apweiler et al. (2018)]. Whither systems medicine? Experimental & Molecular Medicine, 50(3), e453. https://doi.org/10.1038/emm.2017.290
+- .purple[Metzcar et al. (2019)]. A Review of Cell-Based Computational Modeling in Cancer Biology. JCO Clinical Cancer Informatics, (3), 1–13. https://doi.org/10.1200/CCI.18.00069
+- .purple[Bekisz & Geris (2020)]. Cancer modeling: From mechanistic to data-driven approaches, and from fundamental insights to clinical applications. Journal of Computational Science, 46, 101198. https://doi.org/10.1016/J.JOCS.2020.101198
+]
+
+???
+
+Mostly **reviews** or papers that didn't fit to other categories
+
+---
+
+## References (II)
+
+### Example Applications
 
 .small[
-#### Reviews
-
-- Morris et al. (2010). Logic-based models for the analysis of cell signaling networks.
-- ElKalaawy et al. (2015). Methodologies for the modeling and simulation of biochemical networks, illustrated for signal transduction pathways: A primer.
-- Le Novere, N. (2015). Quantitative and logic modelling of molecular and gene networks. Nature Reviews Genetics, 16(3), 146–158. https://doi.org/10.1038/nrg3885
-- Metzcar et al. (2019). A Review of Cell-Based Computational Modeling in Cancer Biology. Https://Doi.Org/10.1200/CCI.18.00069, (3), 1–13. https://doi.org/10.1200/CCI.18.00069
-- Bekisz (2020). Cancer modeling: From mechanistic to data-driven approaches, and from fundamental insights to clinical applications.
-
-#### Precision/Systems Medicine
-
-- Senft (2017). Precision Oncology: The Road Ahead
-- Apweiler (2018). Whither systems medicine?
-
-#### Example Applications
-
-- Eduati 2017
-- Frolich 2018
-- DrugCell 2020
-
-#### Software
-
-- Letort (2018)
-- COPASI (Hoops (2006): ODEs and stochastic simulations or hybrids of these
-- Chaste: Cancer, Heart and Soft Tissue Environment Cooper (2020)
-- Virtual Cell Blinov (2017)
-
+- .purple[McDougall et al. (2006)]. Mathematical modelling of dynamic adaptive tumour-induced angiogenesis: clinical implications and therapeutic targeting strategies. Journal of theoretical biology, 241(3), 564–589. https://doi.org/10.1016/j.jtbi.2005.12.022
+- .purple[Wittmann et al. (2009)]. Transforming Boolean models to continuous models: methodology and application to T-cell receptor signaling. BMC Systems Biology, 3(1), 98. https://doi.org/10.1186/1752-0509-3-98
+- .purple[Jaeger et al. (2017)]. Quantification of pathway cross-talk reveals novel synergistic drug combinations for breast cancer. Cancer Research, 77(2), 459–469. https://doi.org/10.1158/0008-5472.CAN-16-0097
+- .purple[Eduati et al. (2017)]. Drug Resistance Mechanisms in Colorectal Cancer Dissected with Cell Type-Specific Dynamic Logic Models. Cancer Research, 77(12), 3364–3375. https://doi.org/10.1158/0008-5472.CAN-17-0078
+- .purple[Fröhlich et al. (2018)]. Efficient Parameter Estimation Enables the Prediction of Drug Response Using a Mechanistic Pan-Cancer Pathway Model. Cell Systems, 7(6), 567-579.e6. https://doi.org/10.1016/J.CELS.2018.10.013
+- .purple[Norton et al. (2018)]. Modeling triple-negative breast cancer heterogeneity: Effects of stromal macrophages, fibroblasts and tumor vasculature. Journal of theoretical biology, 452, 56–68. https://doi.org/10.1016/j.jtbi.2018.05.003
+- .purple[Ozik et al. (2019)]. Learning-accelerated discovery of immune-tumour interactions. Molecular Systems Design & Engineering, 4(4), 747–760. https://doi.org/10.1039/C9ME00036D
+- .purple[Kuenzi et al. (2020)]. Predicting Drug Response and Synergy Using a Deep Learning Model of Human Cancer Cells. Cancer Cell, 38(5), 672–684. https://doi.org/10.1016/J.CCELL.2020.09.014
+- .purple[Julkunen et al. (2020)]. Leveraging multi-way interactions for systematic prediction of pre-clinical drug combination effects. Nasture Communications, 11(1), 6136. https://doi.org/10.1038/s41467-020-19950-z
 ]
+
+---
+
+## References (III)
+
+### Software
+
+.small[
+- .purple[Hoops et al. (2006)]. COPASI--a COmplex PAthway SImulator. Bioinformatics, 22(24), 3067–3074. https://doi.org/10.1093/bioinformatics/btl485
+- .purple[Aldridge et al. (2009)]. Fuzzy logic analysis of kinase pathway crosstalk in TNF/EGF/insulin-induced signaling. PLoS Computational Biology, 5(4), e1000340. https://doi.org/10.1371/journal.pcbi.1000340
+- .purple[Blinov et al. (2017)]. Compartmental and Spatial Rule-Based Modeling with Virtual Cell. Biophysical Journal, 113(7), 1365–1372. https://doi.org/10.1016/j.bpj.2017.08.022
+- .purple[Stoll et al. (2017)]. MaBoSS 2.0: an environment for stochastic Boolean modeling. Bioinformatics, 33(14), 2226–2228. https://doi.org/10.1093/bioinformatics/btx123
+- .purple[Varela et al. (2018)]. Epilog: A software for the logical modelling of epithelial dynamics [version 2; peer review: 3 approved]. F1000Research, 7, 1145. https://doi.org/10.12688/F1000RESEARCH.15613.2
+- .purple[Ghaffarizadeh et al. (2018)]. PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems. PLoS Computational Biology, 14(2). https://doi.org/10.1371/journal.pcbi.1005991
+- .purple[Letort et al. (2018)]. PhysiBoSS: a multi-scale agent-based modelling framework integrating physical dimension and cell signalling. Bioinformatics, 35(7), 1188–1196. https://doi.org/10.1093/bioinformatics/bty766
+- .purple[Naldi et al. (2018)]. Logical Modeling and Analysis of Cellular Regulatory Networks With GINsim 3.0. Frontiers in Physiology, 9, 646. https://doi.org/10.3389/fphys.2018.00646
+- .purple[Naldi et al. (2018)]. The CoLoMoTo Interactive Notebook: Accessible and Reproducible Computational Analyses for Qualitative Biological Networks. Frontiers in Physiology, 9, 680. https://doi.org/10.3389/fphys.2018.00680
+- .purple[Choi et al. (2018)]. Tellurium: An extensible python-based modeling environment for systems and synthetic biology. BioSystems, 171, 74–79. https://doi.org/10.1016/j.biosystems.2018.07.006
+- .purple[Gjerga et al. (2020)]. Converting networks to predictive logic models from perturbation signalling data with CellNOpt. Bioinformatics. https://doi.org/10.1093/bioinformatics/btaa561
+- .purple[Cooper et al. (2020)]. Chaste: Cancer, Heart and Soft Tissue Environment. Journal of Open Source Software, 5(47), 1848. https://doi.org/10.21105/joss.01848
+]
+
+---
+
+class:center,middle
+
+# .blue.large[Thanks!]
+----
+![](img/ack/questions.jpeg)
