@@ -47,7 +47,6 @@ class: center, middle
 
 # .larger.blue[Introduction to Cancer Modeling]
 ----
-<img src="https://media.giphy.com/media/680qJiuIMtNle/source.gif"></img>
 
 ---
 
@@ -322,6 +321,10 @@ Previous slide: we need modeling. Let's start with some basics first!
 
 .purple[Choi (2018). Tellurium: An extensible python-based modeling environment for systems and synthetic biology]
 ]]
+
+???
+
+Maybe mention that **understanding biological interactions from an activate/inhibit point of view is more intuitive/easy**.
 
 ---
 
@@ -604,15 +607,37 @@ Predicting response without drug combo data:
 
 ## Interpretable Machine Learning: Grey-box modeling!
 
-- Visual Neural Network model: DrugCell paper (white-box ML)
+.pull-left-67[
+### Visual Neural Network (VNN)
+
+![:scale 85%](img/trial-lecture/kuenzi_drugcell.jpg)
+]
+
+.pull-right-33[
+### DrugCell: Interpretable deep learning model of human cancer cells
+
+- .green[Learns] biological mechanisms
+- .green[Stratifies] clinical outcomes
+- .green[Designs] synergistic drug combinations
+
+.small.purple[Kuenzi (2020). Predicting Drug Response and Synergy Using a Deep Learning Model of Human Cancer Cells. Cancer Cell, 38(5), 672–684. https://doi.org/10.1016/J.CCELL.2020.09.014]
+]
 
 ???
 
-### New trend in AI research
+### New trend in AI research (briefly mention? nah!)
 
-Deep NNs have almost exhausted their utility (recognize objects, self-driving cars, beating world-champion at chess and Go), need for fresh approaches, going back to the roots (studying how babies learn, what is intelligence, how do we achieve generalization - take what you learn and use it in new situations, common sense, etc.). Towards this trend are efforts that make existing methods **more intepretable**, e.g. why Deep NNs make the decisions that they make.
+Deep NNs have almost exhausted their utility (recognize objects, self-driving cars, beating world-champion at chess and Go), need for fresh approaches, going back to the roots (studying how babies learn, what is intelligence, how do we achieve generalization - take what you learn and use it in new situations, common sense, etc.). 
 
-This model, called DrugCell, was made mechanistically interpretable, or ‘visible’ by directly mapping the neurons of a deep neural network into a large hierarchy of known and putative molecular components and pathways of the human cell.
+Towards this trend are **efforts that make existing methods more intepretable**, e.g. why Deep NNs make the decisions that they make.
+
+### DrugCell
+
+- Genotype + drug structure predicts response to therapy
+- Model Architecture (.green[green image]):
+Form top to bottom, increase in scale and complexity: **Genes, proteins, complexes, signaling pathways, organelles, cellular processes!**
+- Since DrugCell’s VNN is structured according to the hierarchy of biological subsystems comprising a human cell, its output (genotype embedding) is the result of state changes in particular subsystems within that hierarchy. .green[To identify the most important of these subsystems], **we scored subsystems** by the degree to which their states were significantly more predictive of a drug response than the states of their child subsystems using the relative local improvement in predictive power metric (RLIPP)
+- Authors analyze the top 5 and bottom 5 DrugCell subsystems for each of the drugs tested **to nominate synergistic and non-synergistic drug combinations**.
 
 ---
 
@@ -666,12 +691,15 @@ class: center, middle
 
 ???
 
-- **Cancer is never a single-cell disease!**
-- Various types of cells in the tumor-microenvironment, each with a special role to play in the carcinogenesis.
+- **Cancer is never a single-cell disease!** 
+  - There are Various types of cells in the tumor-microenvironment
+- General categorization
+  - **lattice-based** (track cells in a fixed grid, CA as an example)
+  - **lattice-free** (ABM as an example)
 
 ---
 
-## Cellular Automata: emergent complexity
+# Cellular Automata: emergent complexity
 
 ![](img/trial-lecture/ca.svg)
 
@@ -725,12 +753,11 @@ Stem cells proliferated and differentiated into progenitor cells, and cancer cel
 
 .green.bold[Assets]
 
-- Lattice-free
 - Autonomous agents
 - Incorporate space and stochasticity
 - Utilize parallelism
 - Reproduce emergent behavior
-- Intuitive for multi-cellular modeling
+- Intuitive for multi-cellular systems modeling
 
 .red.bold[Drawbacks]
 
