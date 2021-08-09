@@ -641,6 +641,7 @@ class: center, middle
   - Use this knowledge to better **match observations**?
 
 ---
+exclude:true
 
 # Some notation...
 
@@ -766,25 +767,27 @@ exclude:true
 
 ---
 
-# Truth Density results and validation
+## Truth Density results and validation
 
-.pull-left[![](img/thesis/td-link-operator.svg)]
-.pull-right[![](img/thesis/td-thres.svg)]
+.pull-left-67[![](img/thesis/td-link-operator.svg)]
+.pull-right-33[
+.large[
+&amp;nbsp; .bold[Notation]
+
+- `\(n\)` regulators
+- `\(m\)` .green[activators]
+- `\(k\)` .red[inhibitors]
+
+&amp;nbsp; <i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> .blue[Activator-to-inhibitor ratio] is important!
+]]
 
 &lt;br/&gt;&amp;nbsp;&lt;br/&gt;
 &lt;br/&gt;&amp;nbsp;&lt;br/&gt;
-&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
-&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
-&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
-&lt;br/&gt;&amp;nbsp;&lt;br/&gt;
 
-.bold[Expected behavior for large number of regulators:]
+`\(TD_{AND-NOT} = \frac{1}{2^k}-\frac{1}{2^n} \sim \frac{1}{2^k} \xrightarrow{k \rightarrow \infty} 0\)`, depends on #.red[inhibitors] `\(k\)`
 
-<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> `\(TD_{AND-NOT} = \frac{1}{2^k}-\frac{1}{2^n} \sim \frac{1}{2^k} \xrightarrow{k \rightarrow \infty} 0\)` (depends on #.red[inhibitors])
+`\(TD_{OR-NOT} = 1 - \frac{1}{2^m} + \frac{1}{2^n} \sim 1-\frac{1}{2^m} \xrightarrow{m \rightarrow \infty} 1\)`, depends on #.green[activators] `\(m\)`
 
-<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> `\(TD_{OR-NOT} = 1 - \frac{1}{2^m} + \frac{1}{2^n} \sim 1-\frac{1}{2^m} \xrightarrow{m \rightarrow \infty} 1\)` (depends on #.green[activators])
-
-<i class="fa fa-long-arrow-alt-right" role="presentation" aria-label="long-arrow-alt-right icon"></i> .blue[Activator-to-inhibitor ratio] is important!
 
 ???
 
@@ -823,7 +826,7 @@ https://github.com/druglogics/abmlog <i class="fab fa-github" role="presentation
 
 .large[
 - Higher than random agreement
-- .little[AND-NOT =&gt; 0, OR-NOT =&gt; 1]
+- .little[AND-NOT =&gt; .red[0], OR-NOT =&gt; .green[1]]
 ]]
 
 .pull-right[

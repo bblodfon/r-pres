@@ -627,6 +627,7 @@ class: center, middle
   - Use this knowledge to better **match observations**?
 
 ---
+exclude:true
 
 # Some notation...
 
@@ -752,25 +753,27 @@ $TD_{thres} \rightarrow 1/2$
 
 ---
 
-# Truth Density results and validation
+## Truth Density results and validation
 
-.pull-left[![](img/thesis/td-link-operator.svg)]
-.pull-right[![](img/thesis/td-thres.svg)]
+.pull-left-67[![](img/thesis/td-link-operator.svg)]
+.pull-right-33[
+.large[
+&nbsp; .bold[Notation]
+
+- $n$ regulators
+- $m$ .green[activators]
+- $k$ .red[inhibitors]
+
+&nbsp; `r shiny::icon("long-arrow-alt-right")` .blue[Activator-to-inhibitor ratio] is important!
+]]
 
 <br/>&nbsp;<br/>
 <br/>&nbsp;<br/>
-<br/>&nbsp;<br/>
-<br/>&nbsp;<br/>
-<br/>&nbsp;<br/>
-<br/>&nbsp;<br/>
 
-.bold[Expected behavior for large number of regulators:]
+$TD_{AND-NOT} = \frac{1}{2^k}-\frac{1}{2^n} \sim \frac{1}{2^k} \xrightarrow{k \rightarrow \infty} 0$, depends on #.red[inhibitors] $k$
 
-`r shiny::icon("long-arrow-alt-right")` $TD_{AND-NOT} = \frac{1}{2^k}-\frac{1}{2^n} \sim \frac{1}{2^k} \xrightarrow{k \rightarrow \infty} 0$ (depends on #.red[inhibitors])
+$TD_{OR-NOT} = 1 - \frac{1}{2^m} + \frac{1}{2^n} \sim 1-\frac{1}{2^m} \xrightarrow{m \rightarrow \infty} 1$, depends on #.green[activators] $m$
 
-`r shiny::icon("long-arrow-alt-right")` $TD_{OR-NOT} = 1 - \frac{1}{2^m} + \frac{1}{2^n} \sim 1-\frac{1}{2^m} \xrightarrow{m \rightarrow \infty} 1$ (depends on #.green[activators])
-
-`r shiny::icon("long-arrow-alt-right")` .blue[Activator-to-inhibitor ratio] is important!
 
 ???
 
@@ -809,7 +812,7 @@ https://github.com/druglogics/abmlog `r shiny::icon("github")`
 
 .large[
 - Higher than random agreement
-- .little[AND-NOT => 0, OR-NOT => 1]
+- .little[AND-NOT => .red[0], OR-NOT => .green[1]]
 ]]
 
 .pull-right[
