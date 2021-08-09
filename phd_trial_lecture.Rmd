@@ -337,11 +337,10 @@ Maybe mention that **understanding biological interactions from an activate/inhi
 
 $\frac{dx_i}{dt} = \tau_i(B_i(f(x_{1,i}),...,f(x_{N,i})) - x_i)$
 
-![:scale 60%](img/trial-lecture/eduati_parameters.jpg)]
+.center[![:scale 55%](img/trial-lecture/eduati_parameters.jpg)]]
 
 .pull-right-42[
-
-### .green[Assets]
+### &nbsp; .green[Assets]
 
 .little[
 - Minimum model complexity
@@ -350,7 +349,7 @@ $\frac{dx_i}{dt} = \tau_i(B_i(f(x_{1,i}),...,f(x_{N,i})) - x_i)$
 - No need for kinetic data
 ]
 
-### Other mixed formalisms
+### &nbsp; Other mixed formalisms
 
 .little[
 - Fuzzy logic modeling .small.purple[Aldridge (2009)]
@@ -802,7 +801,7 @@ Stem cells proliferated and differentiated into progenitor cells, and cancer cel
 ]
 
 .pull-right-27[
-.green.bold[Lessons]
+.green.bold[Results]
 .littler[
 - Clonal expansion
 - Mechanics of cell proliferation
@@ -817,7 +816,7 @@ Stem cells proliferated and differentiated into progenitor cells, and cancer cel
 
 .smaller.purple[Ghaffarizadeh (2018). PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems]
 
-.littler[`r shiny::icon("long-arrow-alt-right")` Parameter optimization in 2D simulations correlated with patient response to immunotherapy]
+.small[`r shiny::icon("long-arrow-alt-right")` Parameter optimization in 2D simulations correlated with patient response to immunotherapy]
 
 .smaller.purple[Ozik (2019). Learning-accelerated discovery of immune-tumour interactions]
 ]
