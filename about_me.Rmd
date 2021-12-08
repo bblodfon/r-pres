@@ -35,8 +35,8 @@ output:
 ## Skills
 
 - Software: <i class="fab fa-java"></i> `Java` <i class="fab fa-python"></i> `Python` <i class="fab fa-js"></i> `Javascript` <i class="fab fa-html5"></i> `HTML` <i class="fab fa-css3-alt"></i> `CSS`
-- Data manipulation and analyses in <i class="fab fa-r-project"></i>
-  - Applied Biostatistics (e.g. Random Forests, UMAP)
+- Data analyses in <i class="fab fa-r-project"></i>
+- Applied Biostatistics (e.g. Random Forests, UMAP)
 - Network Theory and Modeling
 
 ???
@@ -46,7 +46,9 @@ output:
 
 ---
 
-# Motivation for my PhD!
+# Overview of my PhD!
+
+.bold[Thesis]: <i>Software implementations allowing new approaches toward data analysis, modeling and curation of biological knowledge for Systems Medicine</i>
 
 .center[![:scale 80%](img/thesis/curation.svg)]
 
@@ -60,10 +62,9 @@ output:
 
 # Future Goals
 
-### Apply my skills for clinical & translational research
-### Knowledge dissemination
-### Interested in learning more about
+## Use my skills for the benefit of clinical & translational research
+## Knowledge dissemination
+## Learn more about
 - Molecular Biology
-- Latest technologies
-  - Deep NNs
-  - Quantum Computing
+- Deep Neural Networks
+- Quantum Computing
